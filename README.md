@@ -5,7 +5,6 @@
 `./src` - Source code (including directory structure) for all services on all gateways  
 `./gmu` - Gateway Management Utility  
 `./gateway` - Gateway installation files (docker)  
-`./pipeline` - Jenkinsfile and other pipeline components  
 
 
 ## Setup demo environment
