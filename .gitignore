@@ -1,0 +1,5 @@
+jenkins_home/*
+gmu/gmu-cert.p12
+gmu/mu-cert.pem
+gmu/gmu.log
+gmu/results.xml

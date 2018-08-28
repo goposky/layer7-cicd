@@ -2,11 +2,11 @@
 <l7:Item xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
     <l7:Name>Bundle mappings</l7:Name>
     <l7:Type>BUNDLE MAPPINGS</l7:Type>
-    <l7:TimeStamp>2018-08-27T11:35:38.574Z</l7:TimeStamp>
+    <l7:TimeStamp>2018-08-28T14:35:31.405Z</l7:TimeStamp>
     <l7:Link rel="self" uri="https://gateway-dev:8443/restman/1.0/bundle?test=false&amp;activate=true"/>
     <l7:Resource>
         <l7:Mappings>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" targetId="6ac7ebd69dfb32579d9e7186115d9d84" targetUri="https://gateway-dev:8443/restman/1.0/folders/6ac7ebd69dfb32579d9e7186115d9d84" type="FOLDER">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" targetId="b2913aad0c582ccee64622c8aab78b97" targetUri="https://gateway-dev:8443/restman/1.0/folders/b2913aad0c582ccee64622c8aab78b97" type="FOLDER">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -216,7 +216,7 @@
             <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="09eeb4a5-f5b4-331e-8659-cefe2634295c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/interfaceTags/09eeb4a5-f5b4-331e-8659-cefe2634295c" targetId="09eeb4a5-f5b4-331e-8659-cefe2634295c" targetUri="https://gateway-dev:8443/restman/1.0/interfaceTags/09eeb4a5-f5b4-331e-8659-cefe2634295c" type="INTERFACE_TAG"/>
             <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="580f7188-00bc-3f5a-8879-3e0dfa6dfb1c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/interfaceTags/580f7188-00bc-3f5a-8879-3e0dfa6dfb1c" targetId="580f7188-00bc-3f5a-8879-3e0dfa6dfb1c" targetUri="https://gateway-dev:8443/restman/1.0/interfaceTags/580f7188-00bc-3f5a-8879-3e0dfa6dfb1c" type="INTERFACE_TAG"/>
             <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="fefaff0cd4f5c3a9bc957df4bce03032" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/fefaff0cd4f5c3a9bc957df4bce03032" targetId="fefaff0cd4f5c3a9bc957df4bce03032" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/fefaff0cd4f5c3a9bc957df4bce03032" type="SSG_CONNECTOR"/>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4b" targetId="6ac7ebd69dfb32579d9e7186115d9d31" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/6ac7ebd69dfb32579d9e7186115d9d31" type="SSG_CONNECTOR">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4b" targetId="b2913aad0c582ccee64622c8aab78b43" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/b2913aad0c582ccee64622c8aab78b43" type="SSG_CONNECTOR">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -226,7 +226,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4a" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4a" targetId="6ac7ebd69dfb32579d9e7186115d9d30" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/6ac7ebd69dfb32579d9e7186115d9d30" type="SSG_CONNECTOR">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4a" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4a" targetId="b2913aad0c582ccee64622c8aab78b42" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/b2913aad0c582ccee64622c8aab78b42" type="SSG_CONNECTOR">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -236,7 +236,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4c" targetId="6ac7ebd69dfb32579d9e7186115d9d32" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/6ac7ebd69dfb32579d9e7186115d9d32" type="SSG_CONNECTOR">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="70263388617b6a9cdab91d126ec0dd4c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/listenPorts/70263388617b6a9cdab91d126ec0dd4c" targetId="b2913aad0c582ccee64622c8aab78b44" targetUri="https://gateway-dev:8443/restman/1.0/listenPorts/b2913aad0c582ccee64622c8aab78b44" type="SSG_CONNECTOR">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -286,7 +286,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb673" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb673" targetId="6ac7ebd69dfb32579d9e7186115d9dc4" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9dc4" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb673" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb673" targetId="b2913aad0c582ccee64622c8aab78bd7" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78bd7" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -296,7 +296,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eef4ce" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eef4ce" targetId="6ac7ebd69dfb32579d9e7186115da049" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da049" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eef4ce" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eef4ce" targetId="b2913aad0c582ccee64622c8aab78e5c" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e5c" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -306,7 +306,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b10b4" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b10b4" targetId="6ac7ebd69dfb32579d9e7186115d9ef0" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9ef0" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b10b4" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b10b4" targetId="b2913aad0c582ccee64622c8aab78d03" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d03" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -323,7 +323,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="fefaff0cd4f5c3a9bc957df4bce05e2e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/fefaff0cd4f5c3a9bc957df4bce05e2e" targetId="6ac7ebd69dfb32579d9e7186115d9f43" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f43" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="fefaff0cd4f5c3a9bc957df4bce05e2e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/fefaff0cd4f5c3a9bc957df4bce05e2e" targetId="b2913aad0c582ccee64622c8aab78d56" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d56" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -354,7 +354,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd8d" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd8d" targetId="6ac7ebd69dfb32579d9e7186115da065" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da065" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd8d" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd8d" targetId="b2913aad0c582ccee64622c8aab78e78" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e78" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -378,7 +378,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1086" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1086" targetId="6ac7ebd69dfb32579d9e7186115d9ecb" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9ecb" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1086" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1086" targetId="b2913aad0c582ccee64622c8aab78cde" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78cde" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -395,7 +395,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd21" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd21" targetId="6ac7ebd69dfb32579d9e7186115d9e8f" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e8f" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd21" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd21" targetId="b2913aad0c582ccee64622c8aab78ca2" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78ca2" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -412,7 +412,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc43" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc43" targetId="6ac7ebd69dfb32579d9e7186115da02b" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da02b" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc43" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc43" targetId="b2913aad0c582ccee64622c8aab78e3e" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e3e" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -422,7 +422,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebcdc" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebcdc" targetId="6ac7ebd69dfb32579d9e7186115d9e53" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e53" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebcdc" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebcdc" targetId="b2913aad0c582ccee64622c8aab78c66" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78c66" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -439,7 +439,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1567" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1567" targetId="6ac7ebd69dfb32579d9e7186115da151" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da151" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1567" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1567" targetId="b2913aad0c582ccee64622c8aab78f64" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78f64" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -463,7 +463,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeba88" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeba88" targetId="6ac7ebd69dfb32579d9e7186115d9fa4" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fa4" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeba88" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeba88" targetId="b2913aad0c582ccee64622c8aab78db7" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78db7" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -473,7 +473,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbfe" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbfe" targetId="6ac7ebd69dfb32579d9e7186115da00d" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da00d" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbfe" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbfe" targetId="b2913aad0c582ccee64622c8aab78e20" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e20" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -483,7 +483,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebadb" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebadb" targetId="6ac7ebd69dfb32579d9e7186115d9fc2" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fc2" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebadb" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebadb" targetId="b2913aad0c582ccee64622c8aab78dd5" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78dd5" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -493,7 +493,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b15bd" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b15bd" targetId="6ac7ebd69dfb32579d9e7186115da18c" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da18c" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b15bd" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b15bd" targetId="b2913aad0c582ccee64622c8aab78f9f" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78f9f" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -510,7 +510,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbb3" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbb3" targetId="6ac7ebd69dfb32579d9e7186115d9fef" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fef" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbb3" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbb3" targetId="b2913aad0c582ccee64622c8aab78e02" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e02" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -534,7 +534,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd09" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd09" targetId="6ac7ebd69dfb32579d9e7186115d9e78" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e78" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebd09" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebd09" targetId="b2913aad0c582ccee64622c8aab78c8b" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78c8b" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -565,7 +565,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b14ed" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b14ed" targetId="6ac7ebd69dfb32579d9e7186115da116" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da116" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b14ed" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b14ed" targetId="b2913aad0c582ccee64622c8aab78f29" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78f29" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -582,7 +582,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebcc4" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebcc4" targetId="6ac7ebd69dfb32579d9e7186115d9e3c" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e3c" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebcc4" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebcc4" targetId="b2913aad0c582ccee64622c8aab78c4f" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78c4f" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -599,7 +599,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeff6b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeff6b" targetId="6ac7ebd69dfb32579d9e7186115da1c5" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da1c5" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeff6b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeff6b" targetId="b2913aad0c582ccee64622c8aab78fd8" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78fd8" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -609,7 +609,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeffe3" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeffe3" targetId="6ac7ebd69dfb32579d9e7186115da1d8" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da1d8" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeffe3" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeffe3" targetId="b2913aad0c582ccee64622c8aab78feb" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78feb" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -633,7 +633,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebb03" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebb03" targetId="6ac7ebd69dfb32579d9e7186115d9fd1" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fd1" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebb03" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebb03" targetId="b2913aad0c582ccee64622c8aab78de4" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78de4" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -643,7 +643,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebb88" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebb88" targetId="6ac7ebd69dfb32579d9e7186115d9fe0" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fe0" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebb88" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebb88" targetId="b2913aad0c582ccee64622c8aab78df3" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78df3" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -653,7 +653,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbdd" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbdd" targetId="6ac7ebd69dfb32579d9e7186115d9ffe" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9ffe" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebbdd" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebbdd" targetId="b2913aad0c582ccee64622c8aab78e11" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e11" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -663,7 +663,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc21" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc21" targetId="6ac7ebd69dfb32579d9e7186115da01c" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da01c" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc21" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc21" targetId="b2913aad0c582ccee64622c8aab78e2f" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e2f" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -673,7 +673,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb72c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb72c" targetId="6ac7ebd69dfb32579d9e7186115d9f68" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f68" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb72c" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb72c" targetId="b2913aad0c582ccee64622c8aab78d7b" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d7b" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -683,7 +683,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1269" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1269" targetId="6ac7ebd69dfb32579d9e7186115da03a" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da03a" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1269" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1269" targetId="b2913aad0c582ccee64622c8aab78e4d" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78e4d" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -693,7 +693,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="fefaff0cd4f5c3a9bc957df4bce05e16" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/fefaff0cd4f5c3a9bc957df4bce05e16" targetId="6ac7ebd69dfb32579d9e7186115d9f2c" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f2c" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="fefaff0cd4f5c3a9bc957df4bce05e16" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/fefaff0cd4f5c3a9bc957df4bce05e16" targetId="b2913aad0c582ccee64622c8aab78d3f" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d3f" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -703,7 +703,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb68b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb68b" targetId="6ac7ebd69dfb32579d9e7186115d9ddb" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9ddb" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb68b" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb68b" targetId="b2913aad0c582ccee64622c8aab78bee" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78bee" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -713,7 +713,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebdda" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebdda" targetId="6ac7ebd69dfb32579d9e7186115da211" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da211" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebdda" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebdda" targetId="b2913aad0c582ccee64622c8aab79024" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab79024" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -730,7 +730,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeba63" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeba63" targetId="6ac7ebd69dfb32579d9e7186115d9f86" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f86" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeba63" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeba63" targetId="b2913aad0c582ccee64622c8aab78d99" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d99" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -740,7 +740,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebab6" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebab6" targetId="6ac7ebd69dfb32579d9e7186115d9fb3" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9fb3" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebab6" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebab6" targetId="b2913aad0c582ccee64622c8aab78dc6" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78dc6" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -750,7 +750,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb9bb" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb9bb" targetId="6ac7ebd69dfb32579d9e7186115d9f77" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f77" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eeb9bb" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eeb9bb" targetId="b2913aad0c582ccee64622c8aab78d8a" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d8a" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -760,7 +760,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebeb5" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebeb5" targetId="6ac7ebd69dfb32579d9e7186115d9f95" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f95" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebeb5" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebeb5" targetId="b2913aad0c582ccee64622c8aab78da8" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78da8" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -777,7 +777,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b106e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b106e" targetId="6ac7ebd69dfb32579d9e7186115d9eb4" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9eb4" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b106e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b106e" targetId="b2913aad0c582ccee64622c8aab78cc7" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78cc7" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -808,7 +808,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc7e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc7e" targetId="6ac7ebd69dfb32579d9e7186115d9e00" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e00" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc7e" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc7e" targetId="b2913aad0c582ccee64622c8aab78c13" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78c13" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -832,7 +832,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1475" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1475" targetId="6ac7ebd69dfb32579d9e7186115da0db" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da0db" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1475" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1475" targetId="b2913aad0c582ccee64622c8aab78eee" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78eee" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -853,7 +853,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b10cc" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b10cc" targetId="6ac7ebd69dfb32579d9e7186115d9f07" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9f07" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b10cc" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b10cc" targetId="b2913aad0c582ccee64622c8aab78d1a" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78d1a" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -863,7 +863,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1115" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1115" targetId="6ac7ebd69dfb32579d9e7186115da0a0" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115da0a0" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="f84c6fe17f2bba7fb6b03122f23b1115" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/f84c6fe17f2bba7fb6b03122f23b1115" targetId="b2913aad0c582ccee64622c8aab78eb3" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78eb3" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
@@ -880,7 +880,7 @@
                     </l7:Property>
                 </l7:Properties>
             </l7:Mapping>
-            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc96" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc96" targetId="6ac7ebd69dfb32579d9e7186115d9e17" targetUri="https://gateway-dev:8443/restman/1.0/roles/6ac7ebd69dfb32579d9e7186115d9e17" type="RBAC_ROLE">
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="53270198e958cd5c497538aa06eebc96" srcUri="https://nl0587yr.dc-ratingen.de:8443/restman/1.0/roles/53270198e958cd5c497538aa06eebc96" targetId="b2913aad0c582ccee64622c8aab78c2a" targetUri="https://gateway-dev:8443/restman/1.0/roles/b2913aad0c582ccee64622c8aab78c2a" type="RBAC_ROLE">
                 <l7:Properties>
                     <l7:Property key="FailOnNew">
                         <l7:BooleanValue>true</l7:BooleanValue>
