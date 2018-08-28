@@ -10,7 +10,7 @@
 
 ## Setup demo environment
 ### Run gateway
-`docker-compose up -f gateway/docker-compose.yml -d` 
+`docker-compose -f gateway/docker-compose.yml up -d` 
 ### Open policy manager
 `javaws gateway/manager.jnlp`
 Login with the default credentials
