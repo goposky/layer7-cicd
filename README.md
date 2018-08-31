@@ -7,23 +7,30 @@
 `./gateway` - Gateway installation files (docker)  
 
 
-## Setup demo environment
-### Run gateway
+## Setup demo environment  
+Clone this repo and change directory into the repo.  
+```
+git clone https://gitlab.com/goposky/layer7-cicd.git
+cd layer7-cicd
+```  
+All commands in the following sections are run from the repo base directory.
+
+### Run gateway  
 `docker-compose -f gateway/docker-compose.yml up -d` 
-### Open policy manager
+### Open policy manager  
 `javaws gateway/manager.jnlp`
-Login with the default credentials
-### Set gmu in your path:
+Java webstart opens the policy manager login screen. Login with the default credentials.
+### Set gmu in your path:  
 `export PATH=$PATH:<path to the gmu directory>`  
-### Load demo policy using gmu
-`gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo`
-### Browse gateway using gmu
-`gmu browse -z gmu/argFile.properties -r -showIds`
+### Load demo policy using gmu  
+`gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo`  
+### Browse gateway using gmu  
+`gmu browse -z gmu/argFile.properties -r -showIds`  
 
 
-## Setup Jenkins pipeline
-From the repo base directory, run jenkins:
-`docker run -d -v pipeline:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts`
+## Setup Jenkins pipeline  
+# From the repo base directory, run jenkins:  
+`docker run -d -v pipeline:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts` 
 
 Install following plugins:
 1. Blue Ocean 
