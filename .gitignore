@@ -1,4 +1,5 @@
 jenkins-home/*
+!jenkins-home/.gitkeep
 gmu/gmu-cert.p12
 gmu/mu-cert.pem
 gmu/gmu.log
