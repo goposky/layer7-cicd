@@ -8,13 +8,12 @@ services:
     hostname: gateway-dev
     image: caapim/gateway:9.3.00
     ports:
-      - "8080:8080"
-      - "8443:8443"
-      - "9443:9443"
-      - "8000:8000"
+      - "8081:8080"
+      - "8441:8443"
+      - "9441:9443"
+      - "8001:8000"
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
-
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
@@ -22,6 +21,43 @@ services:
       ACCEPT_LICENSE: "true"
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
+
+  gateway-tst:
+    hostname: gateway-tst
+    image: caapim/gateway:9.3.00
+    ports:
+      - "8082:8080"
+      - "8442:8443"
+      - "9442:9443"
+      - "8002:8000"
+    volumes:
+      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+    secrets:
+      - source: license
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+    environment:
+      ACCEPT_LICENSE: "true"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+
+  gateway-prd:
+    hostname: gateway-prd
+    image: caapim/gateway:9.3.00
+    ports:
+      - "8083:8080"
+      - "8443:8443"
+      - "9443:9443"
+      - "8003:8000"
+    volumes:
+      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+    secrets:
+      - source: license
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+    environment:
+      ACCEPT_LICENSE: "true"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+
   nginx-stub:
     hostname: nginx-stub
     image: nginx
