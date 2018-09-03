@@ -3,6 +3,7 @@
 # of the MIT license.  See the LICENSE file for details.
 
 version: '3.4'
+
 services:
   gateway-dev:
     hostname: gateway-dev
@@ -12,6 +13,9 @@ services:
       - "8441:8443"
       - "9441:9443"
       - "8001:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.10
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
@@ -30,6 +34,9 @@ services:
       - "8442:8443"
       - "9442:9443"
       - "8002:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.20
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
@@ -48,6 +55,9 @@ services:
       - "8443:8443"
       - "9443:9443"
       - "8003:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.30
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
@@ -58,20 +68,32 @@ services:
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
 
-  jenkins:
-    hostname: jenkins
-    image: jenkins/jenkins:lts
-    volumes:
-      - ../jenkins-home:/var/jenkins_home
-    ports:
-      - 8080:8080
-      - 50000:50000
-
+      #  jenkins:
+      #    hostname: jenkins
+      #    image: jenkins/jenkins:lts
+      #    volumes:
+      #      - ../jenkins-home:/var/jenkins_home
+      #    ports:
+      #      - 8080:8080
+      #      - 50000:50000
+      #    networks:
+      #      demo:
+      #        ipv4_address: 10.1.0.40
   nginx-stub:
     hostname: nginx-stub
     image: nginx
     ports:
       - "9880:80"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.50
 secrets:
   license:
     file: ./docker/license.xml
+
+networks:
+  demo:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.1.0.0/24
