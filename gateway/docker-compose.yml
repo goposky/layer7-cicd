@@ -58,6 +58,15 @@ services:
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
 
+  jenkins:
+    hostname: jenkins
+    image: jenkins/jenkins:lts
+    volumes:
+      - ../jenkins-home:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
+
   nginx-stub:
     hostname: nginx-stub
     image: nginx
