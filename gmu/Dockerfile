@@ -5,3 +5,4 @@ USER root
 RUN chown -R jenkins:jenkins /usr/local/gmu
 USER jenkins
 ENV PATH "$PATH:/usr/local/gmu"
+CMD /usr/bin/tail -f /dev/null
