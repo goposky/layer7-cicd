@@ -68,17 +68,27 @@ services:
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
 
-      #  jenkins:
-      #    hostname: jenkins
-      #    image: jenkins/jenkins:lts
-      #    volumes:
-      #      - ../jenkins-home:/var/jenkins_home
-      #    ports:
-      #      - 8080:8080
-      #      - 50000:50000
-      #    networks:
-      #      demo:
-      #        ipv4_address: 10.1.0.40
+  jenkins:
+    hostname: jenkins
+    image: jenkins/jenkins:lts
+    volumes:
+      - ../jenkins-home:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
+    networks:
+      demo:
+        ipv4_address: 10.1.0.40
+
+  gmu-slave:
+    hostname: gmu-slave
+    image: registry.gitlab.com/goposky/layer7-cicd:gmu-slave
+    volumes:
+    - ../jenkins-home:/var/jenkins_home
+    networks:
+      demo:
+        ipv4_address: 10.1.0.50
+
   nginx-stub:
     hostname: nginx-stub
     image: nginx
@@ -86,7 +96,8 @@ services:
       - "9880:80"
     networks:
       demo:
-        ipv4_address: 10.1.0.50
+        ipv4_address: 10.1.0.60
+
 secrets:
   license:
     file: ./docker/license.xml
