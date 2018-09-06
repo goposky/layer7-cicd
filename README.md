@@ -2,16 +2,16 @@
 ----------------
 
 ## Prequisites
-Docker is installed. 
-Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox.  
-You can toggle between Hyper-V and Virtualbox by following this page:  
+- Git is installed on your PC.
+- Docker is installed on your PC.\
+Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page:  
 https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5
 
 ## Directory listing
-`./src` - Source code (including directory structure) for all services on all gateways\ 
-`./gmu` - Gateway Management Utility\ 
+`./src` - Source code (including directory structure) for all services on all gateways\
+`./gmu` - Gateway Management Utility\
 `./gateway` - Gateway installation files (docker)\
-`./scripts` - contains bash scripts with helpful gmu commands\
+`./scripts` - contains bash scripts with helpful gmu commands
 
 
 ## Setup demo environment 
