@@ -44,23 +44,31 @@ If you prefer to run only 1 or few of the components, you can spin up just that 
 ```
 docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave # Runs 1 gateway environment and the gmu container
 ```
-
 #### Browse gateway using policy manager
-```javaws gateway/manager.jnlp```
+```
+javaws gateway/manager.jnlp
+```
 Java webstart opens the policy manager login screen. Login with the default credentials.
 #### Set gmu in your path:
-`export PATH=$PATH:<path to the gmu directory>`
+```
+export PATH=$PATH:<path to the gmu directory>
+```
 #### Load demo policy using gmu
-`gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo`
+```
+gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo
+```
 #### Browse gateway using gmu
-`gmu browse -z gmu/argFile.properties -r -showIds`\
+```
+gmu browse -z gmu/argFile.properties -r -showIds
+```
 The output should list all the deployed services, policies and folders.
 
-## Setup Jenkins
-#### From the repo base directory, run jenkins:
-`docker run -d -v pipeline:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts`\
-
-Install following plugins:
+#### Setup Jenkins
+Jenkins can be run with the following command. 
+```
+docker-compose -f gateway/docker-compose.yml up -d jenkins
+```
+Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `../jenkins-home`. Ensure that you have the following plugins installed:
 1. Blue Ocean 
 2. Build Timeout 
 3. Build Trigger Badge Plugin 
@@ -82,5 +90,4 @@ Install following plugins:
 19. Violation Comments to GitLab Plugin 
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
-
 
