@@ -46,7 +46,7 @@ docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave # Runs 
 ```
 
 #### Browse gateway using policy manager
-`javaws gateway/manager.jnlp`\
+```javaws gateway/manager.jnlp```
 Java webstart opens the policy manager login screen. Login with the default credentials.
 #### Set gmu in your path:
 `export PATH=$PATH:<path to the gmu directory>`
