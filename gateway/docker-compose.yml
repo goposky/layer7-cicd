@@ -101,7 +101,7 @@ services:
 
 secrets:
   license:
-    file: ./license/license.xml
+    file: ./docker/license.xml
 
 networks:
   demo:

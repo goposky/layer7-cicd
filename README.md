@@ -17,7 +17,7 @@ cd layer7-cicd
 All commands from now on are run from within this repo base directory.\
 Next, copy your CA API license file to the right location and rename it to `license.xml`
 ```
-cp <path-to-your-license-file> gateway/license/license.xml
+cp <path-to-your-license-file> gateway/docker/license.xml
 ```
 
 #### Explaining the demo environment
