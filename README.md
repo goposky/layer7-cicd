@@ -22,11 +22,30 @@ cd layer7-cicd
 ```
 All commands in the following sections are run from the repo base directory.
 
-#### Run gateway environments
-`docker-compose -f gateway/docker-compose.yml up -d`\
-This spins up 3 gateways environments running within on their docker containers.
+#### Explaining the demo environment
+Within the `gateway` folder is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
+```
+$ docker-compose -f gateway/docker-compose.yml config --services | sort
+gateway-dev
+gateway-prd
+gateway-tst
+gmu-slave
+jenkins
+nginx-stub
+```
+As you can see, there are 3 gateway containers representing different environments, a jenkins container, a gmu container (that would act as a Jenkins slave), and an nginx-stub container to serve as stub for automated tests.
 
-#### Open policy manager
+#### Run gateway environments
+To spin up the demo environment with all containers mentioned in the previous section, run the following command.
+```
+docker-compose -f gateway/docker-compose.yml up -d
+```
+If you prefer to run only 1 or few of the components, you can spin up just that specific container by specifying in the `docker-compose up` command.\
+```
+docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave # Runs 1 gateway environment and the gmu container
+```
+
+#### Browse gateway using policy manager
 `javaws gateway/manager.jnlp`\
 Java webstart opens the policy manager login screen. Login with the default credentials.
 #### Set gmu in your path:
