@@ -52,18 +52,26 @@ docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 javaws gateway/manager.jnlp
 ```
 Java webstart opens the policy manager login screen. Login with the default credentials.
+
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-First set gmu in your PATH.
+The GMU utility is packaged into a docker image and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc commands as well, without needing to install the GMU tool locally on your PC.\
+Once, the `gmu-slave` container is running, we may run the commands the following way:
 ```
-export PATH=$PATH:<path to the gmu directory>
+docker exec -it gateway_gmu-slave_1 gmu <command>
+# where gateway_gmu-slave_1 is the gmu-slave container name
+```
+It can be handy to set an alias as follows:
+```
+alias gmu="docker exec -it gateway_gmu-slave_1 gmu"
 ```
 Loading a policy to the gateway:
 ```
-gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo
+gmu migrateIn -z /usr/local/gmu/mnt/argFile.properties --bundle <path-of-bundle-xml-to-import> --results /usr/local/gmu/mnt/results.xml --destFolder /ziggo
+# Note that we supply the properties file via a local directory that is mounted into the container. The mounted volume is described in the docker-compose.yml. The same mounted volume is used to save the results file.
 ```
 Browsing the gateway:
 ```
-gmu browse -z gmu/argFile.properties -r -showIds
+gmu browse -z /usr/local/gmu/mnt/argFile.properties -r -showIds
 ```
 The output should list all the deployed services, policies and folders.
 
