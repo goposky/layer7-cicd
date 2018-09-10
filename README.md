@@ -3,8 +3,8 @@
 This repo is intended to provide a simple way to spin up CA API Gateway environments on your laptop using docker containers. This can be used for local development, experimentation, or educational purposes. The setup also allows you to create a Jenkins pipeline to migrate policies easily across your various gateway environments.
 
 #### Prequisites
-- Git is installed on your PC.
-- Docker is installed on your PC.\
+- Git is installed on your PC. See https://git-scm.com
+- Docker is installed on your PC. See https://docs.docker.com/install \
 (Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5)
 - You have a valid CA API gateway developer license
 
@@ -57,18 +57,18 @@ First set gmu in your PATH.
 ```
 export PATH=$PATH:<path to the gmu directory>
 ```
-#### Load demo policy using gmu
+Loading a policy to the gateway:
 ```
 gmu migrateIn -z gmu/argFile.properties --bundle gateway/build/demo-bundle.xml --results gmu/results.xml --destFolder /ziggo
 ```
-#### Browse gateway using gmu
+Browsing the gateway:
 ```
 gmu browse -z gmu/argFile.properties -r -showIds
 ```
 The output should list all the deployed services, policies and folders.
 
 #### Setup Jenkins
-If you want to demo CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
+If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```
 docker-compose -f gateway/docker-compose.yml up -d jenkins
 ```
