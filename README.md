@@ -8,12 +8,6 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 (Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5)
 - You have a valid CA API gateway developer license
 
-#### Directory listing
-`./src` - Source code (including directory structure) for all services on all gateways\
-`./gmu` - Gateway Management Utility\
-`./gateway` - Gateway installation files (docker)\
-`./scripts` - contains bash scripts with helpful gmu commands
-
 #### Setup demo environment 
 Clone this repo and change directory into the repo. 
 ```
@@ -58,7 +52,8 @@ docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 javaws gateway/manager.jnlp
 ```
 Java webstart opens the policy manager login screen. Login with the default credentials.
-#### Set gmu in your path:
+#### Use the GMU (Gateway Management Utility) to manage your gateways
+First set gmu in your PATH.
 ```
 export PATH=$PATH:<path to the gmu directory>
 ```
