@@ -8,7 +8,7 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 (Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5)
 - You have a valid CA API gateway developer license
 
-#### Setup demo environment 
+#### Setup 
 Clone this repo and change directory into the repo. 
 ```
 git clone https://gitlab.com/goposky/layer7-cicd.git
@@ -20,7 +20,7 @@ Next, copy your CA API license file to the right location and rename it to `lice
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
 
-#### Explaining the demo environment
+#### Spin up the environment(s)
 Within the `gateway` folder is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```
 $ docker-compose -f gateway/docker-compose.yml config --services | sort
@@ -37,13 +37,15 @@ As you can see in the output, the following services are defined:
 - A gmu container that would act as a Jenkins slave
 - An nginx-stub container to serve as stub for automated tests.
 
-#### Run gateway environments
-To spin up the demo environment with all containers mentioned in the previous section, run the following command.
+To spin up the environments with all containers mentioned in the previous section, run the following command:
 ```
 docker-compose -f gateway/docker-compose.yml up -d
 ```
-However, if you prefer to run only 1 or few of the components, you can spin up just that specific container by specifying in the `docker-compose up` command.\
-To spin up a single gateway and the gmu container, run the following command.
+To bring down the environments, run:
+```
+docker-compose -f gateway/docker-compose.yml down
+```
+To spin up a single gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```
 docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 ```
