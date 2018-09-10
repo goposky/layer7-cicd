@@ -1,26 +1,30 @@
-# Layer7 CICD demo
-----------------
+# CA API Gateway (Layer7) CICD
+------------------------------
+This repo is intended to provide a simple way to spin up CA API Gateway environments on your laptop using docker containers. This can be used for local development, experimentation, or educational purposes. The setup also allows you to create a Jenkins pipeline to migrate policies easily across your various gateway environments.
 
-## Prequisites
+#### Prequisites
 - Git is installed on your PC.
 - Docker is installed on your PC.\
-Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page:  
-https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5
+(Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5)
+- You have a valid CA API gateway developer license
 
-## Directory listing
+#### Directory listing
 `./src` - Source code (including directory structure) for all services on all gateways\
 `./gmu` - Gateway Management Utility\
 `./gateway` - Gateway installation files (docker)\
 `./scripts` - contains bash scripts with helpful gmu commands
 
-
-## Setup demo environment 
+#### Setup demo environment 
 Clone this repo and change directory into the repo. 
 ```
 git clone https://gitlab.com/goposky/layer7-cicd.git
 cd layer7-cicd
 ```
-All commands in the following sections are run from the repo base directory.
+All commands from now on are run from within this repo base directory.\
+Next, copy your CA API license file to the right location and rename it to `license.xml`
+```
+cp <path-to-your-license-file> gateway/license/license.xml
+```
 
 #### Explaining the demo environment
 Within the `gateway` folder is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
@@ -33,16 +37,21 @@ gmu-slave
 jenkins
 nginx-stub
 ```
-As you can see, there are 3 gateway containers representing different environments, a jenkins container, a gmu container (that would act as a Jenkins slave), and an nginx-stub container to serve as stub for automated tests.
+As you can see in the output, the following services are defined:
+- 3 gateway containers representing different environments
+- A jenkins container
+- A gmu container that would act as a Jenkins slave
+- An nginx-stub container to serve as stub for automated tests.
 
 #### Run gateway environments
 To spin up the demo environment with all containers mentioned in the previous section, run the following command.
 ```
 docker-compose -f gateway/docker-compose.yml up -d
 ```
-If you prefer to run only 1 or few of the components, you can spin up just that specific container by specifying in the `docker-compose up` command.\
+However, if you prefer to run only 1 or few of the components, you can spin up just that specific container by specifying in the `docker-compose up` command.\
+To spin up a single gateway and the gmu container, run the following command.
 ```
-docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave # Runs 1 gateway environment and the gmu container
+docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 ```
 #### Browse gateway using policy manager
 ```
@@ -64,7 +73,7 @@ gmu browse -z gmu/argFile.properties -r -showIds
 The output should list all the deployed services, policies and folders.
 
 #### Setup Jenkins
-Jenkins can be run with the following command. 
+If you want to demo CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```
 docker-compose -f gateway/docker-compose.yml up -d jenkins
 ```
