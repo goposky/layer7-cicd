@@ -50,6 +50,7 @@ To spin up a single gateway and the gmu container, specify those services in the
 docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 ```
 #### Browse gateway using policy manager
+First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
 ```bash
 javaws gateway/manager.jnlp
 ```
