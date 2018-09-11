@@ -10,13 +10,13 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 
 #### Setup 
 Clone this repo and change directory into the repo. 
-```
+```bash
 git clone https://gitlab.com/goposky/layer7-cicd.git
 cd layer7-cicd
 ```
 All commands from now on are run from within this repo base directory.\
 Next, copy your CA API license file to the right location and rename it to `license.xml`.
-```
+```bash
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
 
@@ -38,19 +38,19 @@ As you can see in the output, the following services are defined:
 - An nginx-stub container to serve as stub for automated tests.
 
 To spin up the environments with all containers mentioned in the previous section, run the following command:
-```
+```bash
 docker-compose -f gateway/docker-compose.yml up -d
 ```
 To bring down the environments, run:
-```
+```bash
 docker-compose -f gateway/docker-compose.yml down
 ```
 To spin up a single gateway and the gmu container, specify those services in the `docker-compose up` command.
-```
+```bash
 docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
 ```
 #### Browse gateway using policy manager
-```
+```bash
 javaws gateway/manager.jnlp
 ```
 Java webstart opens the policy manager login screen. Login with the default credentials (which you can find within the docker-compose.yml file).
@@ -58,29 +58,29 @@ Java webstart opens the policy manager login screen. Login with the default cred
 #### Use the GMU (Gateway Management Utility) to manage your gateways
 The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC.\
 Once, the `gmu-slave` container is running, we may run the commands the following way:
-```
+```bash
 docker exec -it gateway_gmu-slave_1 gmu <command>
 # where gateway_gmu-slave_1 is the gmu-slave container name
 ```
 It can be handy to set an alias to the above command. For bash:
-```
+```bash
 alias gmu="docker exec -it gateway_gmu-slave_1 gmu"
 ```
 Note that the local directory `gmu/mnt` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 \
 Loading a policy to the gateway:
-```
+```bash
 gmu migrateIn -z mnt/<gmu-argument-properties-filename> --bundle mnt/<import-bundle-xml-filename> --results mnt/<results-xml-filename> --destFolder /ziggo
 ```
 Browsing the gateway:
-```
+```bash
 gmu browse -z mnt/<gmu-argument-properties-filename> -r -showIds
 ```
 The output should list all the deployed services, policies and folders.
 
 #### Setup Jenkins
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
-```
+```bash
 docker-compose -f gateway/docker-compose.yml up -d jenkins
 ```
 Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `../jenkins-home`. Ensure that you have the following plugins installed:
