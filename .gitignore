@@ -4,4 +4,6 @@ gmu/gmu-cert.p12
 gmu/mu-cert.pem
 gmu/gmu.log
 gmu/results.xml
+gmu/mnt/*
+!gmu/mnt/dev-argFile.properties
 gateway/docker/license.xml

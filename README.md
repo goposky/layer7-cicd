@@ -21,7 +21,7 @@ cp <path-to-your-license-file> gateway/docker/license.xml
 ```
 
 #### Spin up the environment(s)
-Within the `gateway` folder is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
+Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```
 $ docker-compose -f gateway/docker-compose.yml config --services | sort
 gateway-dev
@@ -66,14 +66,15 @@ It can be handy to set an alias as follows:
 ```
 alias gmu="docker exec -it gateway_gmu-slave_1 gmu"
 ```
+Note that the local directory `gmu/mnt` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
+\
 Loading a policy to the gateway:
 ```
-gmu migrateIn -z /usr/local/gmu/mnt/argFile.properties --bundle <path-of-bundle-xml-to-import> --results /usr/local/gmu/mnt/results.xml --destFolder /ziggo
-# Note that we supply the properties file via a local directory that is mounted into the container. The mounted volume is described in the docker-compose.yml. The same mounted volume is used to save the results file.
+gmu migrateIn -z mnt/<gmu-argument-properties-filename> --bundle mnt/<import-bundle-xml-filename> --results mnt/<results-xml-filename> --destFolder /ziggo
 ```
 Browsing the gateway:
 ```
-gmu browse -z /usr/local/gmu/mnt/argFile.properties -r -showIds
+gmu browse -z mnt/<gmu-argument-properties-filename> -r -showIds
 ```
 The output should list all the deployed services, policies and folders.
 
