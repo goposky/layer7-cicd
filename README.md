@@ -56,7 +56,7 @@ javaws gateway/manager.jnlp
 Java webstart opens the policy manager login screen. Login with the default credentials (which you can find within the docker-compose.yml file).
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-The GMU utility is packaged into a docker image and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc commands as well, without needing to install the GMU tool locally on your PC.\
+The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc commands as well, without needing to install the GMU tool locally on your PC.\
 Once, the `gmu-slave` container is running, we may run the commands the following way:
 ```
 docker exec -it gateway_gmu-slave_1 gmu <command>
