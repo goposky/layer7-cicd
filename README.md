@@ -5,7 +5,8 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 #### Prequisites
 - Git is installed on your PC. See https://git-scm.com
 - Docker is installed on your PC. See https://docs.docker.com/install \
-(Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5)
+Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5\
+Also, once installed, in Docker preferences, disable the "Start docker when you log in" option.
 - You have a valid CA API gateway developer license
 
 #### Setup 
@@ -14,6 +15,12 @@ Clone this repo and change directory into the repo.
 git clone https://gitlab.com/goposky/layer7-cicd.git
 cd layer7-cicd
 ```
+Note: If you are behind a corporate proxy you might need to specify the proxy url in your git config.
+```
+git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:proxy.port
+git config --global https.proxy https://proxyuser:proxypwd@proxy.server.com:proxy.port
+```
+
 All commands from now on are run from within this repo base directory.\
 Next, copy your CA API license file to the right location and rename it to `license.xml`.
 ```bash
