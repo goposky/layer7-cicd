@@ -62,7 +62,7 @@ Once, the `gmu-slave` container is running, we may run the commands the followin
 docker exec -it gateway_gmu-slave_1 gmu <command>
 # where gateway_gmu-slave_1 is the gmu-slave container name
 ```
-It can be handy to set an alias as follows:
+It can be handy to set an alias to the above command. For bash:
 ```
 alias gmu="docker exec -it gateway_gmu-slave_1 gmu"
 ```
