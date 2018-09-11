@@ -15,14 +15,14 @@ git clone https://gitlab.com/goposky/layer7-cicd.git
 cd layer7-cicd
 ```
 All commands from now on are run from within this repo base directory.\
-Next, copy your CA API license file to the right location and rename it to `license.xml`
+Next, copy your CA API license file to the right location and rename it to `license.xml`.
 ```
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
 
 #### Spin up the environment(s)
 Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
-```
+```bash
 $ docker-compose -f gateway/docker-compose.yml config --services | sort
 gateway-dev
 gateway-prd
@@ -56,7 +56,7 @@ javaws gateway/manager.jnlp
 Java webstart opens the policy manager login screen. Login with the default credentials (which you can find within the docker-compose.yml file).
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc commands as well, without needing to install the GMU tool locally on your PC.\
+The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC.\
 Once, the `gmu-slave` container is running, we may run the commands the following way:
 ```
 docker exec -it gateway_gmu-slave_1 gmu <command>
