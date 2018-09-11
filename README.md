@@ -5,7 +5,7 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 #### Prequisites
 - Git is installed on your PC. See https://git-scm.com
 - Docker is installed on your PC. See https://docs.docker.com/install \
-Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5\
+Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5 \
 Also, once installed, in Docker preferences, disable the "Start docker when you log in" option.
 - You have a valid CA API gateway developer license
 
@@ -113,4 +113,6 @@ Jenkins configuration will be persisted on restart of container, since everythin
 19. Violation Comments to GitLab Plugin 
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
+
+TODO: Pipeline setup
 
