@@ -1,8 +1,5 @@
-FROM jenkinsci/slave:alpine
-# copy gmu directory to path
-COPY ./gmu-docker /usr/local/gmu
-USER root
-RUN chown -R jenkins:jenkins /usr/local/gmu
-USER jenkins
-ENV PATH "$PATH:/usr/local/gmu"
-CMD /usr/bin/tail -f /dev/null
+FROM jenkinsci/ssh-slave
+LABEL maintainer="mail@goposky.com"
+# copy gmu directory and set in path
+COPY --chown=jenkins:jenkins ./gmu-docker /home/jenkins/gmu
+ENV PATH "$PATH:/home/jenkins/gmu"

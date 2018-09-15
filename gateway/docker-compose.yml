@@ -17,7 +17,7 @@ services:
       demo:
         ipv4_address: 10.1.0.10
     volumes:
-      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+      - restman-dev:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
@@ -25,6 +25,35 @@ services:
       ACCEPT_LICENSE: "true"
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
+      SSG_DATABASE_JDBC_URL: "jdbc:mysql://mysql-dev:3306/ssg"
+      SSG_DATABASE_USER: "ssgdbuser"
+      SSG_DATABASE_PASSWORD: "dbpassword"
+      SSG_CLUSTER_HOST: "localhost"
+      SSG_CLUSTER_PASSWORD: "password"
+      SSG_JVM_HEAP: "4g"
+      EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
+
+
+  mysql-dev:
+    image: mysql:5.7
+    ports:
+      - "33061:3306"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.11
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_USER=ssgdbuser
+      - MYSQL_PASSWORD=dbpassword
+      - MYSQL_DATABASE=ssg
+    volumes:
+      - dbvolume:/var/lib/mysql
+    command:
+      - "--character-set-server=utf8"
+      - "--innodb_log_buffer_size=32M"
+      - "--innodb_log_file_size=80M"
+      - "--max_allowed_packet=8M"
+
 
   gateway-tst:
     hostname: gateway-tst
@@ -38,7 +67,7 @@ services:
       demo:
         ipv4_address: 10.1.0.20
     volumes:
-      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+      - restman-tst:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
@@ -59,7 +88,7 @@ services:
       demo:
         ipv4_address: 10.1.0.30
     volumes:
-      - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+      - restman-prd:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
@@ -82,10 +111,11 @@ services:
 
   gmu-slave:
     hostname: gmu-slave
-    image: registry.gitlab.com/goposky/layer7-cicd:gmu-slave
+    image: gmu-slave:big
     volumes:
-    - ../jenkins-home:/var/jenkins_home
     - ../gmu/mnt:/home/jenkins/mnt
+    environment:
+    - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFW92LzmpcD+30JMXdV3DFFBc5gQ5balhqnroITZvHyEKZFz11yZXWELQCmKE1LYqJqnpuHhYLCgK31jLG2VNFDWzulvmE7v+Pm9hDdIAp6zItZ8kGmlnuW1Vggy5HQRwZxHIBSJubVVsHe7ftqgF0/B0hbx1TqbdmO8eQHVjKSgQ0AsgiiWOjtRWWdbYeIOdiSDpnxrnua55uVNH/bop1TTpxCFAbhgF9ufF5lnES78YC0HRAC8h98QXS1czClZODQ+zsOcfbLwmSBItBRbWm/WxcWRj3XK4kUD1PgKk+DXOGU+ebvUYxKCwCC8VqY/dL3PCbFj6H2blD1Zx46BmX mail@goposky.com
     networks:
       demo:
         ipv4_address: 10.1.0.50
@@ -109,3 +139,8 @@ networks:
       driver: default
       config:
         - subnet: 10.1.0.0/24
+volumes:
+  restman-dev:
+  dbvolume:
+  restman-tst:
+  restman-prd:

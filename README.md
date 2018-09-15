@@ -1,5 +1,5 @@
 # CA API Gateway (Layer7) CICD
-------------------------------
+
 This repo is intended to provide a simple way to spin up CA API Gateway environments on your laptop using docker containers. This can be used for local development, experimentation, or educational purposes. The setup also allows you to create a Jenkins pipeline to migrate policies easily across your various gateway environments.
 
 #### Prequisites
@@ -32,6 +32,7 @@ Within the `gateway` directory is a `docker-compose.yml` file which defines the 
 ```bash
 $ docker-compose -f gateway/docker-compose.yml config --services | sort
 gateway-dev
+mysql-dev
 gateway-prd
 gateway-tst
 gmu-slave
@@ -40,6 +41,7 @@ nginx-stub
 ```
 As you can see in the output, the following services are defined:
 - 3 gateway containers representing different environments
+- A mysql container that will persist state of the gateway-dev
 - A jenkins container
 - A gmu container that would act as a Jenkins slave
 - An nginx-stub container to serve as stub for automated tests.
@@ -52,9 +54,9 @@ To bring down the environments, run:
 ```bash
 docker-compose -f gateway/docker-compose.yml down
 ```
-To spin up a single gateway and the gmu container, specify those services in the `docker-compose up` command.
+To spin up the dev gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```bash
-docker-compose -f gateway/docker-compose.yml up -d gateway-dev gmu-slave
+docker-compose -f gateway/docker-compose.yml up -d gateway-dev mysql-dev gmu-slave
 ```
 #### Browse gateway using policy manager
 First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
