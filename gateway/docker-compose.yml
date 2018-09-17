@@ -111,7 +111,7 @@ services:
 
   gmu-slave:
     hostname: gmu-slave
-    image: gmu-slave:big
+    image: registry.gitlab.com/goposky/layer7-cicd:gmu-slave
     volumes:
     - ../gmu/mnt:/home/jenkins/mnt
     environment:
