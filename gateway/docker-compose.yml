@@ -7,6 +7,7 @@ version: '3.4'
 services:
   gateway-dev:
     hostname: gateway-dev
+    container_name: gateway-dev
     image: caapim/gateway:9.3.00
     ports:
       - "8081:8080"
@@ -57,6 +58,7 @@ services:
 
   gateway-tst:
     hostname: gateway-tst
+    container_name: gateway-tst
     image: caapim/gateway:9.3.00
     ports:
       - "8082:8080"
@@ -78,6 +80,7 @@ services:
 
   gateway-prd:
     hostname: gateway-prd
+    container_name: gateway-prd
     image: caapim/gateway:9.3.00
     ports:
       - "8083:8080"
@@ -99,6 +102,7 @@ services:
 
   jenkins:
     hostname: jenkins
+    container_name: jenkins
     image: jenkins/jenkins:lts
     volumes:
       - ../jenkins-home:/var/jenkins_home
@@ -111,6 +115,7 @@ services:
 
   gmu-slave:
     hostname: gmu-slave
+    container_name: gmu-slave
     image: registry.gitlab.com/goposky/layer7-cicd:gmu-slave
     volumes:
     - ../gmu/mnt:/home/jenkins/mnt
@@ -122,6 +127,7 @@ services:
 
   nginx-stub:
     hostname: nginx-stub
+    container_name: nginx-stub
     image: nginx
     ports:
       - "9880:80"

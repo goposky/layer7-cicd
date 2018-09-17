@@ -69,12 +69,12 @@ Java webstart opens the policy manager login screen. Login with the default cred
 The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC.\
 Once, the `gmu-slave` container is running, we may run the commands the following way:
 ```bash
-docker exec -it gateway_gmu-slave_1 gmu <command>
-# where gateway_gmu-slave_1 is the gmu-slave container name
+docker exec -it gmu-slave gmu <command>
+# where gmu-slave is the gmu-slave container name
 ```
 It can be handy to set an alias to the above command. For bash:
 ```bash
-alias gmu="docker exec -it gateway_gmu-slave_1 gmu"
+alias gmu="docker exec -it gmu-slave gmu"
 ```
 Note that the local directory `gmu/mnt` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 \
