@@ -26,6 +26,18 @@ Next, copy your CA API license file to the right location and rename it to `lice
 ```bash
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
+Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Once copied, the directory should have contents similar to below:
+```
+README.md                       # this README file
+gmu                             # the GMU script renamed
+lib                             # contains jars required by GMU
+GatewayMigrationUtility.jar     # the main GMU jar
+```
+
+Next, build the gmu-slave docker image.
+```
+docker build gmu -t gmu-slave
+```
 
 #### Spin up the environment(s)
 Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
