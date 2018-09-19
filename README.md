@@ -1,4 +1,4 @@
-# CA API Gateway (Layer7) CICD
+# CA API Gateway (Layer7) local development environment with CI/CD
 
 This repo is intended to provide a simple way to spin up CA API Gateway environments on your laptop using docker containers. This can be used for local development, experimentation, or educational purposes. The setup also allows you to create a Jenkins pipeline to migrate policies easily across your various gateway environments.
 
