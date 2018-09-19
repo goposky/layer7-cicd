@@ -105,7 +105,7 @@ services:
     container_name: jenkins
     image: jenkins/jenkins:lts
     volumes:
-      - ./jenkins-home:/var/jenkins_home
+      - ./jenkins:/var/jenkins_home
     ports:
       - 8080:8080
       - 50000:50000
