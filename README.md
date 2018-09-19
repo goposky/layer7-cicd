@@ -77,7 +77,7 @@ There are 2 ways to do this:
    ```bash
    javaws manager.jnlp
    ```
-Login to Policy Manager with the default credentials (which you can find within the `docker-compose.yml` file).
+Login to Policy Manager with the default credentials, which you can find within the `docker-compose.yml` file. Connect with `localhost` on the port that is mapped to gateway port 8443 (also configured within `docker-compose.yml`). For example, for the `gateway-dev` this is port 8441.
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
 The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.\
