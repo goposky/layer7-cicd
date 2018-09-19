@@ -1,7 +1,7 @@
-gateway/docker/license.xml
+license/license.xml
 jenkins-home/*
 !jenkins-home/.gitkeep
-gmu/gmu-docker/*
-!gmu/gmu-docker/README.md
+gmu/*
+!gmu/README.md
 workspace/*
 !workspace/dev-argFile.properties

@@ -28,9 +28,9 @@ git config --global https.proxy https://proxyuser:proxypwd@proxy.server.com:prox
 All commands from now on are run from within this repo base directory.\
 Next, copy your CA API license file to the right location and rename it to `license.xml`.
 ```bash
-cp <path-to-your-license-file> gateway/docker/license.xml
+cp <path-to-your-license-file> license/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Rename the `GatewayMigrationUtility.sh` file to `gmu`. Once copied, the directory should have contents as listed below:
+Next, copy the GMU utility (script and jar files) into the `gmu` directory. Rename the `GatewayMigrationUtility.sh` file to `gmu`. Once copied, the directory should have contents as listed below:
 ```bash
 README.md                       # a README file
 gmu                             # the GMU shell script renamed
@@ -40,14 +40,14 @@ GatewayMigrationUtility.jar     # the main GMU jar
 
 Next, build the gmu-slave docker image.
 ```bash
-docker build gmu -t gmu-slave   # Builds gmu-slave image
+docker build . -t gmu-slave   # Builds gmu-slave image
 docker images                   # Lists built images
 ```
 The setup is now complete.
 #### Spin up the environment(s)
-Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
+The `docker-compose.yml` file defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
-$ docker-compose -f gateway/docker-compose.yml config --services
+$ docker-compose -f docker-compose.yml config --services
 gateway-dev
 mysql-dev
 gateway-prd
@@ -65,7 +65,7 @@ As you can see in the output, the following services are defined:
 
 To spin up the dev gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```bash
-docker-compose -f gateway/docker-compose.yml up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
+docker-compose -f docker-compose.yml up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
 docker ps   # Shows running containers
 ```
 Note: To persist the state of the dev gateway upon restart, it is configured to use a msyql database (refer `docker-compose.yml`) instead of in-memory database. Therefore we need to also spin up the `mysql-dev` container along with the `gateway-dev` container.
@@ -75,16 +75,16 @@ There are 2 ways to do this:
 2. Using Java web start\
    First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
    ```bash
-   javaws gateway/manager.jnlp
+   javaws manager.jnlp
    ```
 Login to Policy Manager with the default credentials (which you can find within the docker-compose.yml file).
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.\
+The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.\
 
 With the `gmu-slave` container running, we may run the commands the following way:
 ```bash
-docker exec -it gmu-slave gmu <command>
+docker exec -it gmu-slave <gmu command>
 # where gmu-slave is the gmu-slave container name
 ```
 It can be handy to set an alias to the above command. For bash:
@@ -105,15 +105,15 @@ The output should list all the deployed services, policies and folders.\
 
 When you are done, you can shutdown all the containers by running the following.
 ```bash
-docker-compose -f gateway/docker-compose.yml down
+docker-compose -f docker-compose.yml down
 ```
 
 #### Setup Jenkins
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```bash
-docker-compose -f gateway/docker-compose.yml up -d jenkins
+docker-compose -f docker-compose.yml up -d jenkins
 ```
-Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `../jenkins-home`. Ensure that you have the following plugins installed:
+Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins-home`. Ensure that you have the following plugins installed:
 1. Blue Ocean 
 2. Build Timeout 
 3. Build Trigger Badge Plugin 
@@ -142,5 +142,5 @@ TODO: Pipeline setup
 To spin up the environments with all containers mentioned in the previous section, run the following command:\
 (Note: Spinning up all the containers defined in the docker-compose this way will cause docker to use up a lot of system resources. You might want to tweak the memory settings under Docker preferences on your PC.)
 ```bash
-docker-compose -f gateway/docker-compose.yml up -d
+docker-compose -f docker-compose.yml up -d
 ```

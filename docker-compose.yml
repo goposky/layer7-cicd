@@ -1,4 +1,4 @@
-# Copyright (c) 2018 CA. All rights reserved.
+Copyright (c) 2018 CA. All rights reserved.
 # This software may be modified and distributed under the terms
 # of the MIT license.  See the LICENSE file for details.
 
@@ -105,7 +105,7 @@ services:
     container_name: jenkins
     image: jenkins/jenkins:lts
     volumes:
-      - ../jenkins-home:/var/jenkins_home
+      - ./jenkins-home:/var/jenkins_home
     ports:
       - 8080:8080
       - 50000:50000
@@ -118,7 +118,7 @@ services:
     container_name: gmu-slave
     image: gmu-slave
     volumes:
-    - ../workspace:/home/jenkins/mnt
+    - ./workspace:/home/jenkins/mnt
     environment:
     - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFW92LzmpcD+30JMXdV3DFFBc5gQ5balhqnroITZvHyEKZFz11yZXWELQCmKE1LYqJqnpuHhYLCgK31jLG2VNFDWzulvmE7v+Pm9hDdIAp6zItZ8kGmlnuW1Vggy5HQRwZxHIBSJubVVsHe7ftqgF0/B0hbx1TqbdmO8eQHVjKSgQ0AsgiiWOjtRWWdbYeIOdiSDpnxrnua55uVNH/bop1TTpxCFAbhgF9ufF5lnES78YC0HRAC8h98QXS1czClZODQ+zsOcfbLwmSBItBRbWm/WxcWRj3XK4kUD1PgKk+DXOGU+ebvUYxKCwCC8VqY/dL3PCbFj6H2blD1Zx46BmX mail@goposky.com
     networks:
@@ -137,7 +137,7 @@ services:
 
 secrets:
   license:
-    file: ./docker/license.xml
+    file: ./license/license.xml
 
 networks:
   demo:

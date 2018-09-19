@@ -1,7 +1,0 @@
-# Layer 7 stuff
-10.1.0.40       gateway_jenkins_1
-10.1.0.30       gateway_gateway-prd_1 gateway-prd
-10.1.0.60       gateway_nginx-stub_1
-10.1.0.50       gateway_gmu-slave_1
-10.1.0.20       gateway_gateway-tst_1 gateway-tst
-10.1.0.10       gateway_gateway-dev_1 gateway-dev
