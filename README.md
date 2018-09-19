@@ -9,7 +9,9 @@ Note for windows users: On a windows machine you will need to install docker for
 Also, once installed, in Docker preferences, disable the "Start docker when you log in" option.
 - You have a valid CA API gateway developer license
 
-#### Setup 
+#### Setup
+This section describes preparatory steps which need to be done one time. The commands listed here are in `bash`. If you are on a Windows PC, use equivalent windows command wherever applicable.\
+
 Clone this repo and change directory into the repo. 
 ```bash
 git clone https://gitlab.com/goposky/layer7-cicd.git
@@ -26,8 +28,8 @@ Next, copy your CA API license file to the right location and rename it to `lice
 ```bash
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Once copied, the directory should have contents similar to below:
-```
+Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Once copied, the directory should have contents as listed below:
+```bash
 README.md                       # this README file
 gmu                             # the GMU script renamed
 lib                             # contains jars required by GMU
@@ -35,10 +37,11 @@ GatewayMigrationUtility.jar     # the main GMU jar
 ```
 
 Next, build the gmu-slave docker image.
+```bash
+docker build gmu -t gmu-slave   # Builds gmu-slave image
+docker images                   # Lists built images
 ```
-docker build gmu -t gmu-slave
-```
-
+The setup is now complete.
 #### Spin up the environment(s)
 Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
@@ -58,28 +61,25 @@ As you can see in the output, the following services are defined:
 - A gmu container that would act as a Jenkins slave
 - An nginx-stub container to serve as stub for automated tests.
 
-To spin up the environments with all containers mentioned in the previous section, run the following command:
-```bash
-docker-compose -f gateway/docker-compose.yml up -d
-```
-To bring down the environments, run:
-```bash
-docker-compose -f gateway/docker-compose.yml down
-```
 To spin up the dev gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```bash
-docker-compose -f gateway/docker-compose.yml up -d gateway-dev mysql-dev gmu-slave
+docker-compose -f gateway/docker-compose.yml up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
+docker ps   # Shows running containers
 ```
-#### Browse gateway using policy manager
-First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
-```bash
-javaws gateway/manager.jnlp
-```
-Java webstart opens the policy manager login screen. Login with the default credentials (which you can find within the docker-compose.yml file).
+#### Browse gateway using Policy Manager
+There are 2 ways to do this:
+1. Using Policy Manager client
+2. Using Java web start\
+   First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
+   ```bash
+   javaws gateway/manager.jnlp
+   ```
+Login to Policy Manager with the default credentials (which you can find within the docker-compose.yml file).
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. This container functions as a Jenkins slave in our CICD setup. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC.\
-Once, the `gmu-slave` container is running, we may run the commands the following way:
+The GMU utility is packaged into a docker image (refer `gmu/Dockerfile`) and the `gmu-slave` container uses this image. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.\
+
+With the `gmu-slave` container running, we may run the commands the following way:
 ```bash
 docker exec -it gmu-slave gmu <command>
 # where gmu-slave is the gmu-slave container name
@@ -98,7 +98,12 @@ Browsing the gateway:
 ```bash
 gmu browse -z mnt/<gmu-argument-properties-filename> -r -showIds
 ```
-The output should list all the deployed services, policies and folders.
+The output should list all the deployed services, policies and folders.\
+
+When you are done, you can shutdown all the containers by running the following.
+```bash
+docker-compose -f gateway/docker-compose.yml down
+```
 
 #### Setup Jenkins
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
@@ -130,3 +135,9 @@ Jenkins configuration will be persisted on restart of container, since everythin
 
 TODO: Pipeline setup
 
+#### Full pipeline demo
+To spin up the environments with all containers mentioned in the previous section, run the following command:
+(Note: Spinning up all the containers defined in the docker-compose this way will cause docker to use up a lot of system resources. You might want to tweak the memory settings under Docker preferences on your PC.)
+```bash
+docker-compose -f gateway/docker-compose.yml up -d
+```
