@@ -28,11 +28,11 @@ Next, copy your CA API license file to the right location and rename it to `lice
 ```bash
 cp <path-to-your-license-file> gateway/docker/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Once copied, the directory should have contents as listed below:
+Next, copy the GMU utility (script and jar files) into the `gmu/gmu-docker` directory. Rename the `GatewayMigrationUtility.sh` file to `gmu`. Once copied, the directory should have contents as listed below:
 ```bash
-README.md                       # this README file
-gmu                             # the GMU script renamed
-lib                             # contains jars required by GMU
+README.md                       # a README file
+gmu                             # the GMU shell script renamed
+lib                             # directory containing jars required by GMU
 GatewayMigrationUtility.jar     # the main GMU jar
 ```
 
