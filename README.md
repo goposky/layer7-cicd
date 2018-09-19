@@ -45,7 +45,7 @@ The setup is now complete.
 #### Spin up the environment(s)
 Within the `gateway` directory is a `docker-compose.yml` file which defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
-$ docker-compose -f gateway/docker-compose.yml config --services | sort
+$ docker-compose -f gateway/docker-compose.yml config --services
 gateway-dev
 mysql-dev
 gateway-prd
