@@ -21,8 +21,8 @@ cd layer7-cicd
 ```
 Note: If you are behind a corporate proxy you might need to specify the proxy url in your git config.
 ```
-git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:proxy.port
-git config --global https.proxy https://proxyuser:proxypwd@proxy.server.com:proxy.port
+git config --global http.proxy http://<proxyuser>:<proxypwd>@<proxy.server>:<proxy.port>
+git config --global https.proxy https://<proxyuser>:<proxypwd>@<proxy.server>:<proxy.port>
 ```
 
 All commands from now on are run from within this repo base directory.\
