@@ -109,7 +109,9 @@ When you are done, you can shutdown all the containers by running the following.
 docker-compose down
 ```
 
-#### Setup Jenkins
+#### CI/CD demo with Jenkins
+TODO: Following section is incomplete.
+
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```bash
 docker-compose up -d jenkins
@@ -137,9 +139,6 @@ Jenkins configuration will be persisted on restart of container, since everythin
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
 
-TODO: Pipeline setup
-
-#### Full pipeline demo
 To spin up the environments with all containers mentioned in the previous section, run the following command:
 ```bash
 docker-compose up -d
