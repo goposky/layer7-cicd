@@ -10,7 +10,7 @@ Also, once installed, in Docker preferences, disable the "Start docker when you 
 - You have a valid CA API gateway developer license
 
 #### Setup
-This section describes preparatory steps which need to be done one time. The commands listed here are in `bash`. If you are on a Windows PC, use equivalent windows command wherever applicable.\
+This section describes preparatory steps which need to be done one time. The commands listed here are in `bash`. If you are on a Windows PC, use equivalent windows command wherever applicable.
 
 Clone this repo and change directory into the repo. 
 ```bash
