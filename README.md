@@ -91,7 +91,7 @@ It can be handy to set an alias to the above command. For bash:
 ```bash
 alias gmu="docker exec -it gmu-slave gmu"
 ```
-Note that the local directory `gmu/mnt` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
+Note that the local directory `workspace` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 \
 Loading a policy to the gateway:
 ```bash

@@ -3,5 +3,5 @@ jenkins-home/*
 !jenkins-home/.gitkeep
 gmu/gmu-docker/*
 !gmu/gmu-docker/README.md
-gmu/mnt/*
-!gmu/mnt/dev-argFile.properties
+workspace/*
+!workspace/dev-argFile.properties
