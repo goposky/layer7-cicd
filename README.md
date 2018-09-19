@@ -139,7 +139,7 @@ Jenkins configuration will be persisted on restart of container, since everythin
 TODO: Pipeline setup
 
 #### Full pipeline demo
-To spin up the environments with all containers mentioned in the previous section, run the following command:
+To spin up the environments with all containers mentioned in the previous section, run the following command:\
 (Note: Spinning up all the containers defined in the docker-compose this way will cause docker to use up a lot of system resources. You might want to tweak the memory settings under Docker preferences on your PC.)
 ```bash
 docker-compose -f gateway/docker-compose.yml up -d
