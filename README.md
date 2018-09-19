@@ -10,7 +10,7 @@ Also, once installed, in Docker preferences, disable the "Start docker when you 
 - You have a valid CA API gateway developer license
 
 #### Note
-Most of the steps listed below involve using a command-line terminal. The commands listed here are written in `bash`. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
+Most of the steps listed below involve using a command-line terminal. The commands listed here were written and tested in a `bash` terminal. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
 
 #### Setup
 This section describes preparatory steps which need to be done one time.
