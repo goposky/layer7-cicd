@@ -47,7 +47,7 @@ The setup is now complete.
 #### Spin up the environment(s)
 The `docker-compose.yml` file defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
-$ docker-compose -f docker-compose.yml config --services
+$ docker-compose config --services
 gateway-dev
 mysql-dev
 gateway-prd
@@ -65,7 +65,7 @@ As you can see in the output, the following services are defined:
 
 To spin up the dev gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```bash
-docker-compose -f docker-compose.yml up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
+docker-compose up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
 docker ps   # Shows running containers
 ```
 Note: To persist the state of the dev gateway upon restart, it is configured to use a msyql database (refer `docker-compose.yml`) instead of in-memory database. Therefore we need to also spin up the `mysql-dev` container along with the `gateway-dev` container.
@@ -77,7 +77,7 @@ There are 2 ways to do this:
    ```bash
    javaws manager.jnlp
    ```
-Login to Policy Manager with the default credentials (which you can find within the docker-compose.yml file).
+Login to Policy Manager with the default credentials (which you can find within the `docker-compose.yml` file).
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
 The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.\
@@ -105,13 +105,13 @@ The output should list all the deployed services, policies and folders.\
 
 When you are done, you can shutdown all the containers by running the following.
 ```bash
-docker-compose -f docker-compose.yml down
+docker-compose down
 ```
 
 #### Setup Jenkins
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```bash
-docker-compose -f docker-compose.yml up -d jenkins
+docker-compose up -d jenkins
 ```
 Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:
 1. Blue Ocean 
@@ -142,5 +142,5 @@ TODO: Pipeline setup
 To spin up the environments with all containers mentioned in the previous section, run the following command:\
 (Note: Spinning up all the containers defined in the docker-compose this way will cause docker to use up a lot of system resources. You might want to tweak the memory settings under Docker preferences on your PC.)
 ```bash
-docker-compose -f docker-compose.yml up -d
+docker-compose up -d
 ```
