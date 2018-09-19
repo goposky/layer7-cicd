@@ -68,6 +68,7 @@ To spin up the dev gateway and the gmu container, specify those services in the 
 docker-compose -f gateway/docker-compose.yml up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
 docker ps   # Shows running containers
 ```
+Note: To persist the state of the dev gateway upon restart, it is configured to use a msyql database (refer `docker-compose.yml`) instead of in-memory database. Therefore we need to also spin up the `mysql-dev` container along with the `gateway-dev` container.
 #### Browse gateway using Policy Manager
 There are 2 ways to do this:
 1. Using Policy Manager client
