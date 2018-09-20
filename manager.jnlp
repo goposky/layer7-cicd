@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="6.0+" codebase="https://localhost:8441/ssg/webstart/">
+<jnlp spec="6.0+" codebase="https://localhost:8443/ssg/webstart/">
 	<information>
 		<title>
 			CA API Gateway - Policy Manager
