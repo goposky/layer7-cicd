@@ -2,7 +2,7 @@
 
 This repo is intended to provide a simple way to spin up CA API Gateway environments on your laptop using docker containers. This can be used for local development, experimentation, or educational purposes. The setup also allows you to create a Jenkins pipeline to migrate policies easily across your various gateway environments.
 
-#### Prequisites
+## Prequisites
 - Git is installed on your PC. See https://git-scm.com
 - Docker is installed on your PC. See https://docs.docker.com/install \
 Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5 \
@@ -13,7 +13,7 @@ In Docker preferences, disable the "Start docker when you log in" option as bugg
 
 Note: Most of the steps listed below involve using a command-line terminal. The commands listed here were written and tested in a `bash` terminal. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
 
-#### Setup
+## Setup
 This section describes preparatory steps which need to be done one time.
 
 Clone this repo and change directory into the repo. 
@@ -48,7 +48,7 @@ docker images                   # Lists built images
 ```
 Note: The GMU tool is non-sharable and usage is associated with your CA API Gateway license.\
 The setup is now complete.
-#### Spin up the environment(s)
+## Spin up the environment
 The `docker-compose.yml` file defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
 $ docker-compose config --services
@@ -73,7 +73,7 @@ docker-compose up -d gateway-dev mysql-dev   # Spins up the specified containers
 docker ps   # Shows running containers
 ```
 Note: To persist the state of the dev gateway upon restart, it is configured to use a msyql database (refer `docker-compose.yml`) instead of in-memory database. Therefore we need to also spin up the `mysql-dev` container along with the `gateway-dev` container.
-#### Browse gateway using Policy Manager
+### Browse gateway using Policy Manager
 There are 2 ways to do this:
 1. Using Policy Manager fat client
 2. Using Java web start
@@ -82,7 +82,7 @@ There are 2 ways to do this:
    ```
 Login to Policy Manager with the default credentials, which you can find within the `docker-compose.yml` file. Connect with `localhost` on the port that is mapped to gateway port 8443 (also configured within `docker-compose.yml`). For example, for the `gateway-dev` this is port 8441.
 
-#### Use the GMU (Gateway Management Utility) to manage your gateways
+### Use the GMU (Gateway Management Utility) to manage your gateways
 The `workspace` directory may be used to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 Loading a policy to the gateway:
 ```bash
@@ -102,7 +102,7 @@ When you are done, you can shutdown the containers by running the following.
 docker-compose down
 ```
 
-#### CI/CD demo with Jenkins
+## CI/CD demo with Jenkins
 TODO: Following section is incomplete.
 
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
