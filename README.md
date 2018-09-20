@@ -82,7 +82,7 @@ There are 2 ways to do this:
    ```
 Login to Policy Manager with the default credentials, which you can find within the `docker-compose.yml` file. Connect with `localhost` on the port that is mapped to gateway port 8443 (also configured within `docker-compose.yml`). For example, for the `gateway-dev` this is port 8441.
 
-### Use the GMU (Gateway Migration Utility) to manage your gateways
+### Manage gateway using GMU (Gateway Migration Utility)
 The `workspace` directory may be used to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 Loading a policy to the gateway:
 ```bash
