@@ -1,6 +1,6 @@
 license/license.xml
 jenkins/*
-!jenkins/.gitkeep
+!jenkins/README.md
 gmu/*
 !gmu/README.md
 workspace/*
