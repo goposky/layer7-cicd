@@ -7,6 +7,8 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 - Docker is installed on your PC. See https://docs.docker.com/install \
 Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5 \
 Also, once installed, in Docker preferences, disable the "Start docker when you log in" option.
+- Java 1.8 is installed on your PC. Newer version does not work well with the Policy Manager web start.
+  Download from here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
 - You have a valid CA API gateway developer license
 
 Note: Most of the steps listed below involve using a command-line terminal. The commands listed here were written and tested in a `bash` terminal. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
@@ -26,19 +28,20 @@ git config --global https.proxy https://<proxyuser>:<proxypwd>@<proxy.server>:<p
 ```
 
 All commands from now on are run from within this repo base directory.\
-Next, copy your CA API license file to the right location and rename it to `license.xml`.
+Next, copy your CA API Gateway license file to the right location and rename it to `license.xml`.
 ```bash
 cp <path-to-your-license-file> license/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu` directory. Rename the `GatewayMigrationUtility.sh` file to `gmu`. Once copied, the directory should have contents as listed below:
+Next, copy the GMU utility (script and jar files) into the `gmu` directory. Once copied, the directory should have contents as listed below:
 ```bash
 README.md                       # a README file
-gmu                             # the GMU shell script renamed
 lib                             # directory containing jars required by GMU
 GatewayMigrationUtility.jar     # the main GMU jar
+GatewayMigrationUtility.sh      # the GMU shell script for Unix
+GatewayMigrationUtility.bat     # the GMU bat script for Windows
 ```
 
-Next, build the gmu-slave docker image.
+Next, build the gmu-slave docker image. This step is required only if you intend to use run the Jenkins pipeline demo.
 ```bash
 docker build . -t gmu-slave   # Builds gmu-slave image
 docker images                   # Lists built images
@@ -53,8 +56,8 @@ gateway-dev
 mysql-dev
 gateway-prd
 gateway-tst
-gmu-slave
 jenkins
+gmu-slave
 nginx-stub
 ```
 As you can see in the output, the following services are defined:
@@ -66,45 +69,33 @@ As you can see in the output, the following services are defined:
 
 To spin up the dev gateway and the gmu container, specify those services in the `docker-compose up` command.
 ```bash
-docker-compose up -d gateway-dev mysql-dev gmu-slave  # Spins up the specified containers
+docker-compose up -d gateway-dev mysql-dev   # Spins up the specified containers
 docker ps   # Shows running containers
 ```
 Note: To persist the state of the dev gateway upon restart, it is configured to use a msyql database (refer `docker-compose.yml`) instead of in-memory database. Therefore we need to also spin up the `mysql-dev` container along with the `gateway-dev` container.
 #### Browse gateway using Policy Manager
 There are 2 ways to do this:
 1. Using Policy Manager client
-2. Using Java web start\
-   First ensure that Java version 1.8 or below is intalled on your PC, along with the Java Web Start program.
+2. Using Java web start
    ```bash
    javaws manager.jnlp
    ```
 Login to Policy Manager with the default credentials, which you can find within the `docker-compose.yml` file. Connect with `localhost` on the port that is mapped to gateway port 8443 (also configured within `docker-compose.yml`). For example, for the `gateway-dev` this is port 8441.
 
 #### Use the GMU (Gateway Management Utility) to manage your gateways
-The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. We can use this container to run adhoc GMU commands as well, without needing to install the GMU tool locally on your PC. This container also functions as a Jenkins slave in our CICD setup.
-
-With the `gmu-slave` container running, we may run the commands the following way:
-```bash
-docker exec -it gmu-slave <gmu command>
-# where gmu-slave is the gmu-slave container name
-```
-It can be handy to set an alias to the above command. For bash:
-```bash
-alias gmu="docker exec -it gmu-slave gmu"
-```
-Note that the local directory `workspace` will be now mounted within the gmu-slave container in the location `~/mnt`. We can use this local directory to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
-\
+``
+The directory `workspace` directory may be used to supply the gmu argument properties file, import bundle, and to store the output of gmu commands. An example `dev-argFile.properties` file is supplied in the directory to use with the `gateway-dev` gateway.\
 Loading a policy to the gateway:
 ```bash
-gmu migrateIn -z mnt/<gmu-argument-properties-filename> --bundle mnt/<import-bundle-xml-filename> --results mnt/<results-xml-filename> --destFolder /ziggo
+gmu migrateIn -z workspace/<gmu-argument-properties-filename> --bundle workspace/<import-bundle-xml-filename> --results workspace/<results-xml-filename> --destFolder /ziggo
 ```
 Browsing the gateway:
 ```bash
-gmu browse -z mnt/<gmu-argument-properties-filename> -r -showIds
+gmu browse -z workspace/<gmu-argument-properties-filename> -r -showIds
 ```
 The output should list all the deployed services, policies and folders.
 
-When you are done, you can shutdown all the containers by running the following.
+When you are done, you can shutdown the containers by running the following.
 ```bash
 docker-compose down
 ```
@@ -138,6 +129,8 @@ Jenkins configuration will be persisted on restart of container, since everythin
 19. Violation Comments to GitLab Plugin 
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
+
+The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. This container also functions as a Jenkins slave in our CICD setup.
 
 To spin up the environments with all containers mentioned in the previous section, run the following command:
 ```bash
