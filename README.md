@@ -130,7 +130,10 @@ Jenkins configuration will be persisted on restart of container, since everythin
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
 
-The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. This container also functions as a Jenkins slave in our CICD setup.
+The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. This container also functions as a Jenkins slave in our CICD setup. Spin up the gmu slave.
+```bash
+docker-compose up -d gmu-slave
+```
 
 To spin up the environments with all containers mentioned in the previous section, run the following command:
 ```bash
