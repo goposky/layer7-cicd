@@ -47,7 +47,7 @@ docker build . -t gmu-slave     # Builds gmu-slave image
 docker images                   # Lists built images
 ```
 Note: The GMU tool is non-sharable and usage is associated with your CA API Gateway license.\
-The setup is now complete.
+The setup is now complete. 
 ## Spin up the environment
 The `docker-compose.yml` file defines the containers that can be spun up as part of this setup. You can list the defined services by running the following command.
 ```bash
