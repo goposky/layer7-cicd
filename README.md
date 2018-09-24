@@ -145,7 +145,7 @@ The `gmu-slave` container uses the `gmu-slave` image we built in the setup secti
 ```bash
 docker-compose up -d gmu-slave
 ```
-From the Jenkins UI, add the `gmu-slave` as node and select the credential created in the previous step.
+From the Jenkins UI, add the `gmu-slave` as node. Select the credential created in the previous step. Specify SSH port 2222 (instead of default 22).
 
 Now Jenkins should be able to launch the `gmu-slave` as an SSH slave.
 
