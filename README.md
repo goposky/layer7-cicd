@@ -133,7 +133,7 @@ Jenkins configuration will be persisted on restart of container, since everythin
 21. Workspace Cleanup Plugin
 
 ### Set up Jenkins SSH slave
-Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Linux).
+Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Mac/Linux).
 
 Create a file `.env` in the repo base directory which contains an entry of the form (refer to the example file `.env.example` provided):
 ```
