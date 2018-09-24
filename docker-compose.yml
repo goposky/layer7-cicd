@@ -122,7 +122,7 @@ services:
     volumes:
     - ./workspace:/home/jenkins/mnt
     environment:
-    - JENKINS_SLAVE_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFW92LzmpcD+30JMXdV3DFFBc5gQ5balhqnroITZvHyEKZFz11yZXWELQCmKE1LYqJqnpuHhYLCgK31jLG2VNFDWzulvmE7v+Pm9hDdIAp6zItZ8kGmlnuW1Vggy5HQRwZxHIBSJubVVsHe7ftqgF0/B0hbx1TqbdmO8eQHVjKSgQ0AsgiiWOjtRWWdbYeIOdiSDpnxrnua55uVNH/bop1TTpxCFAbhgF9ufF5lnES78YC0HRAC8h98QXS1czClZODQ+zsOcfbLwmSBItBRbWm/WxcWRj3XK4kUD1PgKk+DXOGU+ebvUYxKCwCC8VqY/dL3PCbFj6H2blD1Zx46BmX mail@goposky.com
+    - JENKINS_SLAVE_SSH_PUBKEY=${PUBKEY}
     networks:
       demo:
         ipv4_address: 10.1.0.50

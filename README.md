@@ -132,12 +132,25 @@ Jenkins configuration will be persisted on restart of container, since everythin
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
 
+### Set up Jenkins SSH slave
+Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Linux).
+
+Create a file `.env` in the repo base directory which contains an entry of the form (refer to the example file `.env.example` provided):
+```
+PUBKEY=<SSH Public key>
+```
+In the Jenkins UI, create a credential using the private key file generated above. This credential will be used with the slave we will add next.
+
 The `gmu-slave` container uses the `gmu-slave` image we built in the setup section. This container also functions as a Jenkins slave in our CICD setup. Spin up the gmu slave.
 ```bash
 docker-compose up -d gmu-slave
 ```
+From the Jenkins UI, add the `gmu-slave` as node and select the credential created in the previous step.
 
-To spin up the environments with all containers mentioned in the previous section, run the following command:
+Now Jenkins should be able to launch the `gmu-slave` as an SSH slave.
+
+### Full demo
+With the Jenkins setup complete, you may spin up all the gateway environments with the following command:
 ```bash
 docker-compose up -d
 ```
