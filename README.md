@@ -5,8 +5,12 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
 ## Prequisites
 - Git is installed on your PC. See https://git-scm.com
 - Docker is installed on your PC. See https://docs.docker.com/install \
-Note for windows users: On a windows machine you will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5 \
-In Docker preferences, disable the "Start docker when you log in" option as buggy behaviour has been noticed with Docker on system startup.
+  - Note for Windows users:
+    - You will need to install docker for windows which will disable virtualbox. You can toggle between Hyper-V and Virtualbox by following this page: https://gist.github.com/BergWerkGIS/11eb186f471f7b91cd793372b3f50de5 \
+    - In Docker preferences, disable the "Start docker when you log in" option as buggy behaviour has been noticed with Docker on system startup.
+  - Note for Windows and Mac users:
+    - In Docker preferences, under Daemon, enable "Experimental features".
+    - In Docker preferences, under Advanced, increase memory allocation. Each gateway container needs roughly 2 to 2.5 GB of memory.
 - Java 1.8 is installed on your PC. Newer version does not work well with the Policy Manager web start.
   Download from here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
 - You have a valid CA API gateway developer license
