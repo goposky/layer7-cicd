@@ -6,3 +6,4 @@ gmu/*
 !gmu/README.md
 workspace/*
 !workspace/dev-argFile.properties
+*.swp
