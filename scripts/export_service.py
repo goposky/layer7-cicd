@@ -15,6 +15,8 @@ parser.add_argument("-a", "--arg", help="gateway argument file")
 parser.add_argument("-i", "--id", help="id to export")
 parser.add_argument("-o", "--output", help="output path to export to, this should be directory path until the name of the gateway")
 parser.add_argument("-n", "--name", help="service file name to save as, .xml will be appended to the file so don't include this")
+parser.add_argument("-p", "--plaintextEncryptionPassphrase", help="Plaintext passphrase for encryption, Use the prefix, '@file:' to read passphrase from a file.")
+
 
 args = parser.parse_args()
 
@@ -46,7 +48,7 @@ elif args.browse is None:
     pathlib.Path(args.output+ "/doc").mkdir(parents=True, exist_ok=True)
     pathlib.Path(args.output+ "/src").mkdir(parents=True, exist_ok=True)
 
-    gmu_migrateOut_cmd = "gmu migrateOut --argFile " + args.arg +" --service " + args.id + " --plaintextEncryptionPassphrase @file:/home/amresh/Projects/ziggo/encryptm.txt --dest " + args.output + "/src/" + args.name + ".xml"
+    gmu_migrateOut_cmd = "gmu migrateOut --argFile " + args.arg +" --service " + args.id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + args.output + "/src/" + args.name + ".xml"
 
     # Run the export
     gmu_migrateOut = subprocess.Popen(gmu_migrateOut_cmd, stdout=subprocess.PIPE, shell=True)
