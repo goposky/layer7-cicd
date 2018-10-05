@@ -21,7 +21,7 @@ args = parser.parse_args()
 gmu_services_cmd = "gmu list --argFile " +  args.argFile + " --type SERVICE --hideProgress"
 gmu_services = os.popen(gmu_services_cmd).read()
 
-# List services
+# List and export services
 version_regexp = re.compile("v[0-9]")
 for line in gmu_services.splitlines():
     fields = line.split("\t")
@@ -38,19 +38,19 @@ for line in gmu_services.splitlines():
             print(str(service_name) + "\t" + str(service_version))
 
             # Create directories
-            pathlib.Path(args.output + "/conf/" + service_name + "_" + service_version).mkdir(parents=True, exist_ok=True)
-            pathlib.Path(args.output + "/doc/" + service_name + "_" + service_version).mkdir(parents=True, exist_ok=True)
-            pathlib.Path(args.output + "/src/" + service_name + "_" + service_version).mkdir(parents=True, exist_ok=True)
+            pathlib.Path(args.output + "/conf/" + service_name).mkdir(parents=True, exist_ok=True)
+            pathlib.Path(args.output + "/doc/" + service_name).mkdir(parents=True, exist_ok=True)
+            pathlib.Path(args.output + "/src/" + service_name).mkdir(parents=True, exist_ok=True)
 
             # Run the export
-            gmu_migrateOut_cmd = "gmu migrateOut --argFile " + args.argFile + " --service " + service_id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + args.output + "/src/" + service_name + "_" + service_version + "/" + service_name + ".xml"
+            gmu_migrateOut_cmd = "gmu migrateOut --argFile " + args.argFile + " --service " + service_id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + args.output + "/src/" + service_name + "/" + service_name + ".xml"
 
             gmu_migrateOut = subprocess.Popen(gmu_migrateOut_cmd, stdout=subprocess.PIPE, shell=True)
             (output, err) = gmu_migrateOut.communicate()
             gmu_migrateOut_status = gmu_migrateOut.wait()
 
             # Template the service
-            gmu_template_cmd = "gmu template --bundle " + args.output + "/src/" + service_name + "_" + service_version + "/" + service_name + ".xml" + " --template " + args.output + "/conf/" + service_name + "_" + service_version + "/" + service_name + ".properties"
+            gmu_template_cmd = "gmu template --bundle " + args.output + "/src/" + service_name + "/" + service_name + ".xml" + " --template " + args.output + "/conf/" + service_name + "/" + service_name + ".properties"
 
             gmu_template = subprocess.Popen(gmu_template_cmd, stdout=subprocess.PIPE, shell=True)
             (output, err) = gmu_template.communicate()

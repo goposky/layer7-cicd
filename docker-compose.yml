@@ -137,6 +137,14 @@ services:
       demo:
         ipv4_address: 10.1.0.60
 
+  tibco-dev:
+    hostname: tibco-dev
+    container_name: tibco-dev
+    image: tibco:5
+    networks:
+      demo:
+        ipv4_address: 10.1.0.70
+
 secrets:
   license:
     file: ./license/license.xml
