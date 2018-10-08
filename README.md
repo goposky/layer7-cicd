@@ -135,6 +135,7 @@ Jenkins configuration will be persisted on restart of container, since everythin
 19. Violation Comments to GitLab Plugin 
 20. Violation Comments to GitLab Plugin 
 21. Workspace Cleanup Plugin
+22. Pipeline Utility Steps
 
 ### Set up Jenkins SSH slave
 Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Mac/Linux).
