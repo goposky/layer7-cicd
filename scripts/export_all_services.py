@@ -4,54 +4,60 @@ import os
 import argparse
 import pathlib
 import subprocess
-import re
 
-from prettytable import PrettyTable
-
-parser = argparse.ArgumentParser(
-    description="Exports all services from a layer 7 gateway into the git structure"
+parser = argparse.ArgumentParser(description="Exports all services from a layer 7 gateway into the git structure"
 )
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
 parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=True,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
 parser.add_argument("-o", "--output", required=True, help="Directory of the provider to export to")
+parser.add_argument("-g", "--gateway", required=True, help="Name of the gateway")
 args = parser.parse_args()
 
+gmu_services = os.popen("gmu browse --argFile " + args.argFile + " --recursive --showIds --hideProgress").read()
+services = list()
 
-
-gmu_services_cmd = "gmu list --argFile " +  args.argFile + " --type SERVICE --hideProgress"
-gmu_services = os.popen(gmu_services_cmd).read()
-
-# List and export services
-version_regexp = re.compile("v[0-9]")
 for line in gmu_services.splitlines():
     fields = line.split("\t")
-    if len(fields) == 2:
-        service_id = fields[0]
-        service_name = fields[1]
-        if version_regexp.search(service_name):
-            # Sanitize service names, converting / into _ and removing *
-            # Ideally should be a naming convention which should dissallow this
-            service_name = service_name.replace("/", "_")
-            service_name = service_name.replace("*", "")
+    if len(fields) == 3:
+        gw_object = {"type": fields[0].strip(), "id": fields[1].strip(), "object": fields[2].strip()}
+        services.append(gw_object)
 
-            service_version = version_regexp.findall(service_name)[0]
-            print(str(service_name) + "\t" + str(service_version))
+try:
+    # Export services, assuming the service names have no / or * in them
+    for item in services:
+        if item.get("type") == "service":
+                # The name of the service is the string following the last / character
+                service_name = item.get("object")[item.get("object").rindex("/") + 1:]
+                service_path = item.get("object")[:item.get("object").rindex("/")]
 
-            # Create directories
-            pathlib.Path(args.output + "/conf/" + service_name).mkdir(parents=True, exist_ok=True)
-            pathlib.Path(args.output + "/doc/" + service_name).mkdir(parents=True, exist_ok=True)
-            pathlib.Path(args.output + "/src/" + service_name).mkdir(parents=True, exist_ok=True)
+                # Create the directories to export to
+                conf_dir = args.output + "/" + service_name + "/" + args.gateway + "/conf/"
+                doc_dir = args.output + "/" + service_name + "/" + args.gateway + "/doc/"
+                src_dir = args.output + "/" + service_name + "/" + args.gateway + "/src/"
 
-            # Run the export
-            gmu_migrateOut_cmd = "gmu migrateOut --argFile " + args.argFile + " --service " + service_id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + args.output + "/src/" + service_name + "/" + service_name + ".xml"
+                pathlib.Path(conf_dir).mkdir(parents=True, exist_ok=True)
+                pathlib.Path(doc_dir).mkdir(parents=True, exist_ok=True)
+                pathlib.Path(src_dir).mkdir(parents=True, exist_ok=True)
 
-            gmu_migrateOut = subprocess.Popen(gmu_migrateOut_cmd, stdout=subprocess.PIPE, shell=True)
-            (output, err) = gmu_migrateOut.communicate()
-            gmu_migrateOut_status = gmu_migrateOut.wait()
+                # Run the export
+                gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
+                (output, err) = gmu_migrateOut.communicate()
+                gmu_migrateOut_status = gmu_migrateOut.wait()
 
-            # Template the service
-            gmu_template_cmd = "gmu template --bundle " + args.output + "/src/" + service_name + "/" + service_name + ".xml" + " --template " + args.output + "/conf/" + service_name + "/" + service_name + ".properties"
+                # Template the service
+                gmu_template = subprocess.Popen("gmu template --bundle " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml" + " --template " + "\"" + conf_dir + "\"" + "/" + "\"" + service_name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
+                (output, err) = gmu_template.communicate()
+                gmu_template_status = gmu_template.wait()
+                
+                # Add folder property
+                service_properties = open(conf_dir + "/" + service_name + ".properties", "a")
+                service_properties.write("service.folderpath=/" + service_path)
+                service_properties.close()
 
-            gmu_template = subprocess.Popen(gmu_template_cmd, stdout=subprocess.PIPE, shell=True)
-            (output, err) = gmu_template.communicate()
-            gmu_template_status = gmu_template.wait()
+                print(service_name + " - " + service_path)
+
+
+except Exception as e:
+    pass
+    print("Error processing: " + item.get("object"))
+    print(e)
