@@ -18,10 +18,6 @@ parser.add_argument("-a", "--action", required=True, help="Mapping action: [New,
 args = parser.parse_args()
 
 # Create directory if it doesn't exist
-#conf_dir = args.output + "/" + args.gateway + "/conf/"
-#doc_dir = args.output + "/" + args.gateway + "/doc/"
-#src_dir = args.output + "/" + args.gateway + "/src/"
-
 conf_dir = args.output + "/" + args.name + "/" + args.gateway + "/conf/"
 doc_dir = args.output + "/" + args.name + "/" + args.gateway + "/doc/"
 src_dir = args.output + "/" + args.name + "/" + args.gateway + "/src/"
@@ -41,11 +37,11 @@ gmu_template = subprocess.Popen(gmu_template_cmd, stdout=subprocess.PIPE, shell=
 gmu_template_status = gmu_template.wait()
 
 # Add folder property
-service_path = os.popen("gmu browse --argFile " + args.argFile + " --id " + args.id + " --recursive --showIds").read()
-service_path = service_path[service_path.rindex("/")]
+service_path = os.popen("gmu browse --argFile " + args.argFile + " --id " + args.id + " --recursive --showIds --hideProgress").read()
+service_path = service_path[:service_path.rindex("/")]
 
 service_properties = open(conf_dir + "/" + args.name + ".properties", "a")
-service_properties.write("service.folderpath=/" + service_path)
+service_properties.write("service.folderpath=" + service_path)
 service_properties.close()
 
 # Create mappings file
