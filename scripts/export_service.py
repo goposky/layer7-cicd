@@ -5,8 +5,6 @@ import argparse
 import pathlib
 import subprocess
 
-from prettytable import PrettyTable
-
 parser = argparse.ArgumentParser(description="Script to list and export layer 7 services...because why not")
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
 parser.add_argument("-i", "--id", required=True, help="id to export")
