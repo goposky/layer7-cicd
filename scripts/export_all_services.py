@@ -58,6 +58,6 @@ try:
 
 
 except Exception as e:
-    pass
     print("Error processing: " + item.get("object"))
     print(e)
+    pass
