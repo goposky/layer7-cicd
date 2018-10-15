@@ -8,7 +8,7 @@ import subprocess
 parser = argparse.ArgumentParser(description="Exports all services from a layer 7 gateway into the git structure"
 )
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
-parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=True,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
+parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=False,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
 parser.add_argument("-o", "--output", required=True, help="Directory of the provider to export to")
 parser.add_argument("-g", "--gateway", required=True, help="Name of the gateway")
 args = parser.parse_args()
@@ -40,7 +40,10 @@ try:
                 pathlib.Path(src_dir).mkdir(parents=True, exist_ok=True)
 
                 # Run the export
-                gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
+                if args.plaintextEncryptionPassphrase:
+                    gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
+                else:
+                    gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
                 (output, err) = gmu_migrateOut.communicate()
                 gmu_migrateOut_status = gmu_migrateOut.wait()
 
