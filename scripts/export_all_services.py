@@ -11,6 +11,7 @@ parser.add_argument("-z", "--argFile", required=True, help="The properties file 
 parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=False,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
 parser.add_argument("-o", "--output", required=True, help="Directory of the provider to export to")
 parser.add_argument("-g", "--gateway", required=True, help="Name of the gateway")
+parser.add_argument("-a", "--action", required=False, help="Mapping action: [New, Update, Existing, ForceNew,Delete, Ignore, NewOrExisting, NewOrUpdate,DeleteOrIgnore]")
 args = parser.parse_args()
 
 gmu_services = os.popen("gmu browse --argFile " + args.argFile + " --recursive --showIds --hideProgress").read()
@@ -42,10 +43,19 @@ try:
                 # Run the export
                 if args.plaintextEncryptionPassphrase:
                     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
+                    (output, err) = gmu_migrateOut.communicate()
+                    gmu_migrateOut_status = gmu_migrateOut.wait()
                 else:
                     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
                 (output, err) = gmu_migrateOut.communicate()
                 gmu_migrateOut_status = gmu_migrateOut.wait()
+
+                # Create a mapping file if action parameter is specified
+                if args.action:
+                    gmu_mapping = subprocess.Popen("gmu manageMappings --type SERVICE" + " --action " + args.action +  " --bundle " + src_dir + service_name + ".xml --outputFile " + src_dir + service_name + "-mapping.xml", stdout=subprocess.PIPE, shell=True)
+                    (output, err) = gmu_mapping.communicate()
+                    gmu_mapping_status = gmu_mapping.wait()
+
 
                 # Template the service
                 gmu_template = subprocess.Popen("gmu template --bundle " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml" + " --template " + "\"" + conf_dir + "\"" + "/" + "\"" + service_name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
