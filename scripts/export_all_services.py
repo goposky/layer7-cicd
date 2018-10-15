@@ -52,7 +52,7 @@ try:
 
                 # Create a mapping file if action parameter is specified
                 if args.action:
-                    gmu_mapping = subprocess.Popen("gmu manageMappings --type SERVICE" + " --action " + args.action +  " --bundle " + src_dir + service_name + ".xml --outputFile " + src_dir + service_name + "-mapping.xml", stdout=subprocess.PIPE, shell=True)
+                    gmu_mapping = subprocess.Popen("gmu manageMappings --type SERVICE" + " --action " + args.action +  " --bundle " + "\"" + src_dir + service_name + ".xml" + "\"" + " --outputFile " + "\"" + src_dir + service_name + "-mapping.xml" + "\"", stdout=subprocess.PIPE, shell=True)
                     (output, err) = gmu_mapping.communicate()
                     gmu_mapping_status = gmu_mapping.wait()
 
