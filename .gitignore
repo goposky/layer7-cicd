@@ -7,3 +7,4 @@ gmu/*
 workspace/*
 !workspace/dev-argFile.properties
 *.swp
+gitlab

@@ -5,8 +5,7 @@ import argparse
 import pathlib
 import subprocess
 
-parser = argparse.ArgumentParser(description="Exports all services from a layer 7 gateway into the git structure"
-)
+parser = argparse.ArgumentParser(description="Exports all services from a layer 7 gateway into the git structure")
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
 parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=False,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
 parser.add_argument("-o", "--output", required=True, help="Directory of the provider to export to")
@@ -33,12 +32,14 @@ try:
 
                 # Create the directories to export to
                 conf_dir = args.output + "/" + service_name + "/" + args.gateway + "/conf/"
-                doc_dir = args.output + "/" + service_name + "/" + args.gateway + "/doc/"
+                test_dir = args.output + "/" + service_name + "/" + args.gateway + "/test"
                 src_dir = args.output + "/" + service_name + "/" + args.gateway + "/src/"
+                docs_dir = args.output + "/" + service_name + "/docs/"
 
                 pathlib.Path(conf_dir).mkdir(parents=True, exist_ok=True)
-                pathlib.Path(doc_dir).mkdir(parents=True, exist_ok=True)
+                pathlib.Path(test_dir).mkdir(parents=True, exist_ok=True)
                 pathlib.Path(src_dir).mkdir(parents=True, exist_ok=True)
+                pathlib.Path(docs_dir).mkdir(parents=True, exist_ok=True)
 
                 # Run the export
                 if args.plaintextEncryptionPassphrase:
