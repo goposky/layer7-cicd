@@ -114,6 +114,7 @@ If you want to implement CICD with your gateway environments you need Jenkins. J
 docker-compose up -d jenkins
 ```
 Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:
+[jenkins-plugins.md](jenkins-plugins.md)
 1. Blue Ocean 
 2. Build Timeout 
 3. Build Trigger Badge Plugin 
