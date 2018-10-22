@@ -8,3 +8,4 @@ workspace/*
 !workspace/dev-argFile.properties
 *.swp
 gitlab
+*.bz2
