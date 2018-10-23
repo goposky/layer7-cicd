@@ -112,8 +112,7 @@ If you want to implement CICD with your gateway environments you need Jenkins. J
 ```bash
 docker-compose up -d jenkins
 ```
-Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:  
-[jenkins-plugins.md](jenkins-plugins.md).  
+Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:[jenkins-plugins.md](jenkins-plugins.md).  
 Refer to the following links on how to install the plugins easily using CLI.
 - [How to install using the Jenkins CLI](https://jenkins.io/doc/book/managing/plugins/#install-with-cli)
 - [Stackoverflow article on how to install plugins with CLI](https://stackoverflow.com/questions/34761047/how-to-install-jenkins-plugins-from-command-line)
