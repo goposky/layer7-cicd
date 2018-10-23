@@ -10,24 +10,31 @@ parser.add_argument("-z", "--argFile", required=True, help="The properties file 
 parser.add_argument("-i", "--id", required=True, help="id to export")
 parser.add_argument("-o", "--output", required=True, help="output path to export to, this should be directory path until the name of the provider")
 parser.add_argument("-n", "--name", required=True, help="service file name to save as, .xml will be appended to the file so don't include this")
-parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=True, help="Plaintext passphrase for encryption, Use the prefix, '@file:' to read passphrase from a file.")
+parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=False, help="Plaintext passphrase for encryption, Use the prefix, '@file:' to read passphrase from a file.")
 parser.add_argument("-g", "--gateway", required=True, help="Name of the gateway")
 parser.add_argument("-a", "--action", required=True, help="Mapping action: [New, Update, Existing, ForceNew,Delete, Ignore, NewOrExisting, NewOrUpdate,DeleteOrIgnore]")
 args = parser.parse_args()
 
-# Create directory if it doesn't exist
+# Create the directories to export to
 conf_dir = args.output + "/" + args.name + "/" + args.gateway + "/conf/"
-doc_dir = args.output + "/" + args.name + "/" + args.gateway + "/doc/"
+test_dir = args.output + "/" + args.name + "/" + args.gateway + "/test"
 src_dir = args.output + "/" + args.name + "/" + args.gateway + "/src/"
+docs_dir = args.output + "/" + args.name + "/docs/"
 
 pathlib.Path(conf_dir).mkdir(parents=True, exist_ok=True)
-pathlib.Path(doc_dir).mkdir(parents=True, exist_ok=True)
+pathlib.Path(test_dir).mkdir(parents=True, exist_ok=True)
 pathlib.Path(src_dir).mkdir(parents=True, exist_ok=True)
+pathlib.Path(docs_dir).mkdir(parents=True, exist_ok=True)
 
 # Run the export
-gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + args.id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + src_dir + args.name + ".xml", stdout=subprocess.PIPE, shell=True)
-(output, err) = gmu_migrateOut.communicate()
-gmu_migrateOut_status = gmu_migrateOut.wait()
+if args.plaintextEncryptionPassphrase:
+    gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + args.id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + src_dir + args.name + ".xml", stdout=subprocess.PIPE, shell=True)
+    (output, err) = gmu_migrateOut.communicate()
+    gmu_migrateOut_status = gmu_migrateOut.wait()
+else:
+    gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + args.id + " --dest " + src_dir + args.name + ".xml", stdout=subprocess.PIPE, shell=True)
+    (output, err) = gmu_migrateOut.communicate()
+    gmu_migrateOut_status = gmu_migrateOut.wait()
 
 # Template the service
 gmu_template_cmd = "gmu template --bundle " + src_dir + args.name + ".xml" + " --template " + conf_dir + args.name + ".properties"
