@@ -107,17 +107,17 @@ docker-compose down
 ```
 
 ## CI/CD demo with Jenkins
-TODO: Following section is incomplete.
 
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```bash
 docker-compose up -d jenkins
 ```
-Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:
-[jenkins-plugins.md](jenkins-plugins.md). 
+Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:  
+[jenkins-plugins.md](jenkins-plugins.md).  
 Refer to the following links on how to install the plugins easily using CLI.
-- How to install jenkins plugins from command line:  https://stackoverflow.com/questions/34761047/how-to-install-jenkins-plugins-from-command-line
-- How to overcome the jenkins CLI permissions error: https://www.jeffgeerling.com/blog/2018/fixing-jenkins-cli-error-anonymous-missing-overallread-permission
+- [How to install using the Jenkins CLI](https://jenkins.io/doc/book/managing/plugins/#install-with-cli)
+- [Stackoverflow article on how to install plugins with CLI](https://stackoverflow.com/questions/34761047/how-to-install-jenkins-plugins-from-command-line)
+- [Overcome the jenkins CLI permissions error](https://www.jeffgeerling.com/blog/2018/fixing-jenkins-cli-error-anonymous-missing-overallread-permission)
 
 ### Set up Jenkins SSH slave
 Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Mac/Linux).
