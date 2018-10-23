@@ -114,29 +114,10 @@ If you want to implement CICD with your gateway environments you need Jenkins. J
 docker-compose up -d jenkins
 ```
 Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:
-[jenkins-plugins.md](jenkins-plugins.md)
-1. Blue Ocean 
-2. Build Timeout 
-3. Build Trigger Badge Plugin 
-4. Console Badge 
-5. Email Extension Plugin 
-6. embeddable-build-status 
-7. Gitlab Authentication plugin 
-8. Gitlab Hook Plugin 
-9. Gitlab Logo Plugin 
-10. Gitlab Merge Request Builder 
-11. Gitlab Plugin 
-12. LDAP Plugin 
-13. PAM Authentication plugin 
-14. Pipeline 
-15. Pipeline: Github Groovy Libraries 
-16. Role-based Authorization Strategy 
-17. SSH Slaves plugin 
-18. Timestamper 
-19. Violation Comments to GitLab Plugin 
-20. Violation Comments to GitLab Plugin 
-21. Workspace Cleanup Plugin
-22. Pipeline Utility Steps
+[jenkins-plugins.md](jenkins-plugins.md). 
+Refer to the following links on how to install the plugins easily using CLI.
+- How to install jenkins plugins from command line:  https://stackoverflow.com/questions/34761047/how-to-install-jenkins-plugins-from-command-line
+- How to overcome the jenkins CLI permissions error: https://www.jeffgeerling.com/blog/2018/fixing-jenkins-cli-error-anonymous-missing-overallread-permission
 
 ### Set up Jenkins SSH slave
 Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Mac/Linux).
