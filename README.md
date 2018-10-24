@@ -46,10 +46,12 @@ GatewayMigrationUtility.bat     # the GMU bat script for Windows
 encryptm.txt                    # the encryption passphrase for gateway
 ```
 Append the `PATH` environment variable with the `gmu` directory path.\
-Next, build the gmu-slave docker image. This step is required only if you intend to use run the Jenkins pipeline demo.
+Next, build the jenkins-layer7 and gmu-slave docker images. This step is required only if you intend to use run the Jenkins pipeline demo.  
+Download the [latest linux tarball for soapui](https://www.soapui.org/downloads/latest-release.html) and explode into a directory in the repo base directory, and rename it to `soapui`.
 ```bash
-docker build . -f Dockerfile.gmu -t gmu-slave     # Builds gmu-slave image
-docker images                   # Lists built images and should show the newly built `gmu-slave` image
+docker build . -f Dockerfile.jenkins -t jenkins-layer7	# Builds jenkins-layer7 image
+docker build . -f Dockerfile.gmu -t gmu-slave	# Builds gmu-slave image
+docker images	# Lists built images and should show the newly built `jenkins-layer7` and `gmu-slave` images
 ```
 Note: The GMU tool is non-sharable and usage is associated with your CA API Gateway license.\
 The setup is now complete. 

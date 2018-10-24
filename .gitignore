@@ -10,3 +10,4 @@ workspace/*
 *.swp
 gitlab
 *.bz2
+soapui
