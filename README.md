@@ -36,19 +36,20 @@ Next, copy your CA API Gateway license file to the `license` directory and renam
 ```bash
 cp <path-to-your-license-file> license/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu` directory. Once copied, the directory should have contents as listed below:
+Next, copy the GMU utility (script and jar files) into the `gmu` directory. Also copy the encryption file for connecting to the gateway. Once copied, the directory should have contents as listed below:
 ```bash
 README.md                       # a README file
 lib                             # directory containing jars required by GMU
 GatewayMigrationUtility.jar     # the main GMU jar
 GatewayMigrationUtility.sh      # the GMU shell script for Unix
 GatewayMigrationUtility.bat     # the GMU bat script for Windows
+encryptm.txt                    # the encryption passphrase for gateway
 ```
 Append the `PATH` environment variable with the `gmu` directory path.\
 Next, build the gmu-slave docker image. This step is required only if you intend to use run the Jenkins pipeline demo.
 ```bash
-docker build . -t gmu-slave     # Builds gmu-slave image
-docker images                   # Lists built images
+docker build . -f Dockerfile.gmu -t gmu-slave     # Builds gmu-slave image
+docker images                   # Lists built images and should show the newly built `gmu-slave` image
 ```
 Note: The GMU tool is non-sharable and usage is associated with your CA API Gateway license.\
 The setup is now complete. 
