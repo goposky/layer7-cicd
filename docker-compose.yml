@@ -103,7 +103,7 @@ services:
   jenkins:
     hostname: jenkins
     container_name: jenkins
-    image: jenkins/jenkins:lts
+    image: jenkins-layer7
     volumes:
       - ./jenkins:/var/jenkins_home
     ports:

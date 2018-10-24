@@ -1,9 +1,10 @@
 FROM jenkins/jenkins:lts
-
 USER root
-RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+	&& apt -y update \
+	&& apt install -y nodejs \
+	&& dpkg-reconfigure tzdata
+RUN npm install junit-viewer -g
+COPY --chown=jenkins:jenkins ./jenkins/soapui/ /opt/soapui/
 USER jenkins
-
-COPY --chown=jenkins:jenkins ./gmu/ /home/jenkins/gmu/
-ENV PATH "$PATH:/home/jenkins/gmu"
 
