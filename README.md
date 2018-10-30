@@ -13,6 +13,7 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
     - In Docker preferences, under Advanced, increase memory allocation. Each gateway container needs roughly 2 to 2.5 GB of memory.
 - Java 1.8 is installed on your PC. Newer version does not work well with the Policy Manager web start.
   Download from here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
+- Python 3 is installed. Refer this page: https://docs.python-guide.org/
 - You have a valid CA API gateway developer license
 
 Note: Most of the steps listed below involve using a command-line terminal. The commands listed here were written and tested in a `bash` terminal. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
