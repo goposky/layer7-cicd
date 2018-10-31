@@ -33,7 +33,7 @@ git config --global https.proxy https://<proxyuser>:<proxypwd>@<proxy.server>:<p
 ```
 
 All commands from now on are run from within this repo base directory.\
-Next, copy your CA API Gateway license file to the `license` directory and rename it to `license.xml`.
+Next, copy your CA API Gateway license file to the `license` directory and rename it to `license.xml`. Without a proper license file the gateway containers will not start properly.
 ```bash
 cp <path-to-your-license-file> license/license.xml
 ```
