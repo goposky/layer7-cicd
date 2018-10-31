@@ -11,7 +11,7 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
   - Note for Windows and Mac users:
     - In Docker preferences, under Daemon, enable "Experimental features".
     - In Docker preferences, under Advanced, increase memory allocation. Each gateway container needs roughly 2 to 2.5 GB of memory.
-- Java 1.8 is installed on your PC. This is required for using the Policy Manager webstart. Newer version does not work well with the Policy Manager web start. If you have the Policy Manager fat client installed on your PC then you do not need this.
+- Java 1.8 is installed on your PC. This is required for using the Policy Manager webstart. Newer versions of Java do not work well with the Policy Manager web start. If you have the Policy Manager fat client installed on your PC then you do not need this.
   Download from here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
 - Python 3 is installed. This is required in order to run some of the scripts within the `scripts` directory. Refer this page: https://docs.python-guide.org/
 - You have a valid CA API gateway developer license
