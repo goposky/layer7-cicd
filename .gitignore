@@ -2,6 +2,7 @@ license/license.xml
 .env
 jenkins/*
 !jenkins/README.md
+!jenkins/Dockerfile
 gmu/*
 !gmu/README.md
 workspace/*
@@ -9,3 +10,4 @@ workspace/*
 *.swp
 gitlab
 *.bz2
+soapui

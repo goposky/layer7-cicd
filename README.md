@@ -13,6 +13,7 @@ This repo is intended to provide a simple way to spin up CA API Gateway environm
     - In Docker preferences, under Advanced, increase memory allocation. Each gateway container needs roughly 2 to 2.5 GB of memory.
 - Java 1.8 is installed on your PC. Newer version does not work well with the Policy Manager web start.
   Download from here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
+- Python 3 is installed. Refer this page: https://docs.python-guide.org/
 - You have a valid CA API gateway developer license
 
 Note: Most of the steps listed below involve using a command-line terminal. The commands listed here were written and tested in a `bash` terminal. If you are using a non-bash terminal (for example, the Windows command prompt), use the equivalent commands wherever applicable.
@@ -36,19 +37,22 @@ Next, copy your CA API Gateway license file to the `license` directory and renam
 ```bash
 cp <path-to-your-license-file> license/license.xml
 ```
-Next, copy the GMU utility (script and jar files) into the `gmu` directory. Once copied, the directory should have contents as listed below:
+Next, copy the GMU utility (script and jar files) into the `gmu` directory. Also copy the encryption file for connecting to the gateway. Once copied, the directory should have contents as listed below:
 ```bash
 README.md                       # a README file
 lib                             # directory containing jars required by GMU
 GatewayMigrationUtility.jar     # the main GMU jar
 GatewayMigrationUtility.sh      # the GMU shell script for Unix
 GatewayMigrationUtility.bat     # the GMU bat script for Windows
+encryptm.txt                    # the encryption passphrase for gateway
 ```
 Append the `PATH` environment variable with the `gmu` directory path.\
-Next, build the gmu-slave docker image. This step is required only if you intend to use run the Jenkins pipeline demo.
+Next, build the jenkins-layer7 and gmu-slave docker images. This step is required only if you intend to use run the Jenkins pipeline demo.  
+Download the [latest linux tarball for soapui](https://www.soapui.org/downloads/latest-release.html) and explode into a directory in the repo base directory, and rename it to `soapui`.
 ```bash
-docker build . -t gmu-slave     # Builds gmu-slave image
-docker images                   # Lists built images
+docker build . -f Dockerfile.jenkins -t jenkins-layer7	# Builds jenkins-layer7 image
+docker build . -f Dockerfile.gmu -t gmu-slave	# Builds gmu-slave image
+docker images	# Lists built images and should show the newly built `jenkins-layer7` and `gmu-slave` images
 ```
 Note: The GMU tool is non-sharable and usage is associated with your CA API Gateway license.\
 The setup is now complete. 
@@ -107,36 +111,16 @@ docker-compose down
 ```
 
 ## CI/CD demo with Jenkins
-TODO: Following section is incomplete.
 
 If you want to implement CICD with your gateway environments you need Jenkins. Jenkins can be run with the following command. 
 ```bash
 docker-compose up -d jenkins
 ```
-Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:
-[jenkins-plugins.md](jenkins-plugins.md)
-1. Blue Ocean 
-2. Build Timeout 
-3. Build Trigger Badge Plugin 
-4. Console Badge 
-5. Email Extension Plugin 
-6. embeddable-build-status 
-7. Gitlab Authentication plugin 
-8. Gitlab Hook Plugin 
-9. Gitlab Logo Plugin 
-10. Gitlab Merge Request Builder 
-11. Gitlab Plugin 
-12. LDAP Plugin 
-13. PAM Authentication plugin 
-14. Pipeline 
-15. Pipeline: Github Groovy Libraries 
-16. Role-based Authorization Strategy 
-17. SSH Slaves plugin 
-18. Timestamper 
-19. Violation Comments to GitLab Plugin 
-20. Violation Comments to GitLab Plugin 
-21. Workspace Cleanup Plugin
-22. Pipeline Utility Steps
+Jenkins configuration will be persisted on restart of container, since everything is stored in the mounted directory `jenkins`. Ensure that you have the following plugins installed:[jenkins-plugins.md](jenkins-plugins.md).  
+Refer to the following links on how to install the plugins easily using CLI.
+- [How to install using the Jenkins CLI](https://jenkins.io/doc/book/managing/plugins/#install-with-cli)
+- [Stackoverflow article on how to install plugins with CLI](https://stackoverflow.com/questions/34761047/how-to-install-jenkins-plugins-from-command-line)
+- [Overcome the jenkins CLI permissions error](https://www.jeffgeerling.com/blog/2018/fixing-jenkins-cli-error-anonymous-missing-overallread-permission)
 
 ### Set up Jenkins SSH slave
 Generate SSH public-private keypair for use with SSH slave (Use `puttygen` on Windows or `ssh-keygen` on Mac/Linux).

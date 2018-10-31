@@ -1,0 +1,11 @@
+FROM jenkins/jenkins:lts
+USER root
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+	&& apt -y update \
+	&& apt install -y nodejs \
+	&& echo "Europe/Amsterdam" > /etc/timezone \
+	&& dpkg-reconfigure -f noninteractive tzdata 
+RUN npm install junit-viewer -g
+COPY --chown=jenkins:jenkins ./soapui/ /opt/soapui/
+USER jenkins
+
