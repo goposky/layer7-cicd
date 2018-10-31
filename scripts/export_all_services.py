@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-# FIXME: -p doesnt work, it complains of reading an already closed file, should for now run it withouth -p flag
-
 import os
 import argparse
 import pathlib
 import subprocess
+import traceback
 
 parser = argparse.ArgumentParser(description="Exports all services from a layer 7 gateway into the git structure")
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
@@ -20,7 +19,7 @@ services = list()
 
 for line in gmu_services.splitlines():
     fields = line.split("\t")
-    if len(fields) == 3:
+    if len(fields) == 3 and fields[2] != "Gateway REST Management Service":
         gw_object = {"type": fields[0].strip(), "id": fields[1].strip(), "object": fields[2].strip()}
         services.append(gw_object)
 
@@ -46,8 +45,6 @@ try:
                 # Run the export
                 if args.plaintextEncryptionPassphrase:
                     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
-                    (output, err) = gmu_migrateOut.communicate()
-                    gmu_migrateOut_status = gmu_migrateOut.wait()
                 else:
                     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + item.get("id") + " --dest " + "\"" + src_dir + "\"" + "/" + "\"" + service_name + "\"" + ".xml", stdout=subprocess.PIPE, shell=True)
                 (output, err) = gmu_migrateOut.communicate()
@@ -75,5 +72,5 @@ try:
 
 except Exception as e:
     print("Error processing: " + item.get("object"))
-    print(e)
+    traceback.print_exc()
     pass
