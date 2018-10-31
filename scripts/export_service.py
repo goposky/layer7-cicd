@@ -29,12 +29,10 @@ pathlib.Path(docs_dir).mkdir(parents=True, exist_ok=True)
 # Run the export
 if args.plaintextEncryptionPassphrase:
     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + args.id + " --plaintextEncryptionPassphrase " + args.plaintextEncryptionPassphrase + " --dest " + src_dir + args.name + ".xml", stdout=subprocess.PIPE, shell=True)
-    (output, err) = gmu_migrateOut.communicate()
-    gmu_migrateOut_status = gmu_migrateOut.wait()
 else:
     gmu_migrateOut = subprocess.Popen("gmu migrateOut --argFile " + args.argFile + " --service " + args.id + " --dest " + src_dir + args.name + ".xml", stdout=subprocess.PIPE, shell=True)
-    (output, err) = gmu_migrateOut.communicate()
-    gmu_migrateOut_status = gmu_migrateOut.wait()
+(output, err) = gmu_migrateOut.communicate()
+gmu_migrateOut_status = gmu_migrateOut.wait()
 
 # Template the service
 gmu_template_cmd = "gmu template --bundle " + src_dir + args.name + ".xml" + " --template " + conf_dir + args.name + ".properties"
