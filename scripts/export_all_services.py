@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# FIXME: -p doesnt work, it complains of reading an already closed file, should for now run it withouth -p flag
+
 import os
 import argparse
 import pathlib
