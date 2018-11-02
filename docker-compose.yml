@@ -31,7 +31,7 @@ services:
       SSG_DATABASE_PASSWORD: "dbpassword"
       SSG_CLUSTER_HOST: "localhost"
       SSG_CLUSTER_PASSWORD: "password"
-      SSG_JVM_HEAP: "1g"
+      SSG_JVM_HEAP: "3g"
       EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
 
   mysql-dev:
@@ -100,6 +100,7 @@ services:
       ACCEPT_LICENSE: "true"
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
+      SSG_JVM_HEAP: "1g"
 
   jenkins:
     hostname: jenkins
