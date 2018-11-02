@@ -145,18 +145,6 @@ services:
       demo:
         ipv4_address: 10.1.0.70
 
-  gitlab:
-    hostname: gitlab
-    container_name: gitlab
-    image: gitlab/gitlab-ce:latest
-    networks:
-      demo:
-        ipv4_address: 10.1.0.80
-    volumes:
-      - ./gitlab/config:/etc/gitlab
-      - ./gitlab/logs:/var/log/gitlab
-      - ./gitlab/data:/var/opt/gitlab
-
 secrets:
   license:
     file: ./license/license.xml
