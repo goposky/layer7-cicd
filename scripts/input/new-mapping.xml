@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<l7:Mappings xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:Mapping action="NewOrExisting" srcId="5cb90579e30dd8bcd2cc046f1e392ae1" srcUri="https://gateway-tst:8443/restman/1.0/services/5cb90579e30dd8bcd2cc046f1e392ae1" type="SERVICE"/>
+    <l7:Mapping action="NewOrExisting" srcId="5cb90579e30dd8bcd2cc046f1e38c7db" srcUri="https://gateway-tst:8443/restman/1.0/policies/5cb90579e30dd8bcd2cc046f1e38c7db" type="POLICY">
+        <l7:Properties>
+            <l7:Property key="MapBy">
+                <l7:StringValue>path</l7:StringValue>
+            </l7:Property>
+            <l7:Property key="MapTo">
+                <l7:StringValue>/buildingBlocks/ziggo 1</l7:StringValue>
+            </l7:Property>
+        </l7:Properties>
+    </l7:Mapping>
+    <l7:Mapping action="NewOrExisting" srcId="5cb90579e30dd8bcd2cc046f1e38c80b" srcUri="https://gateway-tst:8443/restman/1.0/policies/5cb90579e30dd8bcd2cc046f1e38c80b" type="POLICY">
+        <l7:Properties>
+            <l7:Property key="MapBy">
+                <l7:StringValue>path</l7:StringValue>
+            </l7:Property>
+            <l7:Property key="MapTo">
+                <l7:StringValue>/buildingBlocks/ziggo 2</l7:StringValue>
+            </l7:Property>
+        </l7:Properties>
+    </l7:Mapping>
+    <l7:Mapping action="NewOrExisting" srcId="5cb90579e30dd8bcd2cc046f1e39164c" srcUri="https://gateway-tst:8443/restman/1.0/policies/5cb90579e30dd8bcd2cc046f1e39164c" type="POLICY">
+        <l7:Properties>
+            <l7:Property key="MapBy">
+                <l7:StringValue>path</l7:StringValue>
+            </l7:Property>
+            <l7:Property key="MapTo">
+                <l7:StringValue>/buildingBlocks/ziggo 3</l7:StringValue>
+            </l7:Property>
+        </l7:Properties>
+    </l7:Mapping>
+</l7:Mappings>

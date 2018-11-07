@@ -1,0 +1,8 @@
+<l7:Properties>
+    <l7:Property key="MapBy">
+        <l7:StringValue>path</l7:StringValue>
+    </l7:Property>
+    <l7:Property key="MapTo">
+        <l7:StringValue>/buildingBlocks</l7:StringValue>
+    </l7:Property>
+</l7:Properties>

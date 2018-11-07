@@ -5,10 +5,11 @@ import fnmatch
 
 from prettytable import PrettyTable
 
-parser  = argparse.ArgumentParser(
-            description = "Script to get a ip addresses of multiple running containers"
-        )
-parser.add_argument("-n", "--name", help="the name of the container to get the ip address from, wildcards in the name are supported to get a list. This should be in quotes.", required=True)
+parser = argparse.ArgumentParser(
+    description="Script to get a ip addresses of multiple running containers"
+)
+parser.add_argument(
+    "-n", "--name", help="the name of the container to get the ip address from, wildcards in the name are supported to get a list. This should be in quotes.", required=True)
 args = parser.parse_args()
 
 # Get a list of current running containers, and filter through this using the given name filter
