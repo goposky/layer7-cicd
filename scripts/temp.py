@@ -45,13 +45,11 @@ def getBundle(username, password, restmanUrl, resourceType, id):
 
 consent = ET.parse("input/consent.xml")
 root = consent.getroot()
-# namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
-# mappings = root.findall("l7:Mappings/l7:Mapping",namespaces)
-ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
-mappings = root.findall("Mappings/Mapping")
+namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
+mappings = root.findall("l7:Mappings/l7:Mapping",namespaces)
 
 for m in mappings:
-    # ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
+    ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
     action = m.get("action")
     srcId = m.get("srcId")
     if(srcId=="a5af7a23ab001c063ef535db8188ad65"):
@@ -64,7 +62,7 @@ for m in mappings:
 
         propertiesMapTo=ET.SubElement(properties,"l7:Properties")
         stringValueMapTo=ET.SubElement(propertiesMapTo,"l7:StringValue")
-        propertiesMapTo.set("key","MapTo")
+        propertiesMapTo.set("key","l7:MapTo")
         stringValueMapTo.text="/buildingBlocks"
         m.insert(1,properties)
 ET.dump(root)
