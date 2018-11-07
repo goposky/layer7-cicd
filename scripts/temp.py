@@ -45,9 +45,10 @@ def getBundle(username, password, restmanUrl, resourceType, id):
 
 consent = ET.parse("input/consent.xml")
 root = consent.getroot()
-namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
-mappings = root.findall("l7:Mappings/l7:Mapping",namespaces)
+# namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
+# mappings = root.findall("l7:Mappings/l7:Mapping",namespaces)
 ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
+mappings = root.findall("Mappings/Mapping")
 
 for m in mappings:
     # ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
