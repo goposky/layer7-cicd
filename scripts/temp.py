@@ -9,17 +9,16 @@ def getBuildingBlocks(xmlContents, namespaces, folderId):
     tree = ET.parse(xmlContents)
     root = tree.getroot()
 
-    policyDetail = root.findall(
-        "l7:References/l7:Item/l7:Resource/l7:Policy/l7:PolicyDetail",
-        namespaces)
+    policyDetail = root.findall("l7:References/l7:Item/l7:Resource/l7:Policy/l7:PolicyDetail", namespaces)
     policies = {}
     for idx, detail in enumerate(policyDetail):
         folderId = detail.attrib.get("folderId")
         policyId = detail.attrib.get("id")
         name = detail.find("l7:Name", namespaces).text
 
-        details = [name, policyId, folderId]
-        policies[idx] = details
+        # details = [name, policyId, folderId]
+        details = [name, folderId]
+        policies[policyId] = details
 
     return policies
 
@@ -34,16 +33,17 @@ def getFolderId(username, password, restmanUrl, folderName):
 def getBundle(username, password, restmanUrl, resourceType, id):
     endpoint = restmanUrl + "/1.0/bundle"
     parameters = {resourceType: id}
-    bundle = requests.get(url=endpoint, auth=(username, password), params=parameters, verify=False)
+    bundle = requests.get(url=endpoint, auth=(
+        username, password), params=parameters, verify=False)
     return bundle.text
 
 
-
-# test = getBuildingBlocks(xmlContents="input/consent.xml",namespaces={"l7": "http://ns.l7tech.com/2010/04/gateway-management"},folderId="985b4aeeb083ede7d9330256c83b987c")
-# for val in test.items():
+bb = getBuildingBlocks(xmlContents="input/consent.xml",namespaces={"l7": "http://ns.l7tech.com/2010/04/gateway-management"},folderId="985b4aeeb083ede7d9330256c83b987c")
+# for val in bb.items():
 #     print(val)
 
 consent = ET.parse("input/consent.xml")
+
 root = consent.getroot()
 namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
 mappings = root.findall("l7:Mappings/l7:Mapping",namespaces)
@@ -52,7 +52,8 @@ for m in mappings:
     ET.register_namespace("l7","http://ns.l7tech.com/2010/04/gateway-management")
     action = m.get("action")
     srcId = m.get("srcId")
-    if(srcId=="a5af7a23ab001c063ef535db8188ad65"):
+    if(srcId in bb):
+    # if(srcId=="a5af7a23ab001c063ef535db8188ad65"):
         properties=ET.Element("l7:Properties")
 
         propertiesMapBy=ET.SubElement(properties,"l7:Property")
@@ -60,12 +61,16 @@ for m in mappings:
         propertiesMapBy.set("key","MapBy")
         stringValueMapBy.text="path"
 
-        propertiesMapTo=ET.SubElement(properties,"l7:Properties")
+        propertiesMapTo=ET.SubElement(properties,"l7:Property")
         stringValueMapTo=ET.SubElement(propertiesMapTo,"l7:StringValue")
-        propertiesMapTo.set("key","l7:MapTo")
-        stringValueMapTo.text="/buildingBlocks"
-        m.insert(1,properties)
-ET.dump(root)
+        propertiesMapTo.set("key","MapTo")
+        stringValueMapTo.text="/buildingBlocks/" + bb[srcId][0]
+        m.insert(0,properties)
+# ET.dump(root)
+
+out = ET.ElementTree()
+out._setroot(root)
+out.write("out.xml")
 
 # properties = ET.Element("l7:Properties")
 # prop = ET.SubElement(properties,"l7:Property")
