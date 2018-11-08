@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<l7:Mappings xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
-    <l7:Mapping action="NewOrExisting" srcId="e73aa375c92bf77a0b52a366672b0306" srcUri="https://gateway-tst:8443/restman/1.0/services/e73aa375c92bf77a0b52a366672b0306" type="SERVICE"/>
-</l7:Mappings>

@@ -10,13 +10,13 @@
                 <l7:Policy guid="9f29a8bd-912e-40a5-a48c-3b6f8aa40ac6" id="a5af7a23ab001c063ef535db8188ad65" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="9f29a8bd-912e-40a5-a48c-3b6f8aa40ac6" id="a5af7a23ab001c063ef535db8188ad65" version="0">
                         <l7:Name>OTK Security Header Extension</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Security Header Extension.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Security Header Extension.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Security Header Extension.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -125,7 +125,7 @@
         &lt;/L7p:AddHeader&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -140,13 +140,13 @@
                 <l7:Policy guid="a2206e7c-28e8-489d-862d-3b7c6da78079" id="c2656fd5ff575252902a7e330e355f53" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="a2206e7c-28e8-489d-862d-3b7c6da78079" id="c2656fd5ff575252902a7e330e355f53" version="0">
                         <l7:Name>OTK Caching Customization</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Caching Customization.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Caching Customization.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Caching Customization.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -427,7 +427,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -442,13 +442,13 @@
                 <l7:Policy guid="df0a2c11-cf6e-47da-84c0-032bf7f3b6d2" id="161861da3a78c5dcdc62696d16914896" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="df0a2c11-cf6e-47da-84c0-032bf7f3b6d2" id="161861da3a78c5dcdc62696d16914896" version="0">
                         <l7:Name>OTK Cache Look Up Customization</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Cache Look Up Customization.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Cache Look Up Customization.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Cache Look Up Customization.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -500,7 +500,7 @@
         &lt;/L7p:CacheLookup&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -515,13 +515,13 @@
                 <l7:Policy guid="2294fc5e-0adf-4d4b-b44d-8d1252f024c9" id="161861da3a78c5dcdc62696d16914883" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="2294fc5e-0adf-4d4b-b44d-8d1252f024c9" id="161861da3a78c5dcdc62696d16914883" version="0">
                         <l7:Name>OTK Cache Store Customization</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Cache Store Customization.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Cache Store Customization.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Cache Store Customization.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -574,7 +574,7 @@
         &lt;/L7p:CacheStorage&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -589,13 +589,13 @@
                 <l7:Policy guid="65eff071-9a97-415b-8ebb-8e711ffd738d" id="161861da3a78c5dcdc62696d16914861" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="65eff071-9a97-415b-8ebb-8e711ffd738d" id="161861da3a78c5dcdc62696d16914861" version="0">
                         <l7:Name>OTK Cache Handler</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Cache Handler.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Cache Handler.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Cache Handler.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -939,7 +939,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -954,13 +954,13 @@
                 <l7:Policy guid="fb88be42-83e7-4d36-a865-34e53d4f4218" id="161861da3a78c5dcdc62696d16914bbb" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="fb88be42-83e7-4d36-a865-34e53d4f4218" id="161861da3a78c5dcdc62696d16914bbb" version="0">
                         <l7:Name>OTK Cache Look Up</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Cache Look Up.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Cache Look Up.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Cache Look Up.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -1118,7 +1118,7 @@
         &lt;/L7p:Include&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -1133,35 +1133,35 @@
                 <l7:EncapsulatedAssertion id="161861da3a78c5dcdc62696d16914c21" version="0">
                     <l7:Name>OTK Cache Look Up</l7:Name>
                     <l7:Guid>68ad78a1-f4a1-4568-91e1-0980d95c75cd</l7:Guid>
-                    <l7:PolicyReference id="161861da3a78c5dcdc62696d16914bbb" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:PolicyReference id="161861da3a78c5dcdc62696d16914bbb" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies">$#{template.encapsulated_assertion.OTK Cache Look Up.PolicyReference}#</l7:PolicyReference>
                     <l7:EncapsulatedArguments>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.1.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.1.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.1.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.1.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.1.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.2.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.2.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.2.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.2.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.2.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.3.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.3.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.3.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.3.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.3.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.4.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.4.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.4.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.4.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Look Up.EncapsulatedArguments.4.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                     </l7:EncapsulatedArguments>
                     <l7:EncapsulatedResults>
@@ -1214,13 +1214,13 @@
                 <l7:Policy guid="1a55cc2a-9996-4978-8473-c2a75e5c59d1" id="bc9a31b7578652a08a514d7d4fef9afd" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="1a55cc2a-9996-4978-8473-c2a75e5c59d1" id="bc9a31b7578652a08a514d7d4fef9afd" version="0">
                         <l7:Name>#OTK Fail with error message</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.#OTK Fail with error message.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.#OTK Fail with error message.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.#OTK Fail with error message.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -1288,7 +1288,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -1303,13 +1303,13 @@
                 <l7:Policy guid="58143e14-a1cd-4cca-b25a-e2d637a42bbc" id="161861da3a78c5dcdc62696d16914be5" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="58143e14-a1cd-4cca-b25a-e2d637a42bbc" id="161861da3a78c5dcdc62696d16914be5" version="0">
                         <l7:Name>OTK Cache Store</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Cache Store.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Cache Store.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Cache Store.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -1493,7 +1493,7 @@
         &lt;/L7p:Include&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -1508,56 +1508,56 @@
                 <l7:EncapsulatedAssertion id="161861da3a78c5dcdc62696d16914c44" version="0">
                     <l7:Name>OTK Cache Store</l7:Name>
                     <l7:Guid>e5ee8bcf-1796-4297-88dd-c838031a6f6a</l7:Guid>
-                    <l7:PolicyReference id="161861da3a78c5dcdc62696d16914be5" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:PolicyReference id="161861da3a78c5dcdc62696d16914be5" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies">$#{template.encapsulated_assertion.OTK Cache Store.PolicyReference}#</l7:PolicyReference>
                     <l7:EncapsulatedArguments>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.1.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.1.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.1.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.1.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.1.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.2.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.2.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.2.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.2.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.2.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.3.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.3.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.3.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.3.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.3.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.4.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.4.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.4.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.4.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.4.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.5.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.5.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.5.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.5.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.5.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.6.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.6.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.6.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.6.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.6.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.7.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.7.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.7.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.7.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Cache Store.EncapsulatedArguments.7.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                     </l7:EncapsulatedArguments>
                     <l7:EncapsulatedResults>
@@ -1606,13 +1606,13 @@
                 <l7:Policy guid="9e864ce5-1275-477f-a642-b5e867f367a3" id="d1bde3d2021a469e82ebf8cac288bbd1" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="9e864ce5-1275-477f-a642-b5e867f367a3" id="d1bde3d2021a469e82ebf8cac288bbd1" version="0">
                         <l7:Name>OTK Fail with error message</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Fail with error message.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Fail with error message.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Fail with error message.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -1703,7 +1703,8 @@
             &lt;L7p:Base64Expression stringValue="$#{template.policy.OTK Fail with error message.Resources.ResourceSet.xml.All.18.SetVariable.Base64Expression.stringValue}#"/&gt;
             &lt;L7p:VariableToSet stringValue="$#{template.policy.OTK Fail with error message.Resources.ResourceSet.xml.All.18.SetVariable.VariableToSet.stringValue}#"/&gt;
         &lt;/L7p:SetVariable&gt;
-        &lt;L7p:HandleErrors L7p:Usage="Required" includeIOException="false" variablePrefix="errors"&gt;
+        &lt;L7p:HandleErrors L7p:Usage="Required"
+            includeIOException="false" variablePrefix="errors"&gt;
             &lt;wsp:OneOrMore wsp:Usage="Required"&gt;
                 &lt;L7p:CommentAssertion&gt;
                     &lt;L7p:Comment stringValue="$#{template.policy.OTK Fail with error message.Resources.ResourceSet.xml.All.19.OneOrMore.CommentAssertion.CommentAssertion.Comment.stringValue}#"/&gt;
@@ -3563,7 +3564,7 @@
         &lt;L7p:FalseAssertion/&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -3578,28 +3579,28 @@
                 <l7:EncapsulatedAssertion id="d1bde3d2021a469e82ebf8cac288bd97" version="0">
                     <l7:Name>OTK Fail with error message</l7:Name>
                     <l7:Guid>56bd8147-3ab4-4d09-9460-8b2de02b7a9e</l7:Guid>
-                    <l7:PolicyReference id="d1bde3d2021a469e82ebf8cac288bbd1" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:PolicyReference id="d1bde3d2021a469e82ebf8cac288bbd1" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies">$#{template.encapsulated_assertion.OTK Fail with error message.PolicyReference}#</l7:PolicyReference>
                     <l7:EncapsulatedArguments>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.1.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.1.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.1.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.1.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.1.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.2.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.2.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.2.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.2.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.2.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.3.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.3.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.3.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.3.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Fail with error message.EncapsulatedArguments.3.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                     </l7:EncapsulatedArguments>
                     <l7:EncapsulatedResults>
@@ -3662,13 +3663,13 @@
                 <l7:Policy guid="b598a733-5faf-439a-9aaf-088ca73d102e" id="d1bde3d2021a469e82ebf8cac288b778" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="b598a733-5faf-439a-9aaf-088ca73d102e" id="d1bde3d2021a469e82ebf8cac288b778" version="0">
                         <l7:Name>OTK Require SSL (with Client Certificate)</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK Require SSL (with Client Certificate).PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK Require SSL (with Client Certificate).PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK Require SSL (with Client Certificate).PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -3877,7 +3878,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -3892,28 +3893,28 @@
                 <l7:EncapsulatedAssertion id="d1bde3d2021a469e82ebf8cac288b7c9" version="0">
                     <l7:Name>OTK Require SSL (with Client Certificate)</l7:Name>
                     <l7:Guid>47f768f4-b478-472b-a1ee-10f4b6e76f99</l7:Guid>
-                    <l7:PolicyReference id="d1bde3d2021a469e82ebf8cac288b778" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:PolicyReference id="d1bde3d2021a469e82ebf8cac288b778" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies">$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).PolicyReference}#</l7:PolicyReference>
                     <l7:EncapsulatedArguments>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.1.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.1.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.1.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.1.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.1.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.2.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.2.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.2.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.2.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.2.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.3.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.3.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.3.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.3.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK Require SSL (with Client Certificate).EncapsulatedArguments.3.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                     </l7:EncapsulatedArguments>
                     <l7:EncapsulatedResults>
@@ -3970,13 +3971,13 @@
                 <l7:Policy guid="6aa2d277-b510-44e2-88ef-31ff01840c28" id="e001cfd0c1c1ffaa18e187b5e72fd946" version="0">
                     <l7:PolicyDetail folderId="739ec70735e715be8161d39043d23717" guid="6aa2d277-b510-44e2-88ef-31ff01840c28" id="e001cfd0c1c1ffaa18e187b5e72fd946" version="0">
                         <l7:Name>OTK HTTP Method Validation</l7:Name>
-                        <l7:PolicyType/>
+                        <l7:PolicyType>$#{template.policy.OTK HTTP Method Validation.PolicyDetail.PolicyType}#</l7:PolicyType>
                         <l7:Properties>
                             <l7:Property key="revision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.policy.OTK HTTP Method Validation.PolicyDetail.Properties.revision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.policy.OTK HTTP Method Validation.PolicyDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:PolicyDetail>
@@ -4056,7 +4057,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Policy>
@@ -4071,21 +4072,21 @@
                 <l7:EncapsulatedAssertion id="3f6b5c92ca2ac3665bc7d8780bc4d876" version="0">
                     <l7:Name>OTK HTTP Method Validation</l7:Name>
                     <l7:Guid>b8822449-71ff-455b-8f10-39122e6c549b</l7:Guid>
-                    <l7:PolicyReference id="e001cfd0c1c1ffaa18e187b5e72fd946" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:PolicyReference id="e001cfd0c1c1ffaa18e187b5e72fd946" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies">$#{template.encapsulated_assertion.OTK HTTP Method Validation.PolicyReference}#</l7:PolicyReference>
                     <l7:EncapsulatedArguments>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.1.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.1.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.1.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.1.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.1.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                         <l7:EncapsulatedAssertionArgument>
-                            <l7:Ordinal>0</l7:Ordinal>
+                            <l7:Ordinal>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.2.Ordinal}#</l7:Ordinal>
                             <l7:ArgumentName>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.2.ArgumentName}#</l7:ArgumentName>
                             <l7:ArgumentType>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.2.ArgumentType}#</l7:ArgumentType>
                             <l7:GuiLabel>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.2.GuiLabel}#</l7:GuiLabel>
-                            <l7:GuiPrompt>false</l7:GuiPrompt>
+                            <l7:GuiPrompt>$#{template.encapsulated_assertion.OTK HTTP Method Validation.EncapsulatedArguments.2.GuiPrompt}#</l7:GuiPrompt>
                         </l7:EncapsulatedAssertionArgument>
                     </l7:EncapsulatedArguments>
                     <l7:EncapsulatedResults>
@@ -4152,7 +4153,7 @@
                 <l7:Service id="e73aa375c92bf77a0b52a366672b0306" version="2">
                     <l7:ServiceDetail folderId="af166f3fe1c8bff95a5fff928eace0ac" id="e73aa375c92bf77a0b52a366672b0306" version="2">
                         <l7:Name>auth/oauth/v2/authorize/consent</l7:Name>
-                        <l7:Enabled>false</l7:Enabled>
+                        <l7:Enabled>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Enabled}#</l7:Enabled>
                         <l7:ServiceMappings>
                             <l7:HttpMapping>
                                 <l7:UrlPattern>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.ServiceMappings.HttpMapping.UrlPattern}#</l7:UrlPattern>
@@ -4170,19 +4171,19 @@
                         </l7:ServiceMappings>
                         <l7:Properties>
                             <l7:Property key="internal">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Properties.internal.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                             <l7:Property key="policyRevision">
-                                <l7:LongValue>0</l7:LongValue>
+                                <l7:LongValue>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Properties.policyRevision.LongValue}#</l7:LongValue>
                             </l7:Property>
                             <l7:Property key="soap">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Properties.soap.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                             <l7:Property key="tracingEnabled">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Properties.tracingEnabled.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                             <l7:Property key="wssProcessingEnabled">
-                                <l7:BooleanValue>false</l7:BooleanValue>
+                                <l7:BooleanValue>$#{template.service.auth/oauth/v2/authorize/consent.ServiceDetail.Properties.wssProcessingEnabled.BooleanValue}#</l7:BooleanValue>
                             </l7:Property>
                         </l7:Properties>
                     </l7:ServiceDetail>
@@ -8294,7 +8295,7 @@
         &lt;/wsp:OneOrMore&gt;
     &lt;/wsp:All&gt;
 &lt;/wsp:Policy&gt;
-                            </l7:Resource>
+</l7:Resource>
                         </l7:ResourceSet>
                     </l7:Resources>
                 </l7:Service>

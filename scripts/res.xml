@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<l7:Item xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:Name>Bundle mappings</l7:Name>
+    <l7:Type>BUNDLE MAPPINGS</l7:Type>
+    <l7:TimeStamp>2018-11-08T14:08:29.431Z</l7:TimeStamp>
+    <l7:Link rel="self" uri="https://gateway-tst:8443/restman/1.0/bundle?test=false&amp;activate=true"/>
+    <l7:Resource>
+        <l7:Mappings>
+            <l7:Mapping action="Ignore" actionTaken="Ignored" type="ENCAPSULATED_ASSERTION">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>guid</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>fbbc4f7d-cd06-41f3-8011-695bfad1d80b</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="739ec70735e715be8161d39043d23717" srcUri="https://gateway-tst:8443/restman/1.0/folders/739ec70735e715be8161d39043d23717" targetId="6c827cbb6889f5b4638fe01f3d683630" targetUri="https://gateway-tst:8443/restman/1.0/folders/6c827cbb6889f5b4638fe01f3d683630" type="FOLDER">
+                <l7:Properties>
+                    <l7:Property key="FailOnNew">
+                        <l7:BooleanValue>true</l7:BooleanValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="a5af7a23ab001c063ef535db8188ad65" srcUri="https://gateway-tst:8443/restman/1.0/policies/a5af7a23ab001c063ef535db8188ad65" targetId="a5af7a23ab001c063ef535db8188ad65" targetUri="https://gateway-tst:8443/restman/1.0/policies/a5af7a23ab001c063ef535db8188ad65" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Security Header Extension</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="c2656fd5ff575252902a7e330e355f53" srcUri="https://gateway-tst:8443/restman/1.0/policies/c2656fd5ff575252902a7e330e355f53" targetId="c2656fd5ff575252902a7e330e355f53" targetUri="https://gateway-tst:8443/restman/1.0/policies/c2656fd5ff575252902a7e330e355f53" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Caching Customization</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914896" srcUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914896" targetId="161861da3a78c5dcdc62696d16914896" targetUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914896" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Cache Look Up Customization</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914883" srcUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914883" targetId="161861da3a78c5dcdc62696d16914883" targetUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914883" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Cache Store Customization</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914861" srcUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914861" targetId="161861da3a78c5dcdc62696d16914861" targetUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914861" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Cache Handler</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914bbb" srcUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914bbb" targetId="161861da3a78c5dcdc62696d16914bbb" targetUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914bbb" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Cache Look Up</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914c21" srcUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/161861da3a78c5dcdc62696d16914c21" targetId="161861da3a78c5dcdc62696d16914c21" targetUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/161861da3a78c5dcdc62696d16914c21" type="ENCAPSULATED_ASSERTION"/>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="bc9a31b7578652a08a514d7d4fef9afd" srcUri="https://gateway-tst:8443/restman/1.0/policies/bc9a31b7578652a08a514d7d4fef9afd" targetId="bc9a31b7578652a08a514d7d4fef9afd" targetUri="https://gateway-tst:8443/restman/1.0/policies/bc9a31b7578652a08a514d7d4fef9afd" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/#OTK Fail with error message</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914be5" srcUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914be5" targetId="161861da3a78c5dcdc62696d16914be5" targetUri="https://gateway-tst:8443/restman/1.0/policies/161861da3a78c5dcdc62696d16914be5" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Cache Store</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="161861da3a78c5dcdc62696d16914c44" srcUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/161861da3a78c5dcdc62696d16914c44" targetId="161861da3a78c5dcdc62696d16914c44" targetUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/161861da3a78c5dcdc62696d16914c44" type="ENCAPSULATED_ASSERTION"/>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="d1bde3d2021a469e82ebf8cac288bbd1" srcUri="https://gateway-tst:8443/restman/1.0/policies/d1bde3d2021a469e82ebf8cac288bbd1" targetId="d1bde3d2021a469e82ebf8cac288bbd1" targetUri="https://gateway-tst:8443/restman/1.0/policies/d1bde3d2021a469e82ebf8cac288bbd1" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Fail with error message</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="d1bde3d2021a469e82ebf8cac288bd97" srcUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/d1bde3d2021a469e82ebf8cac288bd97" targetId="d1bde3d2021a469e82ebf8cac288bd97" targetUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/d1bde3d2021a469e82ebf8cac288bd97" type="ENCAPSULATED_ASSERTION"/>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="d1bde3d2021a469e82ebf8cac288b778" srcUri="https://gateway-tst:8443/restman/1.0/policies/d1bde3d2021a469e82ebf8cac288b778" targetId="d1bde3d2021a469e82ebf8cac288b778" targetUri="https://gateway-tst:8443/restman/1.0/policies/d1bde3d2021a469e82ebf8cac288b778" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK Require SSL (with Client Certificate)</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="d1bde3d2021a469e82ebf8cac288b7c9" srcUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/d1bde3d2021a469e82ebf8cac288b7c9" targetId="d1bde3d2021a469e82ebf8cac288b7c9" targetUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/d1bde3d2021a469e82ebf8cac288b7c9" type="ENCAPSULATED_ASSERTION"/>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="e001cfd0c1c1ffaa18e187b5e72fd946" srcUri="https://gateway-tst:8443/restman/1.0/policies/e001cfd0c1c1ffaa18e187b5e72fd946" targetId="e001cfd0c1c1ffaa18e187b5e72fd946" targetUri="https://gateway-tst:8443/restman/1.0/policies/e001cfd0c1c1ffaa18e187b5e72fd946" type="POLICY">
+                <l7:Properties>
+                    <l7:Property key="MapBy">
+                        <l7:StringValue>path</l7:StringValue>
+                    </l7:Property>
+                    <l7:Property key="MapTo">
+                        <l7:StringValue>/buildingBlocks/OTK HTTP Method Validation</l7:StringValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="3f6b5c92ca2ac3665bc7d8780bc4d876" srcUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/3f6b5c92ca2ac3665bc7d8780bc4d876" targetId="3f6b5c92ca2ac3665bc7d8780bc4d876" targetUri="https://gateway-tst:8443/restman/1.0/encapsulatedAssertions/3f6b5c92ca2ac3665bc7d8780bc4d876" type="ENCAPSULATED_ASSERTION"/>
+            <l7:Mapping action="NewOrExisting" actionTaken="UsedExisting" srcId="af166f3fe1c8bff95a5fff928eace0ac" srcUri="https://gateway-tst:8443/restman/1.0/folders/af166f3fe1c8bff95a5fff928eace0ac" targetId="6c827cbb6889f5b4638fe01f3d683630" targetUri="https://gateway-tst:8443/restman/1.0/folders/6c827cbb6889f5b4638fe01f3d683630" type="FOLDER">
+                <l7:Properties>
+                    <l7:Property key="FailOnNew">
+                        <l7:BooleanValue>true</l7:BooleanValue>
+                    </l7:Property>
+                </l7:Properties>
+            </l7:Mapping>
+            <l7:Mapping action="NewOrExisting" actionTaken="CreatedNew" srcId="e73aa375c92bf77a0b52a366672b0306" srcUri="https://gateway-tst:8443/restman/1.0/services/e73aa375c92bf77a0b52a366672b0306" targetId="e73aa375c92bf77a0b52a366672b0306" targetUri="https://gateway-tst:8443/restman/1.0/services/e73aa375c92bf77a0b52a366672b0306" type="SERVICE"/>
+        </l7:Mappings>
+    </l7:Resource>
+</l7:Item>

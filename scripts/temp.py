@@ -42,7 +42,7 @@ bb = getBuildingBlocks(xmlContents="input/consent.xml",namespaces={"l7": "http:/
 # for val in bb.items():
 #     print(val)
 
-consent = ET.parse("input/consent.xml")
+consent = ET.parse("input/consent.xml",parser=None)
 
 root = consent.getroot()
 namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
@@ -70,7 +70,7 @@ for m in mappings:
 
 out = ET.ElementTree()
 out._setroot(root)
-out.write("out.xml")
+out.write("out.xml",encoding="UTF-8",short_empty_elements=False)
 
 # properties = ET.Element("l7:Properties")
 # prop = ET.SubElement(properties,"l7:Property")
