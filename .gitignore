@@ -11,4 +11,3 @@ workspace/*
 gitlab
 *.bz2
 soapui
-.vscode/*
