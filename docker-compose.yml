@@ -127,16 +127,6 @@ services:
       demo:
         ipv4_address: 10.1.0.50
 
-  nginx-stub:
-    hostname: nginx-stub
-    container_name: nginx-stub
-    image: nginx
-    ports:
-      - "9880:80"
-    networks:
-      demo:
-        ipv4_address: 10.1.0.60
-
 secrets:
   license:
     file: ./license/license.xml
