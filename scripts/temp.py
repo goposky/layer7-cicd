@@ -10,8 +10,7 @@ def getBuildingBlocks(xmlContents, namespaces, folderId):
     tree = ET.parse(xmlContents)
     root = tree.getroot()
 
-    policyDetail = root.findall(
-        "l7:References/l7:Item/l7:Resource/l7:Policy/l7:PolicyDetail", namespaces)
+    policyDetail = root.findall("l7:References/l7:Item/l7:Resource/l7:Policy/l7:PolicyDetail", namespaces)
     policies = {}
     for idx, detail in enumerate(policyDetail):
         folderId = detail.attrib.get("folderId")
@@ -61,19 +60,50 @@ def extendMapping(buildingBlockPolicies, xmlContents, namespaces):
             propertiesMapTo = ET.SubElement(properties, "l7:Property")
             stringValueMapTo = ET.SubElement(propertiesMapTo, "l7:StringValue")
             propertiesMapTo.set("key", "MapTo")
-            stringValueMapTo.text = "/buildingBlocks/" + \
-                buildingBlockPolicies[srcId][0]
+            stringValueMapTo.text = "/buildingBlocks/" + buildingBlockPolicies[srcId][0]
             mapping.insert(0, properties)
 
     bundle._setroot(root)
     return bundle
 
 
-namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
-folderid = "985b4aeeb083ede7d9330256c83b987c"
-policypath = "input/consent.xml"
-buildingblocks = getBuildingBlocks(
-    xmlContents=policypath, namespaces=namespaces, folderId=folderid)
+# def getServices(username, password, restmanUrl):
 
-bundle = extendMapping(buildingBlockPolicies=buildingblocks, xmlContents=policypath, namespaces=namespaces)
-bundle.write("out.xml", encoding="UTF-8")
+namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
+# folderid = "985b4aeeb083ede7d9330256c83b987c"
+# policypath = "input/consent.xml"
+# buildingblocks = getBuildingBlocks(
+#     xmlContents=policypath, namespaces=namespaces, folderId=folderid)
+
+# bundle = extendMapping(buildingBlockPolicies=buildingblocks, xmlContents=policypath, namespaces=namespaces)
+# bundle.write("out.xml", encoding="UTF-8")
+
+
+# folders = requests.get("https://gateway-tst:8443/restman/1.0/folders/0000000000000000ffffffffffffec76/dependencies?level=-1", auth=("admin","password"), verify=False)
+folders = ET.parse("dep.xml")
+# tree = ET.parse(folders.text)
+root = folders.getroot()
+
+
+# serviceDetails = root.findall("l7:Item/l7:Resource/l7:Service/l7:ServiceDetail", namespaces)
+# for service in serviceDetails:
+#     serviceid = service.get("id")
+#     print(serviceid)
+#     # ET.dump(service)
+
+f = root.findall("l7:Resource/l7:DependencyList/l7:Reference/l7:Dependencies/l7:Dependency", namespaces)
+toplevel = {}
+for dep in f:
+    if(dep.find("l7:Type", namespaces).text == "FOLDER"):
+        name = dep.find("l7:Name", namespaces).text
+        folderId = dep.find("l7:Id", namespaces).text
+        fType = dep.find("l7:Type", namespaces).text
+        # print("folderid: " + folderId + "\tname: " + name + "\ttype: " + fType)
+        toplevel[folderId] = name
+
+for k,v in toplevel.items():
+    dependency = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
+    for d in dependency:
+        if(d.find("l7:Id", namespaces).text == str(k)):
+            name = d.find("l7:Name", namespaces).text
+            print(name)
