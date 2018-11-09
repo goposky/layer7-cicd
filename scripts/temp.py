@@ -70,28 +70,32 @@ def extendMapping(buildingBlockPolicies, xmlContents, namespaces):
 # def getServices(username, password, restmanUrl):
 
 namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
-# folderid = "985b4aeeb083ede7d9330256c83b987c"
-# policypath = "input/consent.xml"
-# buildingblocks = getBuildingBlocks(
-#     xmlContents=policypath, namespaces=namespaces, folderId=folderid)
-
-# bundle = extendMapping(buildingBlockPolicies=buildingblocks, xmlContents=policypath, namespaces=namespaces)
-# bundle.write("out.xml", encoding="UTF-8")
-
-
-# folders = requests.get("https://gateway-tst:8443/restman/1.0/folders/0000000000000000ffffffffffffec76/dependencies?level=-1", auth=("admin","password"), verify=False)
 folders = ET.parse("dep.xml")
-# tree = ET.parse(folders.text)
 root = folders.getroot()
 
+refdict = {}
+references = root.findall("l7:Resource/l7:DependencyList/l7:Reference/l7:Dependencies/l7:Dependency", namespaces)
+for reference in references:
+    if (reference.find("l7:Type", namespaces).text == "FOLDER"):
+        rId = reference.find("l7:Id", namespaces).text
+        rName = reference.find("l7:Name", namespaces).text
+        refdict[rId] = rName
 
-# serviceDetails = root.findall("l7:Item/l7:Resource/l7:Service/l7:ServiceDetail", namespaces)
-# for service in serviceDetails:
-#     serviceid = service.get("id")
-#     print(serviceid)
-#     # ET.dump(service)
+fold = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 
-toplevel = root.findall(".//*[l7:Type='FOLDER']/l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
-print(toplevel)
-
-# /l7:Item/l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency[45]
+controlType = "FOLDER"
+for k,v in refdict.items():
+    while controlType == "FOLDER":
+        for f in fold:
+            fName = f.find("l7:Name", namespaces).text
+            fId = f.find("l7:Id", namespaces).text
+            fType = f.find("l7:Type", namespaces).text
+            controlType = fType
+            
+            nested = f.findall("l7:Dependencies/l7:Dependency", namespaces)
+            for n in nested:
+                nName = n.find("l7:Name", namespaces).text
+                nId = n.find("l7:Id", namespaces).text
+                nType = n.find("l7:Type", namespaces).text
+                if (nType == "SERVICE"):
+                    print(v + "/" + fName + "/" + nName)
