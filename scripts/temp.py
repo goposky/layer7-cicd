@@ -97,6 +97,6 @@ for k, v in refdict.items():
                     nName = n.find("l7:Name", namespaces).text
                     nId = n.find("l7:Id", namespaces).text
                     nType = n.find("l7:Type", namespaces).text
-                    if (nType == "SERVICE"):
-                        print(v + "/" + fName + "/" + nName)
+                    # if (nType == "SERVICE"):
+                    print(v + "/" + fName + "/" + nName)
             # controlType = fType
