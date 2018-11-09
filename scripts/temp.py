@@ -91,19 +91,7 @@ root = folders.getroot()
 #     print(serviceid)
 #     # ET.dump(service)
 
-f = root.findall("l7:Resource/l7:DependencyList/l7:Reference/l7:Dependencies/l7:Dependency", namespaces)
-toplevel = {}
-for dep in f:
-    if(dep.find("l7:Type", namespaces).text == "FOLDER"):
-        name = dep.find("l7:Name", namespaces).text
-        folderId = dep.find("l7:Id", namespaces).text
-        fType = dep.find("l7:Type", namespaces).text
-        # print("folderid: " + folderId + "\tname: " + name + "\ttype: " + fType)
-        toplevel[folderId] = name
+toplevel = root.findall(".//*[l7:Type='FOLDER']/l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
+print(toplevel)
 
-for k,v in toplevel.items():
-    dependency = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
-    for d in dependency:
-        if(d.find("l7:Id", namespaces).text == str(k)):
-            name = d.find("l7:Name", namespaces).text
-            print(name)
+# /l7:Item/l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency[45]

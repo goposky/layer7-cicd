@@ -2,7 +2,7 @@
 <l7:Item xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
     <l7:Name>Root Node dependencies</l7:Name>
     <l7:Type>DEPENDENCY</l7:Type>
-    <l7:TimeStamp>2018-11-09T11:33:10.266Z</l7:TimeStamp>
+    <l7:TimeStamp>2018-11-09T12:33:39.111Z</l7:TimeStamp>
     <l7:Link rel="self" uri="https://gateway-tst:8443/restman/1.0/folders/0000000000000000ffffffffffffec76/dependencies?level=-1"/>
     <l7:Resource>
         <l7:DependencyList>
