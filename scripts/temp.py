@@ -83,20 +83,16 @@ for reference in references:
 
 fold = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 
-# controlType = "FOLDER"
 for k, v in refdict.items():
-    # while controlType == "FOLDER":
-        for f in fold:
-            fName = f.find("l7:Name", namespaces).text
-            fId = f.find("l7:Id", namespaces).text
-            fType = f.find("l7:Type", namespaces).text
-            
-            if (fId == k):
-                nested = f.findall("l7:Dependencies/l7:Dependency", namespaces)
-                for n in nested:
-                    nName = n.find("l7:Name", namespaces).text
-                    nId = n.find("l7:Id", namespaces).text
-                    nType = n.find("l7:Type", namespaces).text
-                    # if (nType == "SERVICE"):
-                    print(v + "/" + fName + "/" + nName)
-            # controlType = fType
+    for f in fold:
+        fName = f.find("l7:Name", namespaces).text
+        fId = f.find("l7:Id", namespaces).text
+        fType = f.find("l7:Type", namespaces).text
+        
+        if (fId == k):
+            nested = f.findall("l7:Dependencies/l7:Dependency", namespaces)
+            for n in nested:
+                nName = n.find("l7:Name", namespaces).text
+                nId = n.find("l7:Id", namespaces).text
+                nType = n.find("l7:Type", namespaces).text
+                print(v + "/" + fName + "/" + nName)
