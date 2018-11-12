@@ -3,7 +3,6 @@
 
 import xml.etree.ElementTree as ET
 import requests
-import xmltodict
 
 
 # Get the buildingblock policies based on their folder id
@@ -108,29 +107,28 @@ nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependen
 #             print(totalpath)
 
 dependencies = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
-for dep in dependencies:
-    depId = dep.find("l7:Id", namespaces).text
-    depName = dep.find("l7:Name", namespaces).text
-    depType = dep.find("l7:Type", namespaces).text
 
-    # If type is folder, find the subfolder
-    if(depType == "FOLDER"):
-        nested = dep.findall("l7:Dependencies/l7:Dependency", namespaces)
-        for n in nested:
-            nname = n.find("l7:Name", namespaces).text
-            print(depName + "/" + nname)
+rootid=""
+for i, d in enumerate(dependencies):
+    # if i <= 2:
+    dname = d.find("l7:Name", namespaces).text
+    dtype = d.find("l7:Type", namespaces).text
+    did = d.find("l7:Id", namespaces).text
 
-# with open("dep.xml") as fd:
-#     doc = xmltodict.parse(fd.read())
-# d=doc["l7:Item"]["l7:Resource"]["l7:DependencyList"]["l7:Reference"]["l7:Dependencies"]["l7:Dependency"]
-# folders = doc["l7:Item"]["l7:Resource"]["l7:DependencyList"]["l7:Dependencies"]["l7:Dependency"]
+    nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
+    for n in nested:
+        nname = n.find("l7:Name", namespaces).text
+        ntype = n.find("l7:Type", namespaces).text
+        nid = n.find("l7:Id", namespaces).text
+        rootid=nid
 
-# for f in (folders):
-#     names = f["l7:Name"]
-#     print(names)
-#     print(f)
-#     # dependencies=f["l7:Dependencies"]["l7:Dependency"]
-#     # print(d["l7:Name"])
-#     # for d in dependencies:
-#     #     dname=d["l7:Name"]
-#     #     print(name + "/" +dname)
+    # if(dtype == "SERVICE"):
+    #     continue
+
+    # nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
+    # for n in nested:
+    #     nname = n.find("l7:Name", namespaces).text
+    #     ntype = n.find("l7:Type", namespaces).text
+    #     nid = n.find("l7:Id", namespaces).text
+
+    #     print(dname + "/" + nname + "\t" + nid + " ==> " + ntype)
