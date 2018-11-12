@@ -2,7 +2,7 @@
 <l7:Item xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
     <l7:Name>Root Node dependencies</l7:Name>
     <l7:Type>DEPENDENCY</l7:Type>
-    <l7:TimeStamp>2018-11-09T18:32:52.013Z</l7:TimeStamp>
+    <l7:TimeStamp>2018-11-12T15:24:06.679Z</l7:TimeStamp>
     <l7:Link rel="self" uri="https://gateway-tst:8443/restman/1.0/folders/0000000000000000ffffffffffffec76/dependencies?level=-1"/>
     <l7:Resource>
         <l7:DependencyList>
@@ -48,7 +48,7 @@
                     </l7:Dependency>
                     <l7:Dependency>
                         <l7:Name>Gateway REST Management Service</l7:Name>
-                        <l7:Id>e7be322fa20764a4676645a4758b255a</l7:Id>
+                        <l7:Id>f4f4bfe39eff8bb6a7765993e1cf90f4</l7:Id>
                         <l7:Type>SERVICE</l7:Type>
                     </l7:Dependency>
                 </l7:Dependencies>
@@ -755,6 +755,51 @@
                     <l7:Type>FOLDER</l7:Type>
                     <l7:Dependencies>
                         <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid response_types_supported</l7:Name>
+                            <l7:Id>dcec11ea84d2644c561539fc45b2754d</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid response_modes_supported</l7:Name>
+                            <l7:Id>cb58ad8c1a9353eb38f6bc8547179b50</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid userinfo_endpoint</l7:Name>
+                            <l7:Id>3ee985214cb8ba5807f8f70a31d730cb</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid scopes_supported</l7:Name>
+                            <l7:Id>417b60c1191e97df97b06863f19b1569</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid ui_locales_supported</l7:Name>
+                            <l7:Id>0aad92b5112506263d9f02a93b8e1b74</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid discovery_endpoint DEBUG</l7:Name>
+                            <l7:Id>13209bdb789b7fa7d1bbe15133cd68c3</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid id_token_signing_alg_values_supported</l7:Name>
+                            <l7:Id>2933eff69a08f0c5ae4fb5a0204b0308</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid claim_types_supported</l7:Name>
+                            <l7:Id>346362934435855145925d67535c1037</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 OTK openid grant_types_supported</l7:Name>
+                            <l7:Id>4a17e3f6ca6e29e192d009ca63367c8d</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
                             <l7:Name>OAuth2.0 OTK openid token_endpoint_auth_signing_alg_values_supported</l7:Name>
                             <l7:Id>594ee813f1f9a72aa656e67bf5d3ca64</l7:Id>
                             <l7:Type>POLICY</l7:Type>
@@ -802,51 +847,6 @@
                         <l7:Dependency>
                             <l7:Name>OAuth2.0 OTK openid display_values_supported</l7:Name>
                             <l7:Id>e5967546aed32c3741687d2752e243a6</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid response_types_supported</l7:Name>
-                            <l7:Id>dcec11ea84d2644c561539fc45b2754d</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid response_modes_supported</l7:Name>
-                            <l7:Id>cb58ad8c1a9353eb38f6bc8547179b50</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid userinfo_endpoint</l7:Name>
-                            <l7:Id>3ee985214cb8ba5807f8f70a31d730cb</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid scopes_supported</l7:Name>
-                            <l7:Id>417b60c1191e97df97b06863f19b1569</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid ui_locales_supported</l7:Name>
-                            <l7:Id>0aad92b5112506263d9f02a93b8e1b74</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid discovery_endpoint DEBUG</l7:Name>
-                            <l7:Id>13209bdb789b7fa7d1bbe15133cd68c3</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid id_token_signing_alg_values_supported</l7:Name>
-                            <l7:Id>2933eff69a08f0c5ae4fb5a0204b0308</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid claim_types_supported</l7:Name>
-                            <l7:Id>346362934435855145925d67535c1037</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK openid grant_types_supported</l7:Name>
-                            <l7:Id>4a17e3f6ca6e29e192d009ca63367c8d</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -1070,11 +1070,6 @@
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                         <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK Generate JWT OAuth Token</l7:Name>
-                            <l7:Id>d0a0e193a03a10d250b6f0a4b697123e</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK Validate JWT OAuth Token</l7:Name>
                             <l7:Id>f7df63e962ba746964763ef409cd340e</l7:Id>
                             <l7:Type>POLICY</l7:Type>
@@ -1082,6 +1077,11 @@
                         <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK Replay Attack Protection</l7:Name>
                             <l7:Id>b6e07fbc400c42094b4ad4b995a89a03</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK Generate JWT OAuth Token</l7:Name>
+                            <l7:Id>d0a0e193a03a10d250b6f0a4b697123e</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -1153,13 +1153,13 @@
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                         <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK FIP Client Authentication Extension</l7:Name>
-                            <l7:Id>62fc51f695f95e7fa8f13b632da55df2</l7:Id>
+                            <l7:Name>OAuth2.0 OTK Cookie Management Configuration</l7:Name>
+                            <l7:Id>63302f526d328e9d10614bcda8f91034</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                         <l7:Dependency>
-                            <l7:Name>OAuth2.0 OTK Cookie Management Configuration</l7:Name>
-                            <l7:Id>63302f526d328e9d10614bcda8f91034</l7:Id>
+                            <l7:Name>OAuth2.0 OTK FIP Client Authentication Extension</l7:Name>
+                            <l7:Id>62fc51f695f95e7fa8f13b632da55df2</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -1197,16 +1197,6 @@
                     <l7:Type>FOLDER</l7:Type>
                     <l7:Dependencies>
                         <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid registration_endpoint</l7:Name>
-                            <l7:Id>35bbcb026568591060780aaf23c6814a</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid claims_supported</l7:Name>
-                            <l7:Id>f63b239cd169a343dce7a438ae15e561</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK openid userinfo_endpoint</l7:Name>
                             <l7:Id>9252206f0d75bc0441fec278dd347e4d</l7:Id>
                             <l7:Type>POLICY</l7:Type>
@@ -1216,6 +1206,16 @@
                             <l7:Id>d24cc4dae9125d76c0f9f43f4a1389d3</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid registration_endpoint</l7:Name>
+                            <l7:Id>35bbcb026568591060780aaf23c6814a</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid claims_supported</l7:Name>
+                            <l7:Id>f63b239cd169a343dce7a438ae15e561</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
                     </l7:Dependencies>
                 </l7:Dependency>
                 <l7:Dependency>
@@ -1223,31 +1223,6 @@
                     <l7:Id>a23859acfeffe2133c96c1685dfec338</l7:Id>
                     <l7:Type>FOLDER</l7:Type>
                     <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid userinfo_signing_alg_values_supported</l7:Name>
-                            <l7:Id>3d6098ec6816fa495b95ab42e931db7e</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid acr_values_supported</l7:Name>
-                            <l7:Id>6af9d634c7614beb073778b1c5fe2249</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid service_documentation</l7:Name>
-                            <l7:Id>aff4b16bab56f8f3b106838fc8b3616a</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid token_endpoint_auth_methods_supported</l7:Name>
-                            <l7:Id>f458e57c2cc539f897667657a48b7d0d</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid display_values_supported</l7:Name>
-                            <l7:Id>9e3861ff639b1d05810d674da72bb61d</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
                         <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK openid response_modes_supported</l7:Name>
                             <l7:Id>33d444d52fc014feae1f1c701b9948f7</l7:Id>
@@ -1273,6 +1248,31 @@
                             <l7:Id>f627b518c74f21c2d35af67dacb41283</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid userinfo_signing_alg_values_supported</l7:Name>
+                            <l7:Id>3d6098ec6816fa495b95ab42e931db7e</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid acr_values_supported</l7:Name>
+                            <l7:Id>6af9d634c7614beb073778b1c5fe2249</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid service_documentation</l7:Name>
+                            <l7:Id>aff4b16bab56f8f3b106838fc8b3616a</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid token_endpoint_auth_methods_supported</l7:Name>
+                            <l7:Id>f458e57c2cc539f897667657a48b7d0d</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid display_values_supported</l7:Name>
+                            <l7:Id>9e3861ff639b1d05810d674da72bb61d</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
                     </l7:Dependencies>
                 </l7:Dependency>
                 <l7:Dependency>
@@ -1281,16 +1281,6 @@
                     <l7:Type>FOLDER</l7:Type>
                     <l7:Dependencies>
                         <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid jwks_uri</l7:Name>
-                            <l7:Id>13c98b0043db03d4270b3bd1b6c1309c</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid subject_types_supported</l7:Name>
-                            <l7:Id>bfd1467aac8d4398b2240025a2d457e9</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK openid response_types_supported</l7:Name>
                             <l7:Id>8ae47b18492d063fe9d5e7143ed289b9</l7:Id>
                             <l7:Type>POLICY</l7:Type>
@@ -1298,6 +1288,16 @@
                         <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK openid id_token_signing_alg_values_supported</l7:Name>
                             <l7:Id>dc60b1cf10131dac89cecc9e3c4bb166</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid jwks_uri</l7:Name>
+                            <l7:Id>13c98b0043db03d4270b3bd1b6c1309c</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid subject_types_supported</l7:Name>
+                            <l7:Id>bfd1467aac8d4398b2240025a2d457e9</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -1378,76 +1378,6 @@
                     <l7:Id>985b4aeeb083ede7d9330256c83b987c</l7:Id>
                     <l7:Type>FOLDER</l7:Type>
                     <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - S1 - Validate WSS signature on request_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8b4</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - Z - ApdServiceCruiser - Authentication - Client Certificate (XML)_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8c4</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - R3 - Routing REST via HTTPs - OAuth1_0 - Outbound_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8d4</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - R4 - Routing REST via HTTPs - Basic Authentication - No Strip - Outbound_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534daac</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - Z - AdpServiceCruiser - Validation - message size (XML)_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d81a</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - S4 - Sign request_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d82a</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - E2 - Overstapservice Outbound - Transform and Secure Request_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d83b</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - E3 - SforceService - Set Routing Endpoint_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84f</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - Z - AdpServiceCruiser - Routing - XML via HTTPs inbound_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d85f</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - E3 - TESTSforceService - Set Routing Endpoint_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d873</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - S2 - Sign response_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d883</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - Z - ApdServiceCruiser - Throttling - per Consumer (XML)_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d893</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - S3 - Validate WSS signature on response_policy_version_1</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a4</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>Ziggo - DMZ - Environment variables and defaults_policy_version_1</l7:Name>
-                            <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7db</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
                         <l7:Dependency>
                             <l7:Name>Ziggo - E4 - XPRS - Set Routing Endpoint And Credentials_policy_version_1</l7:Name>
                             <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7fb</l7:Id>
@@ -1551,6 +1481,76 @@
                         <l7:Dependency>
                             <l7:Name>Ziggo - X2 - Transfrom request from SOAP to REST_policy_version_1</l7:Name>
                             <l7:Id>739ec70735e715be8161d39043d1b8e7</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - Z - AdpServiceCruiser - Validation - message size (XML)_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d81a</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - S4 - Sign request_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d82a</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - E2 - Overstapservice Outbound - Transform and Secure Request_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d83b</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - E3 - SforceService - Set Routing Endpoint_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84f</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - Z - AdpServiceCruiser - Routing - XML via HTTPs inbound_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d85f</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - E3 - TESTSforceService - Set Routing Endpoint_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d873</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - S2 - Sign response_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d883</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - Z - ApdServiceCruiser - Throttling - per Consumer (XML)_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d893</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - S3 - Validate WSS signature on response_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a4</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - S1 - Validate WSS signature on request_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8b4</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - Z - ApdServiceCruiser - Authentication - Client Certificate (XML)_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8c4</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - R3 - Routing REST via HTTPs - OAuth1_0 - Outbound_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8d4</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - R4 - Routing REST via HTTPs - Basic Authentication - No Strip - Outbound_policy_version_1</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534daac</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>Ziggo - DMZ - Environment variables and defaults_policy_version_1</l7:Name>
+                            <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7db</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -5374,6 +5374,125 @@
                     </l7:Dependencies>
                 </l7:Dependency>
                 <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid userinfo_endpoint</l7:Name>
+                    <l7:Id>9252206f0d75bc0441fec278dd347e4d</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid userinfo_endpoint</l7:Name>
+                    <l7:Id>3ee985214cb8ba5807f8f70a31d730cb</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid userinfo_endpoint</l7:Name>
+                            <l7:Id>9252206f0d75bc0441fec278dd347e4d</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid scopes_supported</l7:Name>
+                    <l7:Id>d24cc4dae9125d76c0f9f43f4a1389d3</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid scopes_supported</l7:Name>
+                    <l7:Id>417b60c1191e97df97b06863f19b1569</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid scopes_supported</l7:Name>
+                            <l7:Id>d24cc4dae9125d76c0f9f43f4a1389d3</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid ui_locales_supported</l7:Name>
+                    <l7:Id>529950ed8b38a2d8c30724ea13ceed1b</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid ui_locales_supported</l7:Name>
+                    <l7:Id>0aad92b5112506263d9f02a93b8e1b74</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid ui_locales_supported</l7:Name>
+                            <l7:Id>529950ed8b38a2d8c30724ea13ceed1b</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid discovery_endpoint DEBUG</l7:Name>
+                    <l7:Id>be54dad5619924824a2881cfd375c57a</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid discovery_endpoint DEBUG</l7:Name>
+                    <l7:Id>13209bdb789b7fa7d1bbe15133cd68c3</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid discovery_endpoint DEBUG</l7:Name>
+                            <l7:Id>be54dad5619924824a2881cfd375c57a</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid id_token_signing_alg_values_supported</l7:Name>
+                    <l7:Id>dc60b1cf10131dac89cecc9e3c4bb166</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid id_token_signing_alg_values_supported</l7:Name>
+                    <l7:Id>2933eff69a08f0c5ae4fb5a0204b0308</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid id_token_signing_alg_values_supported</l7:Name>
+                            <l7:Id>dc60b1cf10131dac89cecc9e3c4bb166</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid claim_types_supported</l7:Name>
+                    <l7:Id>7d79f29f743e56eeb823498a7f72c9b4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid claim_types_supported</l7:Name>
+                    <l7:Id>346362934435855145925d67535c1037</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid claim_types_supported</l7:Name>
+                            <l7:Id>7d79f29f743e56eeb823498a7f72c9b4</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 #OTK openid grant_types_supported</l7:Name>
+                    <l7:Id>02ffc34e964c1e4b2c18c5681c6cc8e1</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>OAuth2.0 OTK openid grant_types_supported</l7:Name>
+                    <l7:Id>4a17e3f6ca6e29e192d009ca63367c8d</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>OAuth2.0 #OTK openid grant_types_supported</l7:Name>
+                            <l7:Id>02ffc34e964c1e4b2c18c5681c6cc8e1</l7:Id>
+                            <l7:Type>POLICY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
                     <l7:Name>OAuth2.0 #OTK openid token_endpoint_auth_signing_alg_values_supported</l7:Name>
                     <l7:Id>f627b518c74f21c2d35af67dacb41283</l7:Id>
                     <l7:Type>POLICY</l7:Type>
@@ -5539,125 +5658,6 @@
                         <l7:Dependency>
                             <l7:Name>OAuth2.0 #OTK openid display_values_supported</l7:Name>
                             <l7:Id>9e3861ff639b1d05810d674da72bb61d</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid userinfo_endpoint</l7:Name>
-                    <l7:Id>9252206f0d75bc0441fec278dd347e4d</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid userinfo_endpoint</l7:Name>
-                    <l7:Id>3ee985214cb8ba5807f8f70a31d730cb</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid userinfo_endpoint</l7:Name>
-                            <l7:Id>9252206f0d75bc0441fec278dd347e4d</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid scopes_supported</l7:Name>
-                    <l7:Id>d24cc4dae9125d76c0f9f43f4a1389d3</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid scopes_supported</l7:Name>
-                    <l7:Id>417b60c1191e97df97b06863f19b1569</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid scopes_supported</l7:Name>
-                            <l7:Id>d24cc4dae9125d76c0f9f43f4a1389d3</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid ui_locales_supported</l7:Name>
-                    <l7:Id>529950ed8b38a2d8c30724ea13ceed1b</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid ui_locales_supported</l7:Name>
-                    <l7:Id>0aad92b5112506263d9f02a93b8e1b74</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid ui_locales_supported</l7:Name>
-                            <l7:Id>529950ed8b38a2d8c30724ea13ceed1b</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid discovery_endpoint DEBUG</l7:Name>
-                    <l7:Id>be54dad5619924824a2881cfd375c57a</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid discovery_endpoint DEBUG</l7:Name>
-                    <l7:Id>13209bdb789b7fa7d1bbe15133cd68c3</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid discovery_endpoint DEBUG</l7:Name>
-                            <l7:Id>be54dad5619924824a2881cfd375c57a</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid id_token_signing_alg_values_supported</l7:Name>
-                    <l7:Id>dc60b1cf10131dac89cecc9e3c4bb166</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid id_token_signing_alg_values_supported</l7:Name>
-                    <l7:Id>2933eff69a08f0c5ae4fb5a0204b0308</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid id_token_signing_alg_values_supported</l7:Name>
-                            <l7:Id>dc60b1cf10131dac89cecc9e3c4bb166</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid claim_types_supported</l7:Name>
-                    <l7:Id>7d79f29f743e56eeb823498a7f72c9b4</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid claim_types_supported</l7:Name>
-                    <l7:Id>346362934435855145925d67535c1037</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid claim_types_supported</l7:Name>
-                            <l7:Id>7d79f29f743e56eeb823498a7f72c9b4</l7:Id>
-                            <l7:Type>POLICY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 #OTK openid grant_types_supported</l7:Name>
-                    <l7:Id>02ffc34e964c1e4b2c18c5681c6cc8e1</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>OAuth2.0 OTK openid grant_types_supported</l7:Name>
-                    <l7:Id>4a17e3f6ca6e29e192d009ca63367c8d</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>OAuth2.0 #OTK openid grant_types_supported</l7:Name>
-                            <l7:Id>02ffc34e964c1e4b2c18c5681c6cc8e1</l7:Id>
                             <l7:Type>POLICY</l7:Type>
                         </l7:Dependency>
                     </l7:Dependencies>
@@ -6342,278 +6342,6 @@
                     <l7:Type>POLICY</l7:Type>
                 </l7:Dependency>
                 <l7:Dependency>
-                    <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - S1 - Validate WSS signature on request_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8b4</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - Z - ApdServiceCruiser - Authentication - Client Certificate (XML)_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8c4</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - R3 - Routing REST via HTTPs - OAuth1_0 - Outbound_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8d4</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.logBackendFaults</l7:Name>
-                    <l7:Id>5cb90579e30dd8bcd2cc046f1e38c81b</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - R4 - Routing REST via HTTPs - Basic Authentication - No Strip - Outbound_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534daac</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.logBackendFaults</l7:Name>
-                            <l7:Id>5cb90579e30dd8bcd2cc046f1e38c81b</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - Z - AdpServiceCruiser - Validation - message size (XML)_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d81a</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>sgwap-ldv41.office.intern</l7:Name>
-                    <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
-                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - S4 - Sign request_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d82a</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.comprouter.username</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d83a</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - E2 - Overstapservice Outbound - Transform and Secure Request_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d83b</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.comprouter.username</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d83a</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>overstappenRouter</l7:Name>
-                            <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
-                            <l7:Type>SECURE_PASSWORD</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.host</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84e</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.port</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84b</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.protocol</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84c</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.uri</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84d</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - E3 - SforceService - Set Routing Endpoint_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84f</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.host</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84e</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.port</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84b</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.protocol</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84c</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.uri</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84d</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - Z - AdpServiceCruiser - Routing - XML via HTTPs inbound_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d85f</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.host.test</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d870</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.port.test</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d871</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.protocol.test</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d872</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>ziggo.routing.salesforce.login.uri.test</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d86f</l7:Id>
-                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - E3 - TESTSforceService - Set Routing Endpoint_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d873</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.host.test</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d870</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.port.test</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d871</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.protocol.test</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d872</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.routing.salesforce.login.uri.test</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d86f</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - S2 - Sign response_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d883</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - Z - ApdServiceCruiser - Throttling - per Consumer (XML)_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d893</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - S3 - Validate WSS signature on response_policy_version_1</l7:Name>
-                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a4</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                        <l7:Dependency>
-                            <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
-                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
-                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
-                    <l7:Name>Ziggo - DMZ - Environment variables and defaults_policy_version_1</l7:Name>
-                    <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7db</l7:Id>
-                    <l7:Type>POLICY</l7:Type>
-                    <l7:Dependencies>
-                        <l7:Dependency>
-                            <l7:Name>SSL</l7:Name>
-                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
-                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
-                        </l7:Dependency>
-                    </l7:Dependencies>
-                </l7:Dependency>
-                <l7:Dependency>
                     <l7:Name>ziggo.routing.xprscsma.protocol</l7:Name>
                     <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7f0</l7:Id>
                     <l7:Type>CLUSTER_PROPERTY</l7:Type>
@@ -6842,6 +6570,11 @@
                     </l7:Dependencies>
                 </l7:Dependency>
                 <l7:Dependency>
+                    <l7:Name>sgwap-ldv41.office.intern</l7:Name>
+                    <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
+                    <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
                     <l7:Name>Ziggo - R2 - Routing SOAP via HTTP - Inbound_policy_version_1</l7:Name>
                     <l7:Id>5cb90579e30dd8bcd2cc046f1e3914a1</l7:Id>
                     <l7:Type>POLICY</l7:Type>
@@ -6997,6 +6730,11 @@
                     <l7:Type>POLICY</l7:Type>
                 </l7:Dependency>
                 <l7:Dependency>
+                    <l7:Name>ziggo.routing.logBackendFaults</l7:Name>
+                    <l7:Id>5cb90579e30dd8bcd2cc046f1e38c81b</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
                     <l7:Name>Ziggo - R3 - Routing REST via HTTPs - Outbound_policy_version_1</l7:Name>
                     <l7:Id>739ec70735e715be8161d39043d1b584</l7:Id>
                     <l7:Type>POLICY</l7:Type>
@@ -7040,6 +6778,268 @@
                 <l7:Dependency>
                     <l7:Name>Ziggo - X2 - Transfrom request from SOAP to REST_policy_version_1</l7:Name>
                     <l7:Id>739ec70735e715be8161d39043d1b8e7</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - Z - AdpServiceCruiser - Validation - message size (XML)_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d81a</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - S4 - Sign request_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d82a</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.comprouter.username</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d83a</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - E2 - Overstapservice Outbound - Transform and Secure Request_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d83b</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.comprouter.username</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d83a</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>overstappenRouter</l7:Name>
+                            <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
+                            <l7:Type>SECURE_PASSWORD</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.host</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84e</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.port</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84b</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.protocol</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84c</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.uri</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84d</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - E3 - SforceService - Set Routing Endpoint_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d84f</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.host</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84e</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.port</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84b</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.protocol</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84c</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.uri</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d84d</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - Z - AdpServiceCruiser - Routing - XML via HTTPs inbound_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d85f</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.host.test</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d870</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.port.test</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d871</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.protocol.test</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d872</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.routing.salesforce.login.uri.test</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d86f</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - E3 - TESTSforceService - Set Routing Endpoint_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d873</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.host.test</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d870</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.port.test</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d871</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.protocol.test</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d872</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.salesforce.login.uri.test</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d86f</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - S2 - Sign response_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d883</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>sgwap-ldv41.office.intern</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:sgwap-ldv41.office.intern</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - Z - ApdServiceCruiser - Throttling - per Consumer (XML)_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d893</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
+                    <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - S3 - Validate WSS signature on response_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - S1 - Validate WSS signature on request_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8b4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.s.signature_verification.lip.certificate</l7:Name>
+                            <l7:Id>3911f4f9e80f49fc93d6ff92e534d8a3</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - Z - ApdServiceCruiser - Authentication - Client Certificate (XML)_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8c4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - R3 - Routing REST via HTTPs - OAuth1_0 - Outbound_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534d8d4</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - R4 - Routing REST via HTTPs - Basic Authentication - No Strip - Outbound_policy_version_1</l7:Name>
+                    <l7:Id>3911f4f9e80f49fc93d6ff92e534daac</l7:Id>
+                    <l7:Type>POLICY</l7:Type>
+                    <l7:Dependencies>
+                        <l7:Dependency>
+                            <l7:Name>SSL</l7:Name>
+                            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+                            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+                        </l7:Dependency>
+                        <l7:Dependency>
+                            <l7:Name>ziggo.routing.logBackendFaults</l7:Name>
+                            <l7:Id>5cb90579e30dd8bcd2cc046f1e38c81b</l7:Id>
+                            <l7:Type>CLUSTER_PROPERTY</l7:Type>
+                        </l7:Dependency>
+                    </l7:Dependencies>
+                </l7:Dependency>
+                <l7:Dependency>
+                    <l7:Name>Ziggo - DMZ - Environment variables and defaults_policy_version_1</l7:Name>
+                    <l7:Id>5cb90579e30dd8bcd2cc046f1e38c7db</l7:Id>
                     <l7:Type>POLICY</l7:Type>
                     <l7:Dependencies>
                         <l7:Dependency>
@@ -12206,7 +12206,7 @@
                 </l7:Dependency>
                 <l7:Dependency>
                     <l7:Name>Gateway REST Management Service</l7:Name>
-                    <l7:Id>e7be322fa20764a4676645a4758b255a</l7:Id>
+                    <l7:Id>f4f4bfe39eff8bb6a7765993e1cf90f4</l7:Id>
                     <l7:Type>SERVICE</l7:Type>
                     <l7:Dependencies>
                         <l7:Dependency>
@@ -12564,11 +12564,6 @@
                     <l7:Type>ENCAPSULATED_ASSERTION</l7:Type>
                 </l7:MissingDependency>
                 <l7:MissingDependency>
-                    <l7:Name>overstappenRouter</l7:Name>
-                    <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
-                    <l7:Type>SECURE_PASSWORD</l7:Type>
-                </l7:MissingDependency>
-                <l7:MissingDependency>
                     <l7:Name>xprscsmapassword</l7:Name>
                     <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
                     <l7:Type>SECURE_PASSWORD</l7:Type>
@@ -12585,6 +12580,11 @@
                 </l7:MissingDependency>
                 <l7:MissingDependency>
                     <l7:Name>xprstelkpassword</l7:Name>
+                    <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
+                    <l7:Type>SECURE_PASSWORD</l7:Type>
+                </l7:MissingDependency>
+                <l7:MissingDependency>
+                    <l7:Name>overstappenRouter</l7:Name>
                     <l7:Id>0000000000000000ffffffffffffffff</l7:Id>
                     <l7:Type>SECURE_PASSWORD</l7:Type>
                 </l7:MissingDependency>

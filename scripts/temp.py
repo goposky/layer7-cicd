@@ -69,6 +69,7 @@ def extendMapping(buildingBlockPolicies, xmlContents, namespaces):
 
 # def getServices(username, password, restmanUrl):
 
+
 namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
 folders = ET.parse("dep.xml")
 root = folders.getroot()
@@ -76,23 +77,31 @@ root = folders.getroot()
 refdict = {}
 references = root.findall("l7:Resource/l7:DependencyList/l7:Reference/l7:Dependencies/l7:Dependency", namespaces)
 for reference in references:
-    if (reference.find("l7:Type", namespaces).text == "FOLDER"):
-        rId = reference.find("l7:Id", namespaces).text
-        rName = reference.find("l7:Name", namespaces).text
-        refdict[rId] = rName
+    rId = reference.find("l7:Id", namespaces).text
+    rName = reference.find("l7:Name", namespaces).text
+    refdict[rId] = rName
 
-fold = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
+deps = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
+nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency/l7:Dependencies/l7:Dependency", namespaces)
 
-for k, v in refdict.items():
-    for f in fold:
-        fName = f.find("l7:Name", namespaces).text
-        fId = f.find("l7:Id", namespaces).text
-        fType = f.find("l7:Type", namespaces).text
-        
-        if (fId == k):
-            nested = f.findall("l7:Dependencies/l7:Dependency", namespaces)
-            for n in nested:
-                nName = n.find("l7:Name", namespaces).text
-                nId = n.find("l7:Id", namespaces).text
-                nType = n.find("l7:Type", namespaces).text
-                print(v + "/" + fName + "/" + nName)
+# print(refdict)
+
+for d in deps:
+    did = d.find("l7:Id", namespaces).text
+    dname = d.find("l7:Name", namespaces).text
+    dtype = d.find("l7:Type", namespaces).text
+
+    nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
+    for n in nested:
+        nid = n.find("l7:Id", namespaces).text
+        nname = n.find("l7:Name", namespaces).text
+        ntype = n.find("l7:Type", namespaces).text
+        fpath = ""
+        fullpath = ""
+        if(ntype == "FOLDER"):
+            fpath = dname + "/" + nname
+        elif(ntype == "SERVICE"):
+            fullpath = dname + "/" + nname
+        totalpath = fpath + "/" + fullpath
+        if(len(totalpath) > 1):
+            print(totalpath)
