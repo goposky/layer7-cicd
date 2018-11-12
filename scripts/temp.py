@@ -3,6 +3,7 @@
 
 import xml.etree.ElementTree as ET
 import requests
+import xmltodict
 
 
 # Get the buildingblock policies based on their folder id
@@ -86,22 +87,50 @@ nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependen
 
 # print(refdict)
 
-for d in deps:
-    did = d.find("l7:Id", namespaces).text
-    dname = d.find("l7:Name", namespaces).text
-    dtype = d.find("l7:Type", namespaces).text
+# for d in deps:
+#     did = d.find("l7:Id", namespaces).text
+#     dname = d.find("l7:Name", namespaces).text
+#     dtype = d.find("l7:Type", namespaces).text
 
-    nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
-    for n in nested:
-        nid = n.find("l7:Id", namespaces).text
-        nname = n.find("l7:Name", namespaces).text
-        ntype = n.find("l7:Type", namespaces).text
-        fpath = ""
-        fullpath = ""
-        if(ntype == "FOLDER"):
-            fpath = dname + "/" + nname
-        elif(ntype == "SERVICE"):
-            fullpath = dname + "/" + nname
-        totalpath = fpath + "/" + fullpath
-        if(len(totalpath) > 1):
-            print(totalpath)
+#     nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
+#     for n in nested:
+#         nid = n.find("l7:Id", namespaces).text
+#         nname = n.find("l7:Name", namespaces).text
+#         ntype = n.find("l7:Type", namespaces).text
+#         fpath = ""
+#         fullpath = ""
+#         if(ntype == "FOLDER"):
+#             fpath = dname + "/" + nname
+#         elif(ntype == "SERVICE"):
+#             fullpath = dname + "/" + nname
+#         totalpath = fpath + "/" + fullpath
+#         if(len(totalpath) > 1):
+#             print(totalpath)
+
+dependencies = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
+for dep in dependencies:
+    depId=dep.find("l7:Id",namespaces).text
+    depName=dep.find("l7:Name",namespaces).text
+    depType=dep.find("l7:Type",namespaces).text
+    
+    # If type is folder, find the subfolder
+    if(depType=="FOLDER"):
+        nested=dep.findall("l7:Dependencies/l7:Dependency",namespaces)
+        for n in nested:
+            nname=n.find("l7:Name",namespaces).text
+            print(nname)
+
+# with open("dep.xml") as fd:
+#     doc = xmltodict.parse(fd.read())
+# d=doc["l7:Item"]["l7:Resource"]["l7:DependencyList"]["l7:Reference"]["l7:Dependencies"]["l7:Dependency"]
+# folders = doc["l7:Item"]["l7:Resource"]["l7:DependencyList"]["l7:Dependencies"]["l7:Dependency"]
+
+# for f in (folders):
+#     names = f["l7:Name"]
+#     print(names)
+#     print(f)
+#     # dependencies=f["l7:Dependencies"]["l7:Dependency"]
+#     # print(d["l7:Name"])
+#     # for d in dependencies:
+#     #     dname=d["l7:Name"]
+#     #     print(name + "/" +dname)
