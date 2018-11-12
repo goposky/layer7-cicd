@@ -109,16 +109,16 @@ nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependen
 
 dependencies = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 for dep in dependencies:
-    depId=dep.find("l7:Id",namespaces).text
-    depName=dep.find("l7:Name",namespaces).text
-    depType=dep.find("l7:Type",namespaces).text
-    
+    depId = dep.find("l7:Id", namespaces).text
+    depName = dep.find("l7:Name", namespaces).text
+    depType = dep.find("l7:Type", namespaces).text
+
     # If type is folder, find the subfolder
-    if(depType=="FOLDER"):
-        nested=dep.findall("l7:Dependencies/l7:Dependency",namespaces)
+    if(depType == "FOLDER"):
+        nested = dep.findall("l7:Dependencies/l7:Dependency", namespaces)
         for n in nested:
-            nname=n.find("l7:Name",namespaces).text
-            print(nname)
+            nname = n.find("l7:Name", namespaces).text
+            print(depName + "/" + nname)
 
 # with open("dep.xml") as fd:
 #     doc = xmltodict.parse(fd.read())
