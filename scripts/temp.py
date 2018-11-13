@@ -84,28 +84,6 @@ for reference in references:
 deps = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency/l7:Dependencies/l7:Dependency", namespaces)
 
-# print(refdict)
-
-# for d in deps:
-#     did = d.find("l7:Id", namespaces).text
-#     dname = d.find("l7:Name", namespaces).text
-#     dtype = d.find("l7:Type", namespaces).text
-
-#     nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
-#     for n in nested:
-#         nid = n.find("l7:Id", namespaces).text
-#         nname = n.find("l7:Name", namespaces).text
-#         ntype = n.find("l7:Type", namespaces).text
-#         fpath = ""
-#         fullpath = ""
-#         if(ntype == "FOLDER"):
-#             fpath = dname + "/" + nname
-#         elif(ntype == "SERVICE"):
-#             fullpath = dname + "/" + nname
-#         totalpath = fpath + "/" + fullpath
-#         if(len(totalpath) > 1):
-#             print(totalpath)
-
 # dependencies = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 # references = root.findall("l7:Resource/l7:DependencyList/l7:Reference/l7:Dependencies/l7:Dependency", namespaces)
 
@@ -170,8 +148,18 @@ for dep in dependencies:
         dep = {"depId": depId, "depType": depType, "depName": depName, "nestedId": ndepId, "nestedType": ndepType, "nestedName": ndepName}
         dependenciesList.append(dep)
 
-for dItem in dependenciesList:
-    for nItem in dependenciesList:
-        if(dItem.get("nestedId") == nItem.get("depId")):
-            path = dItem.get("depName") + "/" + nItem.get("depName")
-            print(path)
+
+for i, nItem in enumerate(dependenciesList):
+    if(nItem.get("nestedType") == "SERVICE"):
+        # path = nItem.get("depName") + "/" + nItem.get("nestedName")
+
+        dependencyFound = True
+        while(dependencyFound):
+            for item in dependenciesList:
+                itemDepId = nItem.get("depId")
+                itemNestedId = item.get("nestedId")
+                if(itemDepId == itemNestedId):
+                    s = item.get("depName") + "/" + nItem.get("depName")
+                    print(s)
+                else:
+                    dependencyFound = False
