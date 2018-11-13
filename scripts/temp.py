@@ -108,27 +108,33 @@ nested = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependen
 
 dependencies = root.findall("l7:Resource/l7:DependencyList/l7:Dependencies/l7:Dependency", namespaces)
 
-rootid=""
-for i, d in enumerate(dependencies):
-    # if i <= 2:
+
+depList = list()
+
+for d in dependencies:
     dname = d.find("l7:Name", namespaces).text
     dtype = d.find("l7:Type", namespaces).text
     did = d.find("l7:Id", namespaces).text
 
+    # rep = {"id": did, "type": dtype, "name": dname}
+
     nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
     for n in nested:
-        nname = n.find("l7:Name", namespaces).text
-        ntype = n.find("l7:Type", namespaces).text
         nid = n.find("l7:Id", namespaces).text
-        rootid=nid
+        ntype = n.find("l7:Type", namespaces).text
+        nname = n.find("l7:Name", namespaces).text
 
-    # if(dtype == "SERVICE"):
-    #     continue
+        dep = {"id": did, "type": dtype, "name": dname, "depid": nid, "deptype": ntype, "depname": nname}
+        depList.append(dep)
 
-    # nested = d.findall("l7:Dependencies/l7:Dependency", namespaces)
-    # for n in nested:
-    #     nname = n.find("l7:Name", namespaces).text
-    #     ntype = n.find("l7:Type", namespaces).text
-    #     nid = n.find("l7:Id", namespaces).text
-
-    #     print(dname + "/" + nname + "\t" + nid + " ==> " + ntype)
+for it in depList:
+    path=""
+    fid=""
+    if(it.get("deptype")=="SERVICE"):
+        path = it.get("name") + "/" + it.get("depname")
+        fid = it.get("id")
+    for x in depList:
+        if(x.get("depid")==fid):
+            path = x.get("name") + "/" + path
+            print(path)
+    # print(path)
