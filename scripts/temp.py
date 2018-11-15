@@ -96,6 +96,42 @@ class Gateway:
         bundle._setroot(root)
         return bundle
 
+    # Exports a given bundle
+    # FIXME: pretty print the xml when writing out
+    def export(self, bundleId, name, outputDir, exportType="service"):
+        # Create the directories to export to
+        dirs = self.createDirs(outputDir=outputDir, bundleName=name)
+
+        # Get the bundle by calling the rest api
+        bundle = self.getBundle(exportType, bundleId)
+
+        tree = ET.fromstring(bundle)
+        bundleXml = ET.ElementTree()
+        for prefix, url in self.namespaces.items(:
+            ET.register_namespace(prefix, url)
+
+        root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
+        bundleXml._setroot(root)
+        bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+
+        # Create a mapping file with default action set to NewOrExisting
+        os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
+            dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
+
+        # Adjust mapping file for building block policies to map by name and path to building blocks folder
+        mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
+        mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+
+        # Template the service
+        template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " + "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
+        (output, err) = template.communicate()
+        template.wait()
+
+        # Add folder path property
+        properties = open(dirs.get("conf") + name + ".properties", "a")
+        properties.write("service.folderpath=/" + path)
+        properties.close()
+
     # Exports all the bundles for the given type
     # FIXME: pretty print xml when writing out
     def exportAll(self, exportList, outputDir, exportType="service"):
