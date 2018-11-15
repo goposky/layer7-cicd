@@ -96,83 +96,91 @@ class Gateway:
         bundle._setroot(root)
         return bundle
 
-    # Exports a given bundle
-    # FIXME: pretty print the xml when writing out
-    def export(self, bundleId, name, outputDir, exportType="service"):
-        # Create the directories to export to
-        dirs = self.createDirs(outputDir=outputDir, bundleName=name)
-
-        # Get the bundle by calling the rest api
-        bundle = self.getBundle(exportType, bundleId)
-
-        tree = ET.fromstring(bundle)
-        bundleXml = ET.ElementTree()
-        for prefix, url in self.namespaces.items(:
-            ET.register_namespace(prefix, url)
-
-        root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
-        bundleXml._setroot(root)
-        bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
-
-        # Create a mapping file with default action set to NewOrExisting
-        os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
-            dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
-
-        # Adjust mapping file for building block policies to map by name and path to building blocks folder
-        mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
-        mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
-
-        # Template the service
-        template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " + "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
-        (output, err) = template.communicate()
-        template.wait()
-
-        # Add folder path property
-        properties = open(dirs.get("conf") + name + ".properties", "a")
-        properties.write("service.folderpath=/" + path)
-        properties.close()
-
-    # Exports all the bundles for the given type
+    # Exports all the bundles for the given type, or bundle for the given ids
     # FIXME: pretty print xml when writing out
-    def exportAll(self, exportList, outputDir, exportType="service"):
-        for item in exportList:
-            if item.get("type") == exportType:
-                # The name of the export type is the string following the last / character
-                name = item.get("path")[item.get("path").rindex("/") + 1:]
-                path = item.get("path")[:item.get("path").rindex("/")]
+    def export(self, exportList, outputDir, exportType="service", bundleId=None):
+        # When no bundle id is provided, we export all
+        if bundleId is None:
+            for item in exportList:
+                if item.get("type") == exportType and bundleId is None:
+                    # The name of the export type is the string following the last / character
+                    name = item.get("path")[item.get("path").rindex("/") + 1:]
+                    path = item.get("path")[:item.get("path").rindex("/")]
 
-                # Create the directories to export to
-                dirs = self.createDirs(outputDir=outputDir, bundleName=name)
+                    # Create the directories to export to
+                    dirs = self.createDirs(outputDir=outputDir, bundleName=name)
 
-                # Get the bundle by calling the rest api
-                bundle = self.getBundle(exportType, item.get("id"))
+                    # Get the bundle by calling the rest api
+                    bundle = self.getBundle(exportType, item.get("id"))
 
-                tree = ET.fromstring(bundle)
-                bundleXml = ET.ElementTree()
-                for prefix, url in self.namespaces.items():
-                    ET.register_namespace(prefix, url)
+                    tree = ET.fromstring(bundle)
+                    bundleXml = ET.ElementTree()
+                    for prefix, url in self.namespaces.items():
+                        ET.register_namespace(prefix, url)
 
-                root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
-                bundleXml._setroot(root)
-                bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+                    root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
+                    bundleXml._setroot(root)
+                    bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
 
-                # Create a mapping file with default action set to NewOrExisting
-                os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
-                         dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
+                    # Create a mapping file with default action set to NewOrExisting
+                    os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
+                             dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
 
-                # Adjust mapping file for building block policies to map by name and path to building blocks folder
-                mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
-                mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+                    # Adjust mapping file for building block policies to map by name and path to building blocks folder
+                    mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
+                    mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
 
-                # Template the service
-                template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " + "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
-                (output, err) = template.communicate()
-                template.wait()
+                    # Template the service
+                    template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " +
+                                                "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
+                    (output, err) = template.communicate()
+                    template.wait()
 
-                # Add folder path property
-                properties = open(dirs.get("conf") + name + ".properties", "a")
-                properties.write("service.folderpath=/" + path)
-                properties.close()
+                    # Add folder path property
+                    properties = open(dirs.get("conf") + name + ".properties", "a")
+                    properties.write("service.folderpath=/" + path)
+                    properties.close()
+        # Export the bundle for the given id
+        elif bundleId is not None:
+            for item in exportList:
+                if item.get("id") == bundleId and item.get("type") == exportType:
+                    # The name of the export type is the string following the last / character
+                    name = item.get("path")[item.get("path").rindex("/") + 1:]
+                    path = item.get("path")[:item.get("path").rindex("/")]
+
+                    # Create the directories to export to
+                    dirs = self.createDirs(outputDir=outputDir, bundleName=name)
+
+                    # Get the bundle by calling the rest api
+                    bundle = self.getBundle(exportType, item.get("id"))
+
+                    tree = ET.fromstring(bundle)
+                    bundleXml = ET.ElementTree()
+                    for prefix, url in self.namespaces.items():
+                        ET.register_namespace(prefix, url)
+
+                    root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
+                    bundleXml._setroot(root)
+                    bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+
+                    # Create a mapping file with default action set to NewOrExisting
+                    os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
+                             dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
+
+                    # Adjust mapping file for building block policies to map by name and path to building blocks folder
+                    mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
+                    mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+
+                    # Template the service
+                    template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " +
+                                                "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
+                    (output, err) = template.communicate()
+                    template.wait()
+
+                    # Add folder path property
+                    properties = open(dirs.get("conf") + name + ".properties", "a")
+                    properties.write("service.folderpath=/" + path)
+                    properties.close()
 
 
 if __name__ == "__main__":
@@ -184,7 +192,9 @@ if __name__ == "__main__":
     gateway = "NL_BSS"
     gw = Gateway(argFile=argfile, username=username, password=password, restmanUrl=restmanurl, namespaces=namespaces, gateway=gateway)
 
-    gw.exportAll(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
+    # gw.exportAll(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
+
+    gw.export(bundleId="3911f4f9e80f49fc93d6ff92e534dd16",exportList=gw.browse(),outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
 
 
 # # Get the folder id
