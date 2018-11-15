@@ -207,7 +207,7 @@ if __name__ == "__main__":
     gateway = "NL_BSS"
     gw = Gateway(argFile=argfile, username=username, password=password, restmanUrl=restmanurl, namespaces=namespaces, gateway=gateway)
 
-    gw.exportAll(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
+    gw.exportBundle(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
 
     # gw.exportBundle(bundleId="3911f4f9e80f49fc93d6ff92e534dd16", exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
 
