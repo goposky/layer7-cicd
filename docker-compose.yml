@@ -31,7 +31,7 @@ services:
       SSG_DATABASE_PASSWORD: "dbpassword"
       SSG_CLUSTER_HOST: "localhost"
       SSG_CLUSTER_PASSWORD: "password"
-      SSG_JVM_HEAP: "3g"
+      SSG_JVM_HEAP: "1g"
       EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
 
   mysql-dev:
@@ -126,16 +126,6 @@ services:
     networks:
       demo:
         ipv4_address: 10.1.0.50
-
-  nginx-stub:
-    hostname: nginx-stub
-    container_name: nginx-stub
-    image: nginx
-    ports:
-      - "9880:80"
-    networks:
-      demo:
-        ipv4_address: 10.1.0.60
 
 secrets:
   license:
