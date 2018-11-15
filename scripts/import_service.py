@@ -6,7 +6,7 @@ import subprocess
 
 parser = argparse.ArgumentParser(description="Import a service from the checked out git project into the gateway")
 parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
-parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=True,  help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
+parser.add_argument("-p", "--plaintextEncryptionPassphrase", required=True, help="Plaintext passphrase for encryption. Use the prefix '@file:' to read passphrase from a file.")
 parser.add_argument("-r", "--results", required=True, help="Results file of migration operations.")
 parser.add_argument("-b", "--bundle", required=True, help="Bundle to import")
 args = parser.parse_args()

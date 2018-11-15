@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 import xml.etree.ElementTree as ET
 import requests
 import os
@@ -98,7 +97,7 @@ class Gateway:
 
     # Exports all the bundles for the given type, or bundle for the given ids
     # FIXME: pretty print xml when writing out
-    def export(self, exportList, outputDir, exportType="service", bundleId=None):
+    def exportBundle(self, exportList, outputDir, exportType="service", bundleId=None):
         # When no bundle id is provided, we export all
         if bundleId is None:
             for item in exportList:
@@ -182,6 +181,22 @@ class Gateway:
                     properties.write("service.folderpath=/" + path)
                     properties.close()
 
+    # Import a bundle
+    def importBundle(self, outputDir, bundleName, results):
+        confDir = outputDir + "/" + bundleName + "/" + self.gateway + "/conf/"
+        srcDir = outputDir + "/" + bundleName + "/" + self.gateway + "/src/"
+
+        # Read the folderpath from the properties file
+        folderPath = None
+        with open(confDir + bundleName + ".properties") as fp:
+            for line in fp:
+                if "service.folderpath" in line:
+                    folderPath = line[line.rindex("=") + 1:]
+        gmuImport = subprocess.Popen("gmu migrateIn --argFile " + self.argFile + " --results " + results + " --bundle " + "\"" + srcDir + "/" + bundleName + ".xml" + "\"" + " --destFolder " +
+                                     folderPath + " --map " + "\"" + srcDir + bundleName + "-mapping.xml" + "\"" + " --template " + "\"" + confDir + bundleName + ".properties" + "\"", stdout=subprocess.PIPE, shell=True)
+        (output, err) = gmuImport.communicate()
+        gmuImport.wait()
+
 
 if __name__ == "__main__":
     argfile = "/home/amresh/Projects/ziggo/layer7/gitlab.com/layer7-cicd/workspace/dev-argFile.properties"
@@ -194,7 +209,12 @@ if __name__ == "__main__":
 
     # gw.exportAll(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
 
-    gw.export(bundleId="3911f4f9e80f49fc93d6ff92e534dd16",exportList=gw.browse(),outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
+    # gw.exportBundle(bundleId="3911f4f9e80f49fc93d6ff92e534dd16", exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
+
+    gwTst = Gateway(argFile="/home/amresh/Projects/ziggo/layer7/gitlab.com/layer7-cicd/workspace/tst-argFile.properties", restmanUrl="https://gateway-tst:8443/restman",
+                    username="admin", password="password", namespaces={"l7": "http://ns.l7tech.com/2010/04/gateway-management"}, gateway="NL_BSS")
+
+    gwTst.importBundle(outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl", bundleName="Peal Adress", results="res.xml")
 
 
 # # Get the folder id
