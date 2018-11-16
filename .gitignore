@@ -1,0 +1,13 @@
+license/license.xml
+.env
+jenkins/*
+!jenkins/README.md
+!jenkins/Dockerfile
+gmu/*
+!gmu/README.md
+workspace/*
+!workspace/dev-argFile.properties
+*.swp
+gitlab
+*.bz2
+soapui

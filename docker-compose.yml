@@ -1,0 +1,144 @@
+# Copyright (c) 2018 CA. All rights reserved.
+# This software may be modified and distributed under the terms
+# of the MIT license.  See the LICENSE file for details.
+
+version: '3.4'
+
+services:
+  gateway-dev:
+    hostname: gateway-dev
+    container_name: gateway-dev
+    image: caapim/gateway:9.3.00
+    ports:
+      - "8081:8080"
+      - "8441:8443"
+      - "9441:9443"
+      - "8001:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.10
+    volumes:
+      - restman-dev:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+    secrets:
+      - source: license
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+    environment:
+      ACCEPT_LICENSE: "true"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+      SSG_DATABASE_JDBC_URL: "jdbc:mysql://mysql-dev:3306/ssg"
+      SSG_DATABASE_USER: "ssgdbuser"
+      SSG_DATABASE_PASSWORD: "dbpassword"
+      SSG_CLUSTER_HOST: "localhost"
+      SSG_CLUSTER_PASSWORD: "password"
+      SSG_JVM_HEAP: "1g"
+      EXTRA_JAVA_ARGS: "-XX:ParallelGCThreads=4 -Dcom.l7tech.bootstrap.autoTrustSslKey=trustAnchor,TrustedFor.SSL,TrustedFor.SAML_ISSUER"
+
+  mysql-dev:
+    hostname: mysql-dev
+    container_name: mysql-dev
+    image: mysql:5.7
+    ports:
+      - "33061:3306"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.11
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_USER=ssgdbuser
+      - MYSQL_PASSWORD=dbpassword
+      - MYSQL_DATABASE=ssg
+    volumes:
+      - dbvolume:/var/lib/mysql
+    command:
+      - "--character-set-server=utf8"
+      - "--innodb_log_buffer_size=32M"
+      - "--innodb_log_file_size=80M"
+      - "--max_allowed_packet=8M"
+
+  gateway-tst:
+    hostname: gateway-tst
+    container_name: gateway-tst
+    image: caapim/gateway:9.3.00
+    ports:
+      - "8082:8080"
+      - "8442:8443"
+      - "9442:9443"
+      - "8002:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.20
+    volumes:
+      - restman-tst:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+    secrets:
+      - source: license
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+    environment:
+      ACCEPT_LICENSE: "true"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+      SSG_JVM_HEAP: "1g"
+
+  gateway-prd:
+    hostname: gateway-prd
+    container_name: gateway-prd
+    image: caapim/gateway:9.3.00
+    ports:
+      - "8083:8080"
+      - "8443:8443"
+      - "9443:9443"
+      - "8003:8000"
+    networks:
+      demo:
+        ipv4_address: 10.1.0.30
+    volumes:
+      - restman-prd:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
+    secrets:
+      - source: license
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+    environment:
+      ACCEPT_LICENSE: "true"
+      SSG_ADMIN_USERNAME: "admin"
+      SSG_ADMIN_PASSWORD: "password"
+      SSG_JVM_HEAP: "1g"
+
+  jenkins:
+    hostname: jenkins
+    container_name: jenkins
+    image: jenkins-layer7
+    volumes:
+      - ./jenkins:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
+    networks:
+      demo:
+        ipv4_address: 10.1.0.40
+
+  gmu-slave:
+    hostname: gmu-slave
+    container_name: gmu-slave
+    image: gmu-slave
+    volumes:
+    - ./workspace:/home/jenkins/mnt
+    environment:
+    - JENKINS_SLAVE_SSH_PUBKEY=${PUBKEY}
+    networks:
+      demo:
+        ipv4_address: 10.1.0.50
+
+secrets:
+  license:
+    file: ./license/license.xml
+
+networks:
+  demo:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.1.0.0/24
+volumes:
+  restman-dev:
+  dbvolume:
+  restman-tst:
+  restman-prd:

@@ -1,0 +1,8 @@
+FROM goposky/jenkins-ssh-slave:alpine
+
+USER root
+RUN apk --no-cache add curl
+USER jenkins
+COPY --chown=jenkins:jenkins ./gmu/ /home/jenkins/gmu/
+ENV PATH "$PATH:/home/jenkins/gmu"
+
