@@ -5,6 +5,9 @@ import requests
 import os
 import pathlib
 import subprocess
+import argparse
+from tqdm import tqdm
+requests.packages.urllib3.disable_warnings()
 
 
 class Gateway:
@@ -46,7 +49,7 @@ class Gateway:
     # Gets the bundle
     def getBundle(self, resourceType, id):
         endpoint = self.restmanUrl + "/1.0/bundle"
-        parameters = {resourceType: id}
+        parameters = {resourceType: id, "includeDependencies": "true"}
         bundle = requests.get(url=endpoint, auth=(self.username, self.password), params=parameters, verify=False)
         return bundle.text
 
@@ -100,48 +103,51 @@ class Gateway:
     def exportBundle(self, exportList, outputDir, exportType="service", bundleId=None):
         # When no bundle id is provided, we export all
         if bundleId is None:
-            for item in exportList:
-                if item.get("type") == exportType and bundleId is None:
-                    # The name of the export type is the string following the last / character
-                    name = item.get("path")[item.get("path").rindex("/") + 1:]
-                    path = item.get("path")[:item.get("path").rindex("/")]
+            progressbar = tqdm(list(filter(lambda bundle: bundle.get("type") == exportType, exportList)))
+            for item in progressbar:
+                progressbar.set_description(" exporting: " + item.get("path"))
+                # The name of the export type is the string following the last / character
+                name = item.get("path")[item.get("path").rindex("/") + 1:]
+                path = item.get("path")[:item.get("path").rindex("/")]
 
-                    # Create the directories to export to
-                    dirs = self.createDirs(outputDir=outputDir, bundleName=name)
+                # Create the directories to export to
+                dirs = self.createDirs(outputDir=outputDir, bundleName=name)
 
-                    # Get the bundle by calling the rest api
-                    bundle = self.getBundle(exportType, item.get("id"))
+                # Get the bundle by calling the rest api
+                bundle = self.getBundle(exportType, item.get("id"))
 
-                    tree = ET.fromstring(bundle)
-                    bundleXml = ET.ElementTree()
-                    for prefix, url in self.namespaces.items():
-                        ET.register_namespace(prefix, url)
+                tree = ET.fromstring(bundle)
+                bundleXml = ET.ElementTree()
+                for prefix, url in self.namespaces.items():
+                    ET.register_namespace(prefix, url)
 
-                    root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
-                    bundleXml._setroot(root)
-                    bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+                root = tree.find("l7:Resource/l7:Bundle", self.namespaces)
+                bundleXml._setroot(root)
+                bundleXml.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
 
-                    # Create a mapping file with default action set to NewOrExisting
-                    os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
-                             dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
+                # Create a mapping file with default action set to NewOrExisting
+                os.popen("gmu manageMappings --type " + exportType.upper() + " --action NewOrExisting --bundle " "\"" +
+                         dirs.get("src") + name + ".xml" + "\"" + " --outputFile " + "\"" + dirs.get("src") + name + "-mapping.xml" + "\"")
 
-                    # Adjust mapping file for building block policies to map by name and path to building blocks folder
-                    mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
-                    mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
+                # Adjust mapping file for building block policies to map by name and path to building blocks folder
+                mappingAdjustedBundle = self.extendMapping(buildingBlockPolicies=self.getBuildingBlocks(dirs.get("src") + name + ".xml"), bundle=dirs.get("src") + name + ".xml")
+                mappingAdjustedBundle.write(dirs.get("src") + name + ".xml", encoding="utf-8", xml_declaration=True)
 
-                    # Template the service
-                    template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " +
-                                                "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
-                    (output, err) = template.communicate()
-                    template.wait()
+                # Template the service
+                template = subprocess.Popen("gmu template --bundle " + "\"" + dirs.get("src") + "\"" + "/" + "\"" + name + "\"" + ".xml" + " --template " +
+                                            "\"" + dirs.get("conf") + "\"" + "/" + "\"" + name + "\"" + ".properties", stdout=subprocess.PIPE, shell=True)
+                (output, err) = template.communicate()
+                template.wait()
 
-                    # Add folder path property
-                    properties = open(dirs.get("conf") + name + ".properties", "a")
-                    properties.write("service.folderpath=/" + path)
-                    properties.close()
+                # Add folder path property
+                properties = open(dirs.get("conf") + name + ".properties", "a")
+                properties.write("service.folderpath=/" + path)
+                properties.close()
         # Export the bundle for the given id
         elif bundleId is not None:
-            for item in exportList:
+            progressbar = tqdm(list(filter(lambda bundle: bundle.get("type") == exportType and bundle.get("id") == bundleId, exportList)))
+            for item in progressbar:
+                progressbar.set_description(" exporting: " + item.get("path"))
                 if item.get("id") == bundleId and item.get("type") == exportType:
                     # The name of the export type is the string following the last / character
                     name = item.get("path")[item.get("path").rindex("/") + 1:]
@@ -182,9 +188,12 @@ class Gateway:
                     properties.close()
 
     # Import a bundle
-    def importBundle(self, outputDir, bundleName, results):
+    def importBundle(self, outputDir, bundleName, results=None):
         confDir = outputDir + "/" + bundleName + "/" + self.gateway + "/conf/"
         srcDir = outputDir + "/" + bundleName + "/" + self.gateway + "/src/"
+
+        if results is None:
+            results = bundleName + "-results.xml"
 
         # Read the folderpath from the properties file
         folderPath = None
@@ -199,19 +208,25 @@ class Gateway:
 
 
 if __name__ == "__main__":
-    argfile = "/home/amresh/Projects/ziggo/layer7/gitlab.com/layer7-cicd/workspace/dev-argFile.properties"
-    restmanurl = "https://gateway-dev:8443/restman"
-    username = "admin"
-    password = "password"
+    parser = argparse.ArgumentParser(description="Exports and imports policies from and to a layer 7 gateway.")
+    parser.add_argument("action", choices=["import", "export", "exportAll"])
+    parser.add_argument("-z", "--argFile", required=True, help="The properties file for reading args.")
+    parser.add_argument("-d", "--dest", required=True, help="Directory of the provider from which to import or export to.")
+    parser.add_argument("-g", "--gateway", required=True, help="Name of the gateway.")
+    parser.add_argument("-u", "--username", required=True, help="Username for connecting to the gateway.")
+    parser.add_argument("-p", "--password", required=True, help="Password for connecting to the gateway.")
+    parser.add_argument("-w", "--restman", required=True, help="Path to REST Management interface.")
+    parser.add_argument("-i", "--id", required=False, help="Id of the bundle to export.")
+    parser.add_argument("-r", "--results", required=False, default=None, help="Results file of migration operations, if not supplied, the default location will be used from which this script is being run.")
+    parser.add_argument("-n", "--name", required=False, help="Name of the bundle to import, without the file extension")
+    args = parser.parse_args()
+
     namespaces = {"l7": "http://ns.l7tech.com/2010/04/gateway-management"}
-    gateway = "NL_BSS"
-    gw = Gateway(argFile=argfile, username=username, password=password, restmanUrl=restmanurl, namespaces=namespaces, gateway=gateway)
+    gateway = Gateway(argFile=args.argFile, username=args.username, password=args.password, namespaces=namespaces, gateway=args.gateway, restmanUrl=args.restman)
 
-    gw.exportBundle(exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
-
-    # gw.exportBundle(bundleId="3911f4f9e80f49fc93d6ff92e534dd16", exportList=gw.browse(), outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl")
-
-    # gwTst = Gateway(argFile="/home/amresh/Projects/ziggo/layer7/gitlab.com/layer7-cicd/workspace/tst-argFile.properties", restmanUrl="https://gateway-tst:8443/restman",
-    #                 username="admin", password="password", namespaces={"l7": "http://ns.l7tech.com/2010/04/gateway-management"}, gateway="NL_BSS")
-
-    # gwTst.importBundle(outputDir="/home/amresh/Projects/ziggo/layer7/gitlab.com/bsl", bundleName="Peal Adress", results="res.xml")
+    if args.action == "exportAll":
+        gateway.exportBundle(exportList=gateway.browse(), outputDir=args.dest)
+    elif args.action == "export":
+        gateway.exportBundle(exportList=gateway.browse(), outputDir=args.dest, bundleId=args.id)
+    elif args.action == "import":
+        gateway.importBundle(outputDir=args.dest, bundleName=args.name, results=args.results)
