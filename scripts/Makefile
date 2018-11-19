@@ -8,5 +8,5 @@ build:
 	python3 -OO /usr/bin/pyinstaller --onefile gmuz.py
 clean:
 	@echo "Cleanup"
-	rm -rf __pycache__ build temp.spec
+	rm -rf __pycache__ build gmuz.spec
 
