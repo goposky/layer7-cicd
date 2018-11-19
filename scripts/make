@@ -1,2 +1,0 @@
-#!/bin/bash
-python3 -OO /usr/bin/pyinstaller --onefile temp.py
